@@ -303,6 +303,11 @@ function captions(t, y = 1400) {
   const lines = [[]]; let lw = 0;
   for (const w of ws) { if (lw + w.m > 920 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push(w); lw += w.m + sp; }
   const lh = 108, y0 = y - (lines.length - 1) * lh / 2;
+  if (c.line.speaker) {  // Name der sprechenden Figur über dem Untertitel
+    ctx.save(); font(900, 44); ctx.textAlign = 'center'; const nw = ctx.measureText(c.line.speaker).width + 40;
+    ctx.fillStyle = c.line.color || COL.yellow; rr(W / 2 - nw / 2, y0 - 118, nw, 60, 30); ctx.fill();
+    ctx.fillStyle = '#000'; ctx.fillText(c.line.speaker, W / 2, y0 - 88); ctx.restore();
+  }
   lines.forEach((ln, li) => {
     const tot = ln.reduce((s, w) => s + w.m, 0) + sp * (ln.length - 1); let x = W / 2 - tot / 2;
     for (const w of ln) {
@@ -311,7 +316,7 @@ function captions(t, y = 1400) {
         const k = eBack(seg(t, st, st + 0.14));
         ctx.save(); ctx.translate(x + w.m / 2, y0 + li * lh); ctx.scale(k, k);
         ctx.lineWidth = 18; ctx.lineJoin = 'round'; ctx.strokeStyle = '#000'; ctx.textAlign = 'center'; ctx.strokeText(w.w, 0, 0);
-        ctx.fillStyle = w.hl ? COL.yellow : '#fff'; ctx.fillText(w.w, 0, 0); ctx.restore();
+        ctx.fillStyle = w.hl ? COL.yellow : (c.line.color || '#fff'); ctx.fillText(w.w, 0, 0); ctx.restore();
       }
       x += w.m + sp;
     }

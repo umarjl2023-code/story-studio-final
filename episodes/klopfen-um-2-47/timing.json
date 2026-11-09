@@ -6,6 +6,8 @@
    "start": 0.25,
    "end": 4.846,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Es",
@@ -111,6 +113,8 @@
    "start": 5.446,
    "end": 7.958,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Drei",
@@ -168,6 +172,8 @@
    "start": 8.458,
    "end": 12.218,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Du",
@@ -237,6 +243,8 @@
    "start": 12.618,
    "end": 16.393,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Du",
@@ -306,6 +314,8 @@
    "start": 16.893,
    "end": 19.322,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Dann",
@@ -375,6 +385,8 @@
    "start": 19.622,
    "end": 21.753,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Sondern",
@@ -420,6 +432,8 @@
    "start": 22.353,
    "end": 25.632,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Du",
@@ -507,6 +521,8 @@
    "start": 26.032,
    "end": 29.177,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Dein",
@@ -588,6 +604,8 @@
    "start": 29.677,
    "end": 35.456,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Die",
@@ -693,6 +711,8 @@
    "start": 36.056,
    "end": 39.662,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Aber",
@@ -780,6 +800,8 @@
    "start": 40.162,
    "end": 41.388,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Draußen",
@@ -807,6 +829,8 @@
    "start": 41.988,
    "end": 43.699,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Nur",
@@ -858,6 +882,8 @@
    "start": 44.099,
    "end": 46.733,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Und",
@@ -915,6 +941,8 @@
    "start": 47.533,
    "end": 50.551,
    "noCaption": false,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Dann",
@@ -978,6 +1006,8 @@
    "start": 51.451,
    "end": 56.643,
    "noCaption": true,
+   "color": null,
+   "speaker": null,
    "words": [
     {
      "w": "Was",

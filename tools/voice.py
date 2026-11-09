@@ -75,18 +75,19 @@ def piper_model(name):
             print('Lade Stimme:', url); urllib.request.urlretrieve(url, base + ext)
     return base + '.onnx'
 
-_piper = None
+_pipers = {}  # geladene Stimmen (mehrere Figuren = mehrere Stimmen)
 def tts_piper(text, cfg, tmp):
-    global _piper
     from piper import PiperVoice
-    if _piper is None: _piper = PiperVoice.load(piper_model(cfg.get('voice', 'thorsten')))
+    name = cfg.get('voice', 'thorsten')
+    if name not in _pipers: _pipers[name] = PiperVoice.load(piper_model(name))
+    pv = _pipers[name]
     ls = cfg.get('length_scale', 0.95)
     with wave.open(tmp, 'wb') as wf:
         try:
             from piper import SynthesisConfig  # piper-tts >= 1.3
-            _piper.synthesize_wav(text, wf, syn_config=SynthesisConfig(length_scale=ls))
+            pv.synthesize_wav(text, wf, syn_config=SynthesisConfig(length_scale=ls))
         except ImportError:
-            _piper.synthesize(text, wf, length_scale=ls)  # ältere Versionen
+            pv.synthesize(text, wf, length_scale=ls)  # ältere Versionen
     return read_wav(tmp)
 
 def tts_elevenlabs(text, cfg, tmp):
@@ -123,8 +124,12 @@ def main():
     rec = None
     if backend == 'recording':
         rec = read_wav(os.path.join(ep, 'recording.wav'))
+    base_vcfg = vcfg
     for ln in script['lines']:
         txt = clean_text(ln['text'])
+        # Pro Zeile andere Stimme (Dialog): "voice": "kerstin" oder {"voice": "kerstin", "length_scale": 1.0, "voice_id": "…"}
+        lv = ln.get('voice')
+        vcfg = {**base_vcfg, **(lv if isinstance(lv, dict) else {'voice': lv} if lv else {})}
         import hashlib
         cdir = os.path.join(ep, 'voice_cache'); os.makedirs(cdir, exist_ok=True)
         key = hashlib.md5(json.dumps([backend, vcfg.get('voice'), vcfg.get('voice_id'), vcfg.get('length_scale'), txt]).encode()).hexdigest()[:12]
@@ -137,7 +142,7 @@ def main():
             pk = np.abs(a).max() or 1; a = a / pk * 0.7
         dur = len(a) / SR
         lines.append({'id': ln['id'], 'text': ln['text'], 'start': round(t, 3), 'end': round(t + dur, 3),
-                      'noCaption': ln.get('noCaption', False), 'words': word_times(ln['text'], t, t + dur)})
+                      'noCaption': ln.get('noCaption', False), 'color': ln.get('color'), 'speaker': ln.get('speaker'), 'words': word_times(ln['text'], t, t + dur)})
         parts.append((t, a)); t += dur + ln.get('pause', 0.35)
     voice_end = t
     if rec is not None:

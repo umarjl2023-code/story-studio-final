@@ -69,7 +69,13 @@ nichts zu Suizid/Selbstverletzung. Grusel durch Andeutung, nicht durch Gewalt.
 **Serie**: Teil 2 knüpft an die Abstimmung an (Gewinner-Antwort, die der Nutzer nennt). Titel-Schema: `TEIL n – POV: …`.
 
 `script.json`-Felder: `title`, `series`, `part`, `voice` {backend, voice, length_scale}, `outro` (Sek. Abstimmungskarte nach dem Sprechen, 4–5),
-`fact_source`, `lines` [{id, text, pause, noCaption?}]. Beispiel: `episodes/klopfen-um-2-47/script.json`.
+`fact_source`, `lines` [{id, text, pause, noCaption?, voice?, speaker?, color?}]. Beispiel: `episodes/klopfen-um-2-47/script.json`.
+
+**Mehrere Figuren / Dialog**: Der Erzähler (Standardstimme aus `voice`) bleibt, andere Figuren bekommen pro Zeile eine eigene Stimme:
+`{"id":"n1","text":"Hast du das *Licht* gesehen?","pause":0.3,"voice":"kerstin","speaker":"NACHBARIN","color":"#ff9ecf"}`.
+`voice` = Stimmenname (oder Objekt `{voice, length_scale, voice_id}`), `speaker` = Namensschild über dem Untertitel, `color` = Untertitelfarbe der Figur.
+Stimmen sinnvoll verteilen (Erzähler: thorsten; Frauen: kerstin/ramona/eva; zweiter Mann: karlsson/thorsten-medium) und in `serie.md` pro Serie festhalten,
+damit eine Figur in jedem Teil gleich klingt. Figuren im Bild über `acc`/`accColor` unterscheiden. Dialogzeilen kurz halten, der Erzähler trägt die Story.
 
 ---------------------------------------------------------------------------------------------------
 ## 3. Animations-Regeln (`scenes.js`)
