@@ -1,0 +1,7 @@
+{
+  "name": "story-studio",
+  "private": true,
+  "description": "Animierte deutsche Story-/Horror-/Survival-Kurzvideos mit Claude Code",
+  "scripts": { "setup": "npx playwright install chromium" },
+  "dependencies": { "playwright": "^1.48.0" }
+}

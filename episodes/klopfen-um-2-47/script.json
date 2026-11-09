@@ -1,0 +1,25 @@
+{
+  "title": "TEIL 1 – POV: Um 2:47 Uhr klopft es an deiner Tür",
+  "series": "Allein zu Haus",
+  "part": 1,
+  "voice": { "backend": "piper", "voice": "thorsten", "length_scale": 0.97 },
+  "outro": 4.5,
+  "fact_source": "Kriminalpolizei/GdP-Präventionsportal via t-online (Juni 2026): Licht an, Lärm machen, 110 rufen, nicht konfrontieren",
+  "lines": [
+    { "id": "hook",   "text": "Es ist 2 Uhr 47. Du bist allein zu Hause. Und es *klopft* an der Tür.", "pause": 0.6 },
+    { "id": "drei",   "text": "Drei Mal. Langsam. Dann ist es wieder still.", "pause": 0.5 },
+    { "id": "niemand","text": "Du erwartest niemanden. Und wer nachts kommt, klingelt doch eigentlich.", "pause": 0.4 },
+    { "id": "handy",  "text": "Du greifst nach deinem Handy. Keine Nachricht. Kein verpasster *Anruf.*", "pause": 0.5 },
+    { "id": "wieder", "text": "Dann klopft es wieder. Aber diesmal nicht an der Tür.", "pause": 0.3 },
+    { "id": "fenster","text": "Sondern am *Fenster.* Direkt neben dir.", "pause": 0.6 },
+    { "id": "umdrehen","text": "Du drehst dich langsam um. Draußen ist nur der Garten. Und der Regen.", "pause": 0.4 },
+    { "id": "lampe",  "text": "Dein Herz rast. Du machst die Lampe aus, damit dich niemand sieht.", "pause": 0.5 },
+    { "id": "fakt",   "text": "Die Polizei rät übrigens genau das Gegenteil: *Licht* an, laut sein, und sofort die *110* rufen.", "pause": 0.6 },
+    { "id": "flur",   "text": "Aber du denkst nicht nach. Du gehst leise in den Flur. Zum Türspion.", "pause": 0.5 },
+    { "id": "leer",   "text": "Draußen steht *niemand.*", "pause": 0.6 },
+    { "id": "zettel", "text": "Nur auf der Fußmatte liegt ein Zettel.", "pause": 0.4 },
+    { "id": "name",   "text": "Und darauf steht, in krakeliger Schrift, *dein* *Name.*", "pause": 0.8 },
+    { "id": "cliff",  "text": "Dann hörst du es. Schritte. Hinter dir. *Im* *Haus.*", "pause": 0.9 },
+    { "id": "frage",  "text": "Was machst du? A: Du rennst raus. B: Du schließt dich im Bad ein. Schreib's in die Kommentare.", "pause": 0.2, "noCaption": true }
+  ]
+}
