@@ -1,0 +1,8 @@
+node_modules/
+voices/
+episodes/*/_page.html
+episodes/*/stills/
+episodes/*/audio.wav
+episodes/*/voice.wav
+__pycache__/
+.env
