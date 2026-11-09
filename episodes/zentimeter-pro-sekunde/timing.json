@@ -1,0 +1,1981 @@
+{
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Es ist 7 Uhr morgens. Du stehst auf. Und du *wächst.* Jede Sekunde einen *Zentimeter.*",
+   "start": 0.25,
+   "end": 4.907,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Es",
+     "hl": false,
+     "start": 0.29,
+     "end": 0.476
+    },
+    {
+     "w": "ist",
+     "hl": false,
+     "start": 0.476,
+     "end": 0.708
+    },
+    {
+     "w": "7",
+     "hl": false,
+     "start": 0.708,
+     "end": 0.848
+    },
+    {
+     "w": "Uhr",
+     "hl": false,
+     "start": 0.848,
+     "end": 1.08
+    },
+    {
+     "w": "morgens.",
+     "hl": false,
+     "start": 1.08,
+     "end": 1.545
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 1.545,
+     "end": 1.731
+    },
+    {
+     "w": "stehst",
+     "hl": false,
+     "start": 1.731,
+     "end": 2.103
+    },
+    {
+     "w": "auf.",
+     "hl": false,
+     "start": 2.103,
+     "end": 2.382
+    },
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 2.382,
+     "end": 2.615
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 2.615,
+     "end": 2.801
+    },
+    {
+     "w": "wächst.",
+     "hl": true,
+     "start": 2.801,
+     "end": 3.219
+    },
+    {
+     "w": "Jede",
+     "hl": false,
+     "start": 3.219,
+     "end": 3.498
+    },
+    {
+     "w": "Sekunde",
+     "hl": false,
+     "start": 3.498,
+     "end": 3.917
+    },
+    {
+     "w": "einen",
+     "hl": false,
+     "start": 3.917,
+     "end": 4.242
+    },
+    {
+     "w": "Zentimeter.",
+     "hl": true,
+     "start": 4.242,
+     "end": 4.847
+    }
+   ]
+  },
+  {
+   "id": "harmlos",
+   "text": "Du bist 1 Meter 75 groß. Ein Zentimeter klingt harmlos.",
+   "start": 5.507,
+   "end": 9.451,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 5.547,
+     "end": 5.78
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 5.78,
+     "end": 6.129
+    },
+    {
+     "w": "1",
+     "hl": false,
+     "start": 6.129,
+     "end": 6.304
+    },
+    {
+     "w": "Meter",
+     "hl": false,
+     "start": 6.304,
+     "end": 6.712
+    },
+    {
+     "w": "75",
+     "hl": false,
+     "start": 6.712,
+     "end": 6.945
+    },
+    {
+     "w": "groß.",
+     "hl": false,
+     "start": 6.945,
+     "end": 7.352
+    },
+    {
+     "w": "Ein",
+     "hl": false,
+     "start": 7.352,
+     "end": 7.644
+    },
+    {
+     "w": "Zentimeter",
+     "hl": false,
+     "start": 7.644,
+     "end": 8.343
+    },
+    {
+     "w": "klingt",
+     "hl": false,
+     "start": 8.343,
+     "end": 8.809
+    },
+    {
+     "w": "harmlos.",
+     "hl": false,
+     "start": 8.809,
+     "end": 9.391
+    }
+   ]
+  },
+  {
+   "id": "rechnen",
+   "text": "Aber rechne mal. Eine Minute sind 60 Zentimeter. Eine Stunde sind *36 Meter.*",
+   "start": 9.851,
+   "end": 14.955,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Aber",
+     "hl": false,
+     "start": 9.891,
+     "end": 10.229
+    },
+    {
+     "w": "rechne",
+     "hl": false,
+     "start": 10.229,
+     "end": 10.678
+    },
+    {
+     "w": "mal.",
+     "hl": false,
+     "start": 10.678,
+     "end": 11.016
+    },
+    {
+     "w": "Eine",
+     "hl": false,
+     "start": 11.016,
+     "end": 11.353
+    },
+    {
+     "w": "Minute",
+     "hl": false,
+     "start": 11.353,
+     "end": 11.803
+    },
+    {
+     "w": "sind",
+     "hl": false,
+     "start": 11.803,
+     "end": 12.14
+    },
+    {
+     "w": "60",
+     "hl": false,
+     "start": 12.14,
+     "end": 12.365
+    },
+    {
+     "w": "Zentimeter.",
+     "hl": false,
+     "start": 12.365,
+     "end": 13.096
+    },
+    {
+     "w": "Eine",
+     "hl": false,
+     "start": 13.096,
+     "end": 13.433
+    },
+    {
+     "w": "Stunde",
+     "hl": false,
+     "start": 13.433,
+     "end": 13.883
+    },
+    {
+     "w": "sind",
+     "hl": false,
+     "start": 13.883,
+     "end": 14.221
+    },
+    {
+     "w": "36",
+     "hl": true,
+     "start": 14.221,
+     "end": 14.446
+    },
+    {
+     "w": "Meter.",
+     "hl": true,
+     "start": 14.446,
+     "end": 14.895
+    }
+   ]
+  },
+  {
+   "id": "tuer",
+   "text": "Nach 30 Sekunden knallst du mit der Stirn gegen den *Türrahmen.*",
+   "start": 15.655,
+   "end": 18.989,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Nach",
+     "hl": false,
+     "start": 15.695,
+     "end": 15.958
+    },
+    {
+     "w": "30",
+     "hl": false,
+     "start": 15.958,
+     "end": 16.132
+    },
+    {
+     "w": "Sekunden",
+     "hl": false,
+     "start": 16.132,
+     "end": 16.569
+    },
+    {
+     "w": "knallst",
+     "hl": false,
+     "start": 16.569,
+     "end": 16.962
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 16.962,
+     "end": 17.137
+    },
+    {
+     "w": "mit",
+     "hl": false,
+     "start": 17.137,
+     "end": 17.356
+    },
+    {
+     "w": "der",
+     "hl": false,
+     "start": 17.356,
+     "end": 17.574
+    },
+    {
+     "w": "Stirn",
+     "hl": false,
+     "start": 17.574,
+     "end": 17.88
+    },
+    {
+     "w": "gegen",
+     "hl": false,
+     "start": 17.88,
+     "end": 18.186
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 18.186,
+     "end": 18.404
+    },
+    {
+     "w": "Türrahmen.",
+     "hl": true,
+     "start": 18.404,
+     "end": 18.929
+    }
+   ]
+  },
+  {
+   "id": "decke",
+   "text": "Nach einer Minute bist du 2 Meter 35. Deine Haare streifen die *Decke.*",
+   "start": 19.389,
+   "end": 23.562,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Nach",
+     "hl": false,
+     "start": 19.429,
+     "end": 19.723
+    },
+    {
+     "w": "einer",
+     "hl": false,
+     "start": 19.723,
+     "end": 20.067
+    },
+    {
+     "w": "Minute",
+     "hl": false,
+     "start": 20.067,
+     "end": 20.459
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 20.459,
+     "end": 20.754
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 20.754,
+     "end": 20.95
+    },
+    {
+     "w": "2",
+     "hl": false,
+     "start": 20.95,
+     "end": 21.097
+    },
+    {
+     "w": "Meter",
+     "hl": false,
+     "start": 21.097,
+     "end": 21.441
+    },
+    {
+     "w": "35.",
+     "hl": false,
+     "start": 21.441,
+     "end": 21.686
+    },
+    {
+     "w": "Deine",
+     "hl": false,
+     "start": 21.686,
+     "end": 22.03
+    },
+    {
+     "w": "Haare",
+     "hl": false,
+     "start": 22.03,
+     "end": 22.373
+    },
+    {
+     "w": "streifen",
+     "hl": false,
+     "start": 22.373,
+     "end": 22.864
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 22.864,
+     "end": 23.109
+    },
+    {
+     "w": "Decke.",
+     "hl": true,
+     "start": 23.109,
+     "end": 23.502
+    }
+   ]
+  },
+  {
+   "id": "raus",
+   "text": "Du musst raus. Sofort. Du kriechst auf allen vieren durch den Flur.",
+   "start": 23.962,
+   "end": 27.545,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 24.002,
+     "end": 24.176
+    },
+    {
+     "w": "musst",
+     "hl": false,
+     "start": 24.176,
+     "end": 24.481
+    },
+    {
+     "w": "raus.",
+     "hl": false,
+     "start": 24.481,
+     "end": 24.786
+    },
+    {
+     "w": "Sofort.",
+     "hl": false,
+     "start": 24.786,
+     "end": 25.178
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 25.178,
+     "end": 25.352
+    },
+    {
+     "w": "kriechst",
+     "hl": false,
+     "start": 25.352,
+     "end": 25.787
+    },
+    {
+     "w": "auf",
+     "hl": false,
+     "start": 25.787,
+     "end": 26.005
+    },
+    {
+     "w": "allen",
+     "hl": false,
+     "start": 26.005,
+     "end": 26.31
+    },
+    {
+     "w": "vieren",
+     "hl": false,
+     "start": 26.31,
+     "end": 26.658
+    },
+    {
+     "w": "durch",
+     "hl": false,
+     "start": 26.658,
+     "end": 26.963
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 26.963,
+     "end": 27.181
+    },
+    {
+     "w": "Flur.",
+     "hl": false,
+     "start": 27.181,
+     "end": 27.485
+    }
+   ]
+  },
+  {
+   "id": "kleidung",
+   "text": "Dein T-Shirt *reißt.* Du quetschst dich gerade so durch die Haustür.",
+   "start": 27.845,
+   "end": 30.972,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Dein",
+     "hl": false,
+     "start": 27.885,
+     "end": 28.118
+    },
+    {
+     "w": "T-Shirt",
+     "hl": false,
+     "start": 28.118,
+     "end": 28.467
+    },
+    {
+     "w": "reißt.",
+     "hl": true,
+     "start": 28.467,
+     "end": 28.778
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 28.778,
+     "end": 28.933
+    },
+    {
+     "w": "quetschst",
+     "hl": false,
+     "start": 28.933,
+     "end": 29.36
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 29.36,
+     "end": 29.593
+    },
+    {
+     "w": "gerade",
+     "hl": false,
+     "start": 29.593,
+     "end": 29.903
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 29.903,
+     "end": 30.059
+    },
+    {
+     "w": "durch",
+     "hl": false,
+     "start": 30.059,
+     "end": 30.33
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 30.33,
+     "end": 30.524
+    },
+    {
+     "w": "Haustür.",
+     "hl": false,
+     "start": 30.524,
+     "end": 30.912
+    }
+   ]
+  },
+  {
+   "id": "strasse",
+   "text": "Draußen bremst ein Auto. Der Fahrer starrt dich an. Du bist jetzt 3 Meter groß.",
+   "start": 31.472,
+   "end": 35.669,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Draußen",
+     "hl": false,
+     "start": 31.512,
+     "end": 31.901
+    },
+    {
+     "w": "bremst",
+     "hl": false,
+     "start": 31.901,
+     "end": 32.245
+    },
+    {
+     "w": "ein",
+     "hl": false,
+     "start": 32.245,
+     "end": 32.461
+    },
+    {
+     "w": "Auto.",
+     "hl": false,
+     "start": 32.461,
+     "end": 32.763
+    },
+    {
+     "w": "Der",
+     "hl": false,
+     "start": 32.763,
+     "end": 32.979
+    },
+    {
+     "w": "Fahrer",
+     "hl": false,
+     "start": 32.979,
+     "end": 33.324
+    },
+    {
+     "w": "starrt",
+     "hl": false,
+     "start": 33.324,
+     "end": 33.669
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 33.669,
+     "end": 33.927
+    },
+    {
+     "w": "an.",
+     "hl": false,
+     "start": 33.927,
+     "end": 34.143
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 34.143,
+     "end": 34.315
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 34.315,
+     "end": 34.574
+    },
+    {
+     "w": "jetzt",
+     "hl": false,
+     "start": 34.574,
+     "end": 34.876
+    },
+    {
+     "w": "3",
+     "hl": false,
+     "start": 34.876,
+     "end": 35.005
+    },
+    {
+     "w": "Meter",
+     "hl": false,
+     "start": 35.005,
+     "end": 35.307
+    },
+    {
+     "w": "groß.",
+     "hl": false,
+     "start": 35.307,
+     "end": 35.609
+    }
+   ]
+  },
+  {
+   "id": "handy",
+   "text": "Nach 3 Minuten bist du höher als ein *Bus.* Überall gehen Handys hoch. Alle filmen.",
+   "start": 36.069,
+   "end": 40.72,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Nach",
+     "hl": false,
+     "start": 36.109,
+     "end": 36.391
+    },
+    {
+     "w": "3",
+     "hl": false,
+     "start": 36.391,
+     "end": 36.531
+    },
+    {
+     "w": "Minuten",
+     "hl": false,
+     "start": 36.531,
+     "end": 36.954
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 36.954,
+     "end": 37.235
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 37.235,
+     "end": 37.423
+    },
+    {
+     "w": "höher",
+     "hl": false,
+     "start": 37.423,
+     "end": 37.751
+    },
+    {
+     "w": "als",
+     "hl": false,
+     "start": 37.751,
+     "end": 37.986
+    },
+    {
+     "w": "ein",
+     "hl": false,
+     "start": 37.986,
+     "end": 38.22
+    },
+    {
+     "w": "Bus.",
+     "hl": true,
+     "start": 38.22,
+     "end": 38.502
+    },
+    {
+     "w": "Überall",
+     "hl": false,
+     "start": 38.502,
+     "end": 38.924
+    },
+    {
+     "w": "gehen",
+     "hl": false,
+     "start": 38.924,
+     "end": 39.252
+    },
+    {
+     "w": "Handys",
+     "hl": false,
+     "start": 39.252,
+     "end": 39.628
+    },
+    {
+     "w": "hoch.",
+     "hl": false,
+     "start": 39.628,
+     "end": 39.956
+    },
+    {
+     "w": "Alle",
+     "hl": false,
+     "start": 39.956,
+     "end": 40.238
+    },
+    {
+     "w": "filmen.",
+     "hl": false,
+     "start": 40.238,
+     "end": 40.66
+    }
+   ]
+  },
+  {
+   "id": "knie",
+   "text": "Dann kommt der Schmerz. Deine *Knie.* Sie brennen bei jedem Schritt.",
+   "start": 41.12,
+   "end": 44.326,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Dann",
+     "hl": false,
+     "start": 41.16,
+     "end": 41.399
+    },
+    {
+     "w": "kommt",
+     "hl": false,
+     "start": 41.399,
+     "end": 41.678
+    },
+    {
+     "w": "der",
+     "hl": false,
+     "start": 41.678,
+     "end": 41.877
+    },
+    {
+     "w": "Schmerz.",
+     "hl": false,
+     "start": 41.877,
+     "end": 42.275
+    },
+    {
+     "w": "Deine",
+     "hl": false,
+     "start": 42.275,
+     "end": 42.554
+    },
+    {
+     "w": "Knie.",
+     "hl": true,
+     "start": 42.554,
+     "end": 42.832
+    },
+    {
+     "w": "Sie",
+     "hl": false,
+     "start": 42.832,
+     "end": 43.031
+    },
+    {
+     "w": "brennen",
+     "hl": false,
+     "start": 43.031,
+     "end": 43.39
+    },
+    {
+     "w": "bei",
+     "hl": false,
+     "start": 43.39,
+     "end": 43.589
+    },
+    {
+     "w": "jedem",
+     "hl": false,
+     "start": 43.589,
+     "end": 43.867
+    },
+    {
+     "w": "Schritt.",
+     "hl": false,
+     "start": 43.867,
+     "end": 44.266
+    }
+   ]
+  },
+  {
+   "id": "fakt",
+   "text": "Schuld ist das *Quadrat-Würfel-Gesetz.* Galileo Galilei hat es schon sechzehnhundertachtunddreißig beschrieben.",
+   "start": 44.826,
+   "end": 50.309,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Schuld",
+     "hl": false,
+     "start": 44.866,
+     "end": 45.222
+    },
+    {
+     "w": "ist",
+     "hl": false,
+     "start": 45.222,
+     "end": 45.444
+    },
+    {
+     "w": "das",
+     "hl": false,
+     "start": 45.444,
+     "end": 45.666
+    },
+    {
+     "w": "Quadrat-Würfel-Gesetz.",
+     "hl": true,
+     "start": 45.666,
+     "end": 46.734
+    },
+    {
+     "w": "Galileo",
+     "hl": false,
+     "start": 46.734,
+     "end": 47.135
+    },
+    {
+     "w": "Galilei",
+     "hl": false,
+     "start": 47.135,
+     "end": 47.535
+    },
+    {
+     "w": "hat",
+     "hl": false,
+     "start": 47.535,
+     "end": 47.757
+    },
+    {
+     "w": "es",
+     "hl": false,
+     "start": 47.757,
+     "end": 47.935
+    },
+    {
+     "w": "schon",
+     "hl": false,
+     "start": 47.935,
+     "end": 48.247
+    },
+    {
+     "w": "sechzehnhundertachtunddreißig",
+     "hl": false,
+     "start": 48.247,
+     "end": 49.626
+    },
+    {
+     "w": "beschrieben.",
+     "hl": false,
+     "start": 49.626,
+     "end": 50.249
+    }
+   ]
+  },
+  {
+   "id": "fakt2",
+   "text": "Wirst du doppelt so groß, wiegst du *achtmal* so viel. Aber deine Knochen werden nur *viermal* so stark.",
+   "start": 50.609,
+   "end": 55.81,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Wirst",
+     "hl": false,
+     "start": 50.649,
+     "end": 50.949
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 50.949,
+     "end": 51.12
+    },
+    {
+     "w": "doppelt",
+     "hl": false,
+     "start": 51.12,
+     "end": 51.506
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 51.506,
+     "end": 51.678
+    },
+    {
+     "w": "groß,",
+     "hl": false,
+     "start": 51.678,
+     "end": 51.978
+    },
+    {
+     "w": "wiegst",
+     "hl": false,
+     "start": 51.978,
+     "end": 52.321
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 52.321,
+     "end": 52.492
+    },
+    {
+     "w": "achtmal",
+     "hl": true,
+     "start": 52.492,
+     "end": 52.878
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 52.878,
+     "end": 53.049
+    },
+    {
+     "w": "viel.",
+     "hl": false,
+     "start": 53.049,
+     "end": 53.349
+    },
+    {
+     "w": "Aber",
+     "hl": false,
+     "start": 53.349,
+     "end": 53.607
+    },
+    {
+     "w": "deine",
+     "hl": false,
+     "start": 53.607,
+     "end": 53.907
+    },
+    {
+     "w": "Knochen",
+     "hl": false,
+     "start": 53.907,
+     "end": 54.292
+    },
+    {
+     "w": "werden",
+     "hl": false,
+     "start": 54.292,
+     "end": 54.635
+    },
+    {
+     "w": "nur",
+     "hl": false,
+     "start": 54.635,
+     "end": 54.85
+    },
+    {
+     "w": "viermal",
+     "hl": true,
+     "start": 54.85,
+     "end": 55.236
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 55.236,
+     "end": 55.407
+    },
+    {
+     "w": "stark.",
+     "hl": false,
+     "start": 55.407,
+     "end": 55.75
+    }
+   ]
+  },
+  {
+   "id": "dach",
+   "text": "Minute 6. Du bist 5 Meter 35. Du schaust deinen Nachbarn direkt ins Schlafzimmerfenster.",
+   "start": 56.41,
+   "end": 61.757,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Minute",
+     "hl": false,
+     "start": 56.45,
+     "end": 56.858
+    },
+    {
+     "w": "6.",
+     "hl": false,
+     "start": 56.858,
+     "end": 57.061
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 57.061,
+     "end": 57.265
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 57.265,
+     "end": 57.571
+    },
+    {
+     "w": "5",
+     "hl": false,
+     "start": 57.571,
+     "end": 57.724
+    },
+    {
+     "w": "Meter",
+     "hl": false,
+     "start": 57.724,
+     "end": 58.08
+    },
+    {
+     "w": "35.",
+     "hl": false,
+     "start": 58.08,
+     "end": 58.335
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 58.335,
+     "end": 58.539
+    },
+    {
+     "w": "schaust",
+     "hl": false,
+     "start": 58.539,
+     "end": 58.997
+    },
+    {
+     "w": "deinen",
+     "hl": false,
+     "start": 58.997,
+     "end": 59.405
+    },
+    {
+     "w": "Nachbarn",
+     "hl": false,
+     "start": 59.405,
+     "end": 59.914
+    },
+    {
+     "w": "direkt",
+     "hl": false,
+     "start": 59.914,
+     "end": 60.322
+    },
+    {
+     "w": "ins",
+     "hl": false,
+     "start": 60.322,
+     "end": 60.576
+    },
+    {
+     "w": "Schlafzimmerfenster.",
+     "hl": false,
+     "start": 60.576,
+     "end": 61.697
+    }
+   ]
+  },
+  {
+   "id": "schwindel",
+   "text": "Und dir wird *schwindelig.* Dein Herz muss das Blut immer höher pumpen. Bis in deinen Kopf.",
+   "start": 62.157,
+   "end": 66.479,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 62.197,
+     "end": 62.396
+    },
+    {
+     "w": "dir",
+     "hl": false,
+     "start": 62.396,
+     "end": 62.595
+    },
+    {
+     "w": "wird",
+     "hl": false,
+     "start": 62.595,
+     "end": 62.834
+    },
+    {
+     "w": "schwindelig.",
+     "hl": true,
+     "start": 62.834,
+     "end": 63.392
+    },
+    {
+     "w": "Dein",
+     "hl": false,
+     "start": 63.392,
+     "end": 63.631
+    },
+    {
+     "w": "Herz",
+     "hl": false,
+     "start": 63.631,
+     "end": 63.87
+    },
+    {
+     "w": "muss",
+     "hl": false,
+     "start": 63.87,
+     "end": 64.109
+    },
+    {
+     "w": "das",
+     "hl": false,
+     "start": 64.109,
+     "end": 64.308
+    },
+    {
+     "w": "Blut",
+     "hl": false,
+     "start": 64.308,
+     "end": 64.547
+    },
+    {
+     "w": "immer",
+     "hl": false,
+     "start": 64.547,
+     "end": 64.826
+    },
+    {
+     "w": "höher",
+     "hl": false,
+     "start": 64.826,
+     "end": 65.105
+    },
+    {
+     "w": "pumpen.",
+     "hl": false,
+     "start": 65.105,
+     "end": 65.463
+    },
+    {
+     "w": "Bis",
+     "hl": false,
+     "start": 65.463,
+     "end": 65.663
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 65.663,
+     "end": 65.822
+    },
+    {
+     "w": "deinen",
+     "hl": false,
+     "start": 65.822,
+     "end": 66.141
+    },
+    {
+     "w": "Kopf.",
+     "hl": false,
+     "start": 66.141,
+     "end": 66.419
+    }
+   ]
+  },
+  {
+   "id": "giraffe",
+   "text": "Eine Giraffe hat dafür einen doppelt so hohen *Blutdruck* wie du. Du hast ihn nicht.",
+   "start": 66.879,
+   "end": 71.049,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Eine",
+     "hl": false,
+     "start": 66.919,
+     "end": 67.169
+    },
+    {
+     "w": "Giraffe",
+     "hl": false,
+     "start": 67.169,
+     "end": 67.542
+    },
+    {
+     "w": "hat",
+     "hl": false,
+     "start": 67.542,
+     "end": 67.75
+    },
+    {
+     "w": "dafür",
+     "hl": false,
+     "start": 67.75,
+     "end": 68.041
+    },
+    {
+     "w": "einen",
+     "hl": false,
+     "start": 68.041,
+     "end": 68.331
+    },
+    {
+     "w": "doppelt",
+     "hl": false,
+     "start": 68.331,
+     "end": 68.705
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 68.705,
+     "end": 68.871
+    },
+    {
+     "w": "hohen",
+     "hl": false,
+     "start": 68.871,
+     "end": 69.162
+    },
+    {
+     "w": "Blutdruck",
+     "hl": true,
+     "start": 69.162,
+     "end": 69.619
+    },
+    {
+     "w": "wie",
+     "hl": false,
+     "start": 69.619,
+     "end": 69.826
+    },
+    {
+     "w": "du.",
+     "hl": false,
+     "start": 69.826,
+     "end": 70.034
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 70.034,
+     "end": 70.2
+    },
+    {
+     "w": "hast",
+     "hl": false,
+     "start": 70.2,
+     "end": 70.449
+    },
+    {
+     "w": "ihn",
+     "hl": false,
+     "start": 70.449,
+     "end": 70.657
+    },
+    {
+     "w": "nicht.",
+     "hl": false,
+     "start": 70.657,
+     "end": 70.989
+    }
+   ]
+  },
+  {
+   "id": "fehler",
+   "text": "Du solltest dich hinlegen. Aber du willst weg von den Kameras. Also *rennst* du los.",
+   "start": 71.549,
+   "end": 75.319,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 71.589,
+     "end": 71.739
+    },
+    {
+     "w": "solltest",
+     "hl": false,
+     "start": 71.739,
+     "end": 72.113
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 72.113,
+     "end": 72.338
+    },
+    {
+     "w": "hinlegen.",
+     "hl": false,
+     "start": 72.338,
+     "end": 72.75
+    },
+    {
+     "w": "Aber",
+     "hl": false,
+     "start": 72.75,
+     "end": 72.974
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 72.974,
+     "end": 73.124
+    },
+    {
+     "w": "willst",
+     "hl": false,
+     "start": 73.124,
+     "end": 73.424
+    },
+    {
+     "w": "weg",
+     "hl": false,
+     "start": 73.424,
+     "end": 73.611
+    },
+    {
+     "w": "von",
+     "hl": false,
+     "start": 73.611,
+     "end": 73.798
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 73.798,
+     "end": 73.986
+    },
+    {
+     "w": "Kameras.",
+     "hl": false,
+     "start": 73.986,
+     "end": 74.36
+    },
+    {
+     "w": "Also",
+     "hl": false,
+     "start": 74.36,
+     "end": 74.585
+    },
+    {
+     "w": "rennst",
+     "hl": true,
+     "start": 74.585,
+     "end": 74.885
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 74.885,
+     "end": 75.034
+    },
+    {
+     "w": "los.",
+     "hl": false,
+     "start": 75.034,
+     "end": 75.259
+    }
+   ]
+  },
+  {
+   "id": "asphalt",
+   "text": "Bei jedem Schritt bricht der *Asphalt* unter deinen Füßen.",
+   "start": 75.719,
+   "end": 78.087,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Bei",
+     "hl": false,
+     "start": 75.759,
+     "end": 75.931
+    },
+    {
+     "w": "jedem",
+     "hl": false,
+     "start": 75.931,
+     "end": 76.171
+    },
+    {
+     "w": "Schritt",
+     "hl": false,
+     "start": 76.171,
+     "end": 76.481
+    },
+    {
+     "w": "bricht",
+     "hl": false,
+     "start": 76.481,
+     "end": 76.755
+    },
+    {
+     "w": "der",
+     "hl": false,
+     "start": 76.755,
+     "end": 76.927
+    },
+    {
+     "w": "Asphalt",
+     "hl": true,
+     "start": 76.927,
+     "end": 77.236
+    },
+    {
+     "w": "unter",
+     "hl": false,
+     "start": 77.236,
+     "end": 77.477
+    },
+    {
+     "w": "deinen",
+     "hl": false,
+     "start": 77.477,
+     "end": 77.752
+    },
+    {
+     "w": "Füßen.",
+     "hl": false,
+     "start": 77.752,
+     "end": 78.027
+    }
+   ]
+  },
+  {
+   "id": "heli",
+   "text": "Minute 10. 7 Meter 75. Über dir knattert ein *Hubschrauber.*",
+   "start": 78.487,
+   "end": 82.73,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Minute",
+     "hl": false,
+     "start": 78.527,
+     "end": 79.007
+    },
+    {
+     "w": "10.",
+     "hl": false,
+     "start": 79.007,
+     "end": 79.307
+    },
+    {
+     "w": "7",
+     "hl": false,
+     "start": 79.307,
+     "end": 79.488
+    },
+    {
+     "w": "Meter",
+     "hl": false,
+     "start": 79.488,
+     "end": 79.908
+    },
+    {
+     "w": "75.",
+     "hl": false,
+     "start": 79.908,
+     "end": 80.208
+    },
+    {
+     "w": "Über",
+     "hl": false,
+     "start": 80.208,
+     "end": 80.568
+    },
+    {
+     "w": "dir",
+     "hl": false,
+     "start": 80.568,
+     "end": 80.869
+    },
+    {
+     "w": "knattert",
+     "hl": false,
+     "start": 80.869,
+     "end": 81.469
+    },
+    {
+     "w": "ein",
+     "hl": false,
+     "start": 81.469,
+     "end": 81.77
+    },
+    {
+     "w": "Hubschrauber.",
+     "hl": true,
+     "start": 81.77,
+     "end": 82.67
+    }
+   ]
+  },
+  {
+   "id": "durchsage",
+   "text": "Eine Stimme aus dem Lautsprecher: Bleiben Sie stehen! Sie wachsen weiter!",
+   "start": 83.23,
+   "end": 86.865,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Eine",
+     "hl": false,
+     "start": 83.27,
+     "end": 83.52
+    },
+    {
+     "w": "Stimme",
+     "hl": false,
+     "start": 83.52,
+     "end": 83.852
+    },
+    {
+     "w": "aus",
+     "hl": false,
+     "start": 83.852,
+     "end": 84.06
+    },
+    {
+     "w": "dem",
+     "hl": false,
+     "start": 84.06,
+     "end": 84.268
+    },
+    {
+     "w": "Lautsprecher:",
+     "hl": false,
+     "start": 84.268,
+     "end": 84.892
+    },
+    {
+     "w": "Bleiben",
+     "hl": false,
+     "start": 84.892,
+     "end": 85.266
+    },
+    {
+     "w": "Sie",
+     "hl": false,
+     "start": 85.266,
+     "end": 85.474
+    },
+    {
+     "w": "stehen!",
+     "hl": false,
+     "start": 85.474,
+     "end": 85.848
+    },
+    {
+     "w": "Sie",
+     "hl": false,
+     "start": 85.848,
+     "end": 86.056
+    },
+    {
+     "w": "wachsen",
+     "hl": false,
+     "start": 86.056,
+     "end": 86.43
+    },
+    {
+     "w": "weiter!",
+     "hl": false,
+     "start": 86.43,
+     "end": 86.805
+    }
+   ]
+  },
+  {
+   "id": "stunde",
+   "text": "In einer Stunde bist du fast *40 Meter* groß. Und es hört *nicht* auf.",
+   "start": 87.265,
+   "end": 90.856,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "In",
+     "hl": false,
+     "start": 87.305,
+     "end": 87.477
+    },
+    {
+     "w": "einer",
+     "hl": false,
+     "start": 87.477,
+     "end": 87.779
+    },
+    {
+     "w": "Stunde",
+     "hl": false,
+     "start": 87.779,
+     "end": 88.124
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 88.124,
+     "end": 88.382
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 88.382,
+     "end": 88.555
+    },
+    {
+     "w": "fast",
+     "hl": false,
+     "start": 88.555,
+     "end": 88.813
+    },
+    {
+     "w": "40",
+     "hl": true,
+     "start": 88.813,
+     "end": 88.986
+    },
+    {
+     "w": "Meter",
+     "hl": true,
+     "start": 88.986,
+     "end": 89.288
+    },
+    {
+     "w": "groß.",
+     "hl": false,
+     "start": 89.288,
+     "end": 89.589
+    },
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 89.589,
+     "end": 89.805
+    },
+    {
+     "w": "es",
+     "hl": false,
+     "start": 89.805,
+     "end": 89.977
+    },
+    {
+     "w": "hört",
+     "hl": false,
+     "start": 89.977,
+     "end": 90.236
+    },
+    {
+     "w": "nicht",
+     "hl": true,
+     "start": 90.236,
+     "end": 90.538
+    },
+    {
+     "w": "auf.",
+     "hl": false,
+     "start": 90.538,
+     "end": 90.796
+    }
+   ]
+  },
+  {
+   "id": "cliff",
+   "text": "Deine Beine *zittern.* Du spürst: Lange tragen sie dich nicht mehr.",
+   "start": 91.656,
+   "end": 94.963,
+   "noCaption": false,
+   "words": [
+    {
+     "w": "Deine",
+     "hl": false,
+     "start": 91.696,
+     "end": 91.988
+    },
+    {
+     "w": "Beine",
+     "hl": false,
+     "start": 91.988,
+     "end": 92.279
+    },
+    {
+     "w": "zittern.",
+     "hl": true,
+     "start": 92.279,
+     "end": 92.696
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 92.696,
+     "end": 92.862
+    },
+    {
+     "w": "spürst:",
+     "hl": false,
+     "start": 92.862,
+     "end": 93.237
+    },
+    {
+     "w": "Lange",
+     "hl": false,
+     "start": 93.237,
+     "end": 93.529
+    },
+    {
+     "w": "tragen",
+     "hl": false,
+     "start": 93.529,
+     "end": 93.862
+    },
+    {
+     "w": "sie",
+     "hl": false,
+     "start": 93.862,
+     "end": 94.07
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 94.07,
+     "end": 94.32
+    },
+    {
+     "w": "nicht",
+     "hl": false,
+     "start": 94.32,
+     "end": 94.611
+    },
+    {
+     "w": "mehr.",
+     "hl": false,
+     "start": 94.611,
+     "end": 94.903
+    }
+   ]
+  },
+  {
+   "id": "frage",
+   "text": "Was machst du? A: Du legst dich hin und wartest auf Hilfe. B: Du läufst zum Meer, damit das Wasser dich trägt. Schreib's in die Kommentare.",
+   "start": 95.863,
+   "end": 103.224,
+   "noCaption": true,
+   "words": [
+    {
+     "w": "Was",
+     "hl": false,
+     "start": 95.903,
+     "end": 96.122
+    },
+    {
+     "w": "machst",
+     "hl": false,
+     "start": 96.122,
+     "end": 96.472
+    },
+    {
+     "w": "du?",
+     "hl": false,
+     "start": 96.472,
+     "end": 96.69
+    },
+    {
+     "w": "A:",
+     "hl": false,
+     "start": 96.69,
+     "end": 96.865
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 96.865,
+     "end": 97.04
+    },
+    {
+     "w": "legst",
+     "hl": false,
+     "start": 97.04,
+     "end": 97.346
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 97.346,
+     "end": 97.609
+    },
+    {
+     "w": "hin",
+     "hl": false,
+     "start": 97.609,
+     "end": 97.828
+    },
+    {
+     "w": "und",
+     "hl": false,
+     "start": 97.828,
+     "end": 98.046
+    },
+    {
+     "w": "wartest",
+     "hl": false,
+     "start": 98.046,
+     "end": 98.44
+    },
+    {
+     "w": "auf",
+     "hl": false,
+     "start": 98.44,
+     "end": 98.659
+    },
+    {
+     "w": "Hilfe.",
+     "hl": false,
+     "start": 98.659,
+     "end": 99.009
+    },
+    {
+     "w": "B:",
+     "hl": false,
+     "start": 99.009,
+     "end": 99.184
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 99.184,
+     "end": 99.359
+    },
+    {
+     "w": "läufst",
+     "hl": false,
+     "start": 99.359,
+     "end": 99.709
+    },
+    {
+     "w": "zum",
+     "hl": false,
+     "start": 99.709,
+     "end": 99.927
+    },
+    {
+     "w": "Meer,",
+     "hl": false,
+     "start": 99.927,
+     "end": 100.233
+    },
+    {
+     "w": "damit",
+     "hl": false,
+     "start": 100.233,
+     "end": 100.54
+    },
+    {
+     "w": "das",
+     "hl": false,
+     "start": 100.54,
+     "end": 100.758
+    },
+    {
+     "w": "Wasser",
+     "hl": false,
+     "start": 100.758,
+     "end": 101.108
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 101.108,
+     "end": 101.371
+    },
+    {
+     "w": "trägt.",
+     "hl": false,
+     "start": 101.371,
+     "end": 101.721
+    },
+    {
+     "w": "Schreib's",
+     "hl": false,
+     "start": 101.721,
+     "end": 102.202
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 102.202,
+     "end": 102.377
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 102.377,
+     "end": 102.596
+    },
+    {
+     "w": "Kommentare.",
+     "hl": false,
+     "start": 102.596,
+     "end": 103.164
+    }
+   ]
+  }
+ ],
+ "voiceEnd": 103.424,
+ "total": 107.92,
+ "backend": "piper"
+}

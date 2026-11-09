@@ -1,0 +1,32 @@
+{
+  "title": "TEIL 1 – POV: Du wächst jede Sekunde einen Zentimeter",
+  "series": "Was wäre wenn",
+  "part": 1,
+  "voice": { "backend": "piper", "voice": "thorsten", "length_scale": 0.97 },
+  "outro": 4.5,
+  "fact_source": "Quadrat-Würfel-Gesetz, Galileo Galilei, 'Zwei neue Wissenschaften' 1638 (Wikipedia 'Square–cube law'; TU Dortmund Vorlesung Biomechanik); Giraffen-Blutdruck etwa doppelt so hoch wie beim Menschen (Carlsbergfondet / Pfizer, Acta Physiologica 2025)",
+  "lines": [
+    { "id": "hook",     "text": "Es ist 7 Uhr morgens. Du stehst auf. Und du *wächst.* Jede Sekunde einen *Zentimeter.*", "pause": 0.6 },
+    { "id": "harmlos",  "text": "Du bist 1 Meter 75 groß. Ein Zentimeter klingt harmlos.", "pause": 0.4 },
+    { "id": "rechnen",  "text": "Aber rechne mal. Eine Minute sind 60 Zentimeter. Eine Stunde sind *36 Meter.*", "pause": 0.7 },
+    { "id": "tuer",     "text": "Nach 30 Sekunden knallst du mit der Stirn gegen den *Türrahmen.*", "pause": 0.4 },
+    { "id": "decke",    "text": "Nach einer Minute bist du 2 Meter 35. Deine Haare streifen die *Decke.*", "pause": 0.4 },
+    { "id": "raus",     "text": "Du musst raus. Sofort. Du kriechst auf allen vieren durch den Flur.", "pause": 0.3 },
+    { "id": "kleidung", "text": "Dein T-Shirt *reißt.* Du quetschst dich gerade so durch die Haustür.", "pause": 0.5 },
+    { "id": "strasse",  "text": "Draußen bremst ein Auto. Der Fahrer starrt dich an. Du bist jetzt 3 Meter groß.", "pause": 0.4 },
+    { "id": "handy",    "text": "Nach 3 Minuten bist du höher als ein *Bus.* Überall gehen Handys hoch. Alle filmen.", "pause": 0.4 },
+    { "id": "knie",     "text": "Dann kommt der Schmerz. Deine *Knie.* Sie brennen bei jedem Schritt.", "pause": 0.5 },
+    { "id": "fakt",     "text": "Schuld ist das *Quadrat-Würfel-Gesetz.* Galileo Galilei hat es schon sechzehnhundertachtunddreißig beschrieben.", "pause": 0.3 },
+    { "id": "fakt2",    "text": "Wirst du doppelt so groß, wiegst du *achtmal* so viel. Aber deine Knochen werden nur *viermal* so stark.", "pause": 0.6 },
+    { "id": "dach",     "text": "Minute 6. Du bist 5 Meter 35. Du schaust deinen Nachbarn direkt ins Schlafzimmerfenster.", "pause": 0.4 },
+    { "id": "schwindel","text": "Und dir wird *schwindelig.* Dein Herz muss das Blut immer höher pumpen. Bis in deinen Kopf.", "pause": 0.4 },
+    { "id": "giraffe",  "text": "Eine Giraffe hat dafür einen doppelt so hohen *Blutdruck* wie du. Du hast ihn nicht.", "pause": 0.5 },
+    { "id": "fehler",   "text": "Du solltest dich hinlegen. Aber du willst weg von den Kameras. Also *rennst* du los.", "pause": 0.4 },
+    { "id": "asphalt",  "text": "Bei jedem Schritt bricht der *Asphalt* unter deinen Füßen.", "pause": 0.4 },
+    { "id": "heli",     "text": "Minute 10. 7 Meter 75. Über dir knattert ein *Hubschrauber.*", "pause": 0.5 },
+    { "id": "durchsage","text": "Eine Stimme aus dem Lautsprecher: Bleiben Sie stehen! Sie wachsen weiter!", "pause": 0.4 },
+    { "id": "stunde",   "text": "In einer Stunde bist du fast *40 Meter* groß. Und es hört *nicht* auf.", "pause": 0.8 },
+    { "id": "cliff",    "text": "Deine Beine *zittern.* Du spürst: Lange tragen sie dich nicht mehr.", "pause": 0.9 },
+    { "id": "frage",    "text": "Was machst du? A: Du legst dich hin und wartest auf Hilfe. B: Du läufst zum Meer, damit das Wasser dich trägt. Schreib's in die Kommentare.", "pause": 0.2, "noCaption": true }
+  ]
+}
