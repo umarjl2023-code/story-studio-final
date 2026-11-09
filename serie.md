@@ -10,3 +10,4 @@
 | Serie | Teil | Ordner | Abstimmung | Ergebnis |
 |---|---|---|---|---|
 | Allein zu Haus | 1 | episodes/klopfen-um-2-47 | A: rausrennen / B: im Bad einschließen | offen |
+| Was wäre wenn | 1 | episodes/zentimeter-pro-sekunde | A: hinlegen und auf Hilfe warten / B: zum Meer laufen | offen |
