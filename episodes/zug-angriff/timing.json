@@ -1,0 +1,1346 @@
+{
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Es ist 16 Uhr 12. Du sitzt im Zug nach Hause. Und über dir *donnern* zwei Kampfjets vorbei.",
+   "start": 0.25,
+   "end": 5.31,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Es",
+     "hl": false,
+     "start": 0.29,
+     "end": 0.474
+    },
+    {
+     "w": "ist",
+     "hl": false,
+     "start": 0.474,
+     "end": 0.703
+    },
+    {
+     "w": "16",
+     "hl": false,
+     "start": 0.703,
+     "end": 0.887
+    },
+    {
+     "w": "Uhr",
+     "hl": false,
+     "start": 0.887,
+     "end": 1.117
+    },
+    {
+     "w": "12.",
+     "hl": false,
+     "start": 1.117,
+     "end": 1.346
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 1.346,
+     "end": 1.53
+    },
+    {
+     "w": "sitzt",
+     "hl": false,
+     "start": 1.53,
+     "end": 1.851
+    },
+    {
+     "w": "im",
+     "hl": false,
+     "start": 1.851,
+     "end": 2.035
+    },
+    {
+     "w": "Zug",
+     "hl": false,
+     "start": 2.035,
+     "end": 2.265
+    },
+    {
+     "w": "nach",
+     "hl": false,
+     "start": 2.265,
+     "end": 2.54
+    },
+    {
+     "w": "Hause.",
+     "hl": false,
+     "start": 2.54,
+     "end": 2.908
+    },
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 2.908,
+     "end": 3.137
+    },
+    {
+     "w": "über",
+     "hl": false,
+     "start": 3.137,
+     "end": 3.413
+    },
+    {
+     "w": "dir",
+     "hl": false,
+     "start": 3.413,
+     "end": 3.642
+    },
+    {
+     "w": "donnern",
+     "hl": true,
+     "start": 3.642,
+     "end": 4.056
+    },
+    {
+     "w": "zwei",
+     "hl": false,
+     "start": 4.056,
+     "end": 4.331
+    },
+    {
+     "w": "Kampfjets",
+     "hl": false,
+     "start": 4.331,
+     "end": 4.836
+    },
+    {
+     "w": "vorbei.",
+     "hl": false,
+     "start": 4.836,
+     "end": 5.25
+    }
+   ]
+  },
+  {
+   "id": "tief",
+   "text": "So tief, dass die *Scheiben* zittern. Die Frau neben dir lässt ihren Kaffee fallen.",
+   "start": 5.81,
+   "end": 9.818,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "So",
+     "hl": false,
+     "start": 5.85,
+     "end": 6.013
+    },
+    {
+     "w": "tief,",
+     "hl": false,
+     "start": 6.013,
+     "end": 6.298
+    },
+    {
+     "w": "dass",
+     "hl": false,
+     "start": 6.298,
+     "end": 6.542
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 6.542,
+     "end": 6.745
+    },
+    {
+     "w": "Scheiben",
+     "hl": true,
+     "start": 6.745,
+     "end": 7.152
+    },
+    {
+     "w": "zittern.",
+     "hl": false,
+     "start": 7.152,
+     "end": 7.56
+    },
+    {
+     "w": "Die",
+     "hl": false,
+     "start": 7.56,
+     "end": 7.763
+    },
+    {
+     "w": "Frau",
+     "hl": false,
+     "start": 7.763,
+     "end": 8.007
+    },
+    {
+     "w": "neben",
+     "hl": false,
+     "start": 8.007,
+     "end": 8.292
+    },
+    {
+     "w": "dir",
+     "hl": false,
+     "start": 8.292,
+     "end": 8.496
+    },
+    {
+     "w": "lässt",
+     "hl": false,
+     "start": 8.496,
+     "end": 8.781
+    },
+    {
+     "w": "ihren",
+     "hl": false,
+     "start": 8.781,
+     "end": 9.066
+    },
+    {
+     "w": "Kaffee",
+     "hl": false,
+     "start": 9.066,
+     "end": 9.391
+    },
+    {
+     "w": "fallen.",
+     "hl": false,
+     "start": 9.391,
+     "end": 9.758
+    }
+   ]
+  },
+  {
+   "id": "frau1",
+   "text": "Das ist doch nur eine *Übung*, oder?",
+   "start": 10.118,
+   "end": 12.22,
+   "noCaption": false,
+   "color": "#ff9ecf",
+   "speaker": "FRAU NEBEN DIR",
+   "words": [
+    {
+     "w": "Das",
+     "hl": false,
+     "start": 10.158,
+     "end": 10.396
+    },
+    {
+     "w": "ist",
+     "hl": false,
+     "start": 10.396,
+     "end": 10.635
+    },
+    {
+     "w": "doch",
+     "hl": false,
+     "start": 10.635,
+     "end": 10.921
+    },
+    {
+     "w": "nur",
+     "hl": false,
+     "start": 10.921,
+     "end": 11.159
+    },
+    {
+     "w": "eine",
+     "hl": false,
+     "start": 11.159,
+     "end": 11.445
+    },
+    {
+     "w": "Übung,",
+     "hl": true,
+     "start": 11.445,
+     "end": 11.827
+    },
+    {
+     "w": "oder?",
+     "hl": false,
+     "start": 11.827,
+     "end": 12.16
+    }
+   ]
+  },
+  {
+   "id": "alarm",
+   "text": "Dann schrillen alle Handys gleichzeitig. Auf deinem Display steht: *Extreme Gefahr.*",
+   "start": 12.72,
+   "end": 16.936,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Dann",
+     "hl": false,
+     "start": 12.76,
+     "end": 13.023
+    },
+    {
+     "w": "schrillen",
+     "hl": false,
+     "start": 13.023,
+     "end": 13.505
+    },
+    {
+     "w": "alle",
+     "hl": false,
+     "start": 13.505,
+     "end": 13.767
+    },
+    {
+     "w": "Handys",
+     "hl": false,
+     "start": 13.767,
+     "end": 14.118
+    },
+    {
+     "w": "gleichzeitig.",
+     "hl": false,
+     "start": 14.118,
+     "end": 14.774
+    },
+    {
+     "w": "Auf",
+     "hl": false,
+     "start": 14.774,
+     "end": 14.993
+    },
+    {
+     "w": "deinem",
+     "hl": false,
+     "start": 14.993,
+     "end": 15.344
+    },
+    {
+     "w": "Display",
+     "hl": false,
+     "start": 15.344,
+     "end": 15.738
+    },
+    {
+     "w": "steht:",
+     "hl": false,
+     "start": 15.738,
+     "end": 16.088
+    },
+    {
+     "w": "Extreme",
+     "hl": true,
+     "start": 16.088,
+     "end": 16.482
+    },
+    {
+     "w": "Gefahr.",
+     "hl": true,
+     "start": 16.482,
+     "end": 16.876
+    }
+   ]
+  },
+  {
+   "id": "bremst",
+   "text": "Der Zug *bremst* so hart, dass Taschen durch den Gang fliegen.",
+   "start": 17.536,
+   "end": 20.312,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Der",
+     "hl": false,
+     "start": 17.576,
+     "end": 17.762
+    },
+    {
+     "w": "Zug",
+     "hl": false,
+     "start": 17.762,
+     "end": 17.948
+    },
+    {
+     "w": "bremst",
+     "hl": true,
+     "start": 17.948,
+     "end": 18.245
+    },
+    {
+     "w": "so",
+     "hl": false,
+     "start": 18.245,
+     "end": 18.394
+    },
+    {
+     "w": "hart,",
+     "hl": false,
+     "start": 18.394,
+     "end": 18.654
+    },
+    {
+     "w": "dass",
+     "hl": false,
+     "start": 18.654,
+     "end": 18.877
+    },
+    {
+     "w": "Taschen",
+     "hl": false,
+     "start": 18.877,
+     "end": 19.212
+    },
+    {
+     "w": "durch",
+     "hl": false,
+     "start": 19.212,
+     "end": 19.472
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 19.472,
+     "end": 19.658
+    },
+    {
+     "w": "Gang",
+     "hl": false,
+     "start": 19.658,
+     "end": 19.881
+    },
+    {
+     "w": "fliegen.",
+     "hl": false,
+     "start": 19.881,
+     "end": 20.252
+    }
+   ]
+  },
+  {
+   "id": "durchsage",
+   "text": "Achtung. Wir halten auf freier Strecke. Bitte bleiben Sie im *Zug.*",
+   "start": 20.712,
+   "end": 24.635,
+   "noCaption": false,
+   "color": "#8fd3ff",
+   "speaker": "DURCHSAGE",
+   "words": [
+    {
+     "w": "Achtung.",
+     "hl": false,
+     "start": 20.752,
+     "end": 21.249
+    },
+    {
+     "w": "Wir",
+     "hl": false,
+     "start": 21.249,
+     "end": 21.497
+    },
+    {
+     "w": "halten",
+     "hl": false,
+     "start": 21.497,
+     "end": 21.894
+    },
+    {
+     "w": "auf",
+     "hl": false,
+     "start": 21.894,
+     "end": 22.142
+    },
+    {
+     "w": "freier",
+     "hl": false,
+     "start": 22.142,
+     "end": 22.539
+    },
+    {
+     "w": "Strecke.",
+     "hl": false,
+     "start": 22.539,
+     "end": 23.036
+    },
+    {
+     "w": "Bitte",
+     "hl": false,
+     "start": 23.036,
+     "end": 23.383
+    },
+    {
+     "w": "bleiben",
+     "hl": false,
+     "start": 23.383,
+     "end": 23.83
+    },
+    {
+     "w": "Sie",
+     "hl": false,
+     "start": 23.83,
+     "end": 24.078
+    },
+    {
+     "w": "im",
+     "hl": false,
+     "start": 24.078,
+     "end": 24.277
+    },
+    {
+     "w": "Zug.",
+     "hl": true,
+     "start": 24.277,
+     "end": 24.575
+    }
+   ]
+  },
+  {
+   "id": "rauch",
+   "text": "Draußen am Horizont steigen schwarze *Rauchsäulen* auf.",
+   "start": 25.035,
+   "end": 27.809,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Draußen",
+     "hl": false,
+     "start": 25.075,
+     "end": 25.469
+    },
+    {
+     "w": "am",
+     "hl": false,
+     "start": 25.469,
+     "end": 25.645
+    },
+    {
+     "w": "Horizont",
+     "hl": false,
+     "start": 25.645,
+     "end": 26.083
+    },
+    {
+     "w": "steigen",
+     "hl": false,
+     "start": 26.083,
+     "end": 26.478
+    },
+    {
+     "w": "schwarze",
+     "hl": false,
+     "start": 26.478,
+     "end": 26.916
+    },
+    {
+     "w": "Rauchsäulen",
+     "hl": true,
+     "start": 26.916,
+     "end": 27.486
+    },
+    {
+     "w": "auf.",
+     "hl": false,
+     "start": 27.486,
+     "end": 27.749
+    }
+   ]
+  },
+  {
+   "id": "netz",
+   "text": "Du willst deine Familie anrufen. Aber da steht nur: Kein *Netz.*",
+   "start": 28.209,
+   "end": 31.484,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 28.249,
+     "end": 28.421
+    },
+    {
+     "w": "willst",
+     "hl": false,
+     "start": 28.421,
+     "end": 28.764
+    },
+    {
+     "w": "deine",
+     "hl": false,
+     "start": 28.764,
+     "end": 29.065
+    },
+    {
+     "w": "Familie",
+     "hl": false,
+     "start": 29.065,
+     "end": 29.451
+    },
+    {
+     "w": "anrufen.",
+     "hl": false,
+     "start": 29.451,
+     "end": 29.88
+    },
+    {
+     "w": "Aber",
+     "hl": false,
+     "start": 29.88,
+     "end": 30.137
+    },
+    {
+     "w": "da",
+     "hl": false,
+     "start": 30.137,
+     "end": 30.309
+    },
+    {
+     "w": "steht",
+     "hl": false,
+     "start": 30.309,
+     "end": 30.609
+    },
+    {
+     "w": "nur:",
+     "hl": false,
+     "start": 30.609,
+     "end": 30.866
+    },
+    {
+     "w": "Kein",
+     "hl": false,
+     "start": 30.866,
+     "end": 31.124
+    },
+    {
+     "w": "Netz.",
+     "hl": true,
+     "start": 31.124,
+     "end": 31.424
+    }
+   ]
+  },
+  {
+   "id": "fehler",
+   "text": "Jemand drückt die Tür auf. Alle rennen raus aufs Feld. Und du rennst *hinterher.*",
+   "start": 31.984,
+   "end": 35.738,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Jemand",
+     "hl": false,
+     "start": 32.024,
+     "end": 32.335
+    },
+    {
+     "w": "drückt",
+     "hl": false,
+     "start": 32.335,
+     "end": 32.646
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 32.646,
+     "end": 32.841
+    },
+    {
+     "w": "Tür",
+     "hl": false,
+     "start": 32.841,
+     "end": 33.035
+    },
+    {
+     "w": "auf.",
+     "hl": false,
+     "start": 33.035,
+     "end": 33.268
+    },
+    {
+     "w": "Alle",
+     "hl": false,
+     "start": 33.268,
+     "end": 33.501
+    },
+    {
+     "w": "rennen",
+     "hl": false,
+     "start": 33.501,
+     "end": 33.812
+    },
+    {
+     "w": "raus",
+     "hl": false,
+     "start": 33.812,
+     "end": 34.046
+    },
+    {
+     "w": "aufs",
+     "hl": false,
+     "start": 34.046,
+     "end": 34.279
+    },
+    {
+     "w": "Feld.",
+     "hl": false,
+     "start": 34.279,
+     "end": 34.551
+    },
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 34.551,
+     "end": 34.745
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 34.745,
+     "end": 34.901
+    },
+    {
+     "w": "rennst",
+     "hl": false,
+     "start": 34.901,
+     "end": 35.212
+    },
+    {
+     "w": "hinterher.",
+     "hl": true,
+     "start": 35.212,
+     "end": 35.678
+    }
+   ]
+  },
+  {
+   "id": "frau2",
+   "text": "Komm zurück! Draußen bist du *ungeschützt!*",
+   "start": 36.138,
+   "end": 38.91,
+   "noCaption": false,
+   "color": "#ff9ecf",
+   "speaker": "FRAU NEBEN DIR",
+   "words": [
+    {
+     "w": "Komm",
+     "hl": false,
+     "start": 36.178,
+     "end": 36.512
+    },
+    {
+     "w": "zurück!",
+     "hl": false,
+     "start": 36.512,
+     "end": 37.013
+    },
+    {
+     "w": "Draußen",
+     "hl": false,
+     "start": 37.013,
+     "end": 37.514
+    },
+    {
+     "w": "bist",
+     "hl": false,
+     "start": 37.514,
+     "end": 37.848
+    },
+    {
+     "w": "du",
+     "hl": false,
+     "start": 37.848,
+     "end": 38.071
+    },
+    {
+     "w": "ungeschützt!",
+     "hl": true,
+     "start": 38.071,
+     "end": 38.85
+    }
+   ]
+  },
+  {
+   "id": "still",
+   "text": "Dann wird es plötzlich ganz *still.*",
+   "start": 39.51,
+   "end": 40.973,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Dann",
+     "hl": false,
+     "start": 39.55,
+     "end": 39.75
+    },
+    {
+     "w": "wird",
+     "hl": false,
+     "start": 39.75,
+     "end": 39.949
+    },
+    {
+     "w": "es",
+     "hl": false,
+     "start": 39.949,
+     "end": 40.082
+    },
+    {
+     "w": "plötzlich",
+     "hl": false,
+     "start": 40.082,
+     "end": 40.448
+    },
+    {
+     "w": "ganz",
+     "hl": false,
+     "start": 40.448,
+     "end": 40.647
+    },
+    {
+     "w": "still.",
+     "hl": true,
+     "start": 40.647,
+     "end": 40.913
+    }
+   ]
+  },
+  {
+   "id": "blitz",
+   "text": "Und der Himmel wird *weiß.*",
+   "start": 41.873,
+   "end": 42.998,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Und",
+     "hl": false,
+     "start": 41.913,
+     "end": 42.078
+    },
+    {
+     "w": "der",
+     "hl": false,
+     "start": 42.078,
+     "end": 42.244
+    },
+    {
+     "w": "Himmel",
+     "hl": false,
+     "start": 42.244,
+     "end": 42.508
+    },
+    {
+     "w": "wird",
+     "hl": false,
+     "start": 42.508,
+     "end": 42.707
+    },
+    {
+     "w": "weiß.",
+     "hl": true,
+     "start": 42.707,
+     "end": 42.938
+    }
+   ]
+  },
+  {
+   "id": "pilz",
+   "text": "Weit hinter der Stadt wächst eine riesige Wolke in den Himmel. Ein *Atompilz.*",
+   "start": 43.798,
+   "end": 47.673,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Weit",
+     "hl": false,
+     "start": 43.838,
+     "end": 44.09
+    },
+    {
+     "w": "hinter",
+     "hl": false,
+     "start": 44.09,
+     "end": 44.425
+    },
+    {
+     "w": "der",
+     "hl": false,
+     "start": 44.425,
+     "end": 44.635
+    },
+    {
+     "w": "Stadt",
+     "hl": false,
+     "start": 44.635,
+     "end": 44.929
+    },
+    {
+     "w": "wächst",
+     "hl": false,
+     "start": 44.929,
+     "end": 45.264
+    },
+    {
+     "w": "eine",
+     "hl": false,
+     "start": 45.264,
+     "end": 45.516
+    },
+    {
+     "w": "riesige",
+     "hl": false,
+     "start": 45.516,
+     "end": 45.894
+    },
+    {
+     "w": "Wolke",
+     "hl": false,
+     "start": 45.894,
+     "end": 46.187
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 46.187,
+     "end": 46.355
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 46.355,
+     "end": 46.565
+    },
+    {
+     "w": "Himmel.",
+     "hl": false,
+     "start": 46.565,
+     "end": 46.942
+    },
+    {
+     "w": "Ein",
+     "hl": false,
+     "start": 46.942,
+     "end": 47.152
+    },
+    {
+     "w": "Atompilz.",
+     "hl": true,
+     "start": 47.152,
+     "end": 47.613
+    }
+   ]
+  },
+  {
+   "id": "fakt",
+   "text": "Behörden raten: Nie in den Blitz schauen. Sofort *flach hinlegen* und den Kopf schützen.",
+   "start": 48.273,
+   "end": 52.699,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Behörden",
+     "hl": false,
+     "start": 48.313,
+     "end": 48.742
+    },
+    {
+     "w": "raten:",
+     "hl": false,
+     "start": 48.742,
+     "end": 49.084
+    },
+    {
+     "w": "Nie",
+     "hl": false,
+     "start": 49.084,
+     "end": 49.299
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 49.299,
+     "end": 49.47
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 49.47,
+     "end": 49.684
+    },
+    {
+     "w": "Blitz",
+     "hl": false,
+     "start": 49.684,
+     "end": 49.984
+    },
+    {
+     "w": "schauen.",
+     "hl": false,
+     "start": 49.984,
+     "end": 50.412
+    },
+    {
+     "w": "Sofort",
+     "hl": false,
+     "start": 50.412,
+     "end": 50.755
+    },
+    {
+     "w": "flach",
+     "hl": true,
+     "start": 50.755,
+     "end": 51.055
+    },
+    {
+     "w": "hinlegen",
+     "hl": true,
+     "start": 51.055,
+     "end": 51.483
+    },
+    {
+     "w": "und",
+     "hl": false,
+     "start": 51.483,
+     "end": 51.697
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 51.697,
+     "end": 51.911
+    },
+    {
+     "w": "Kopf",
+     "hl": false,
+     "start": 51.911,
+     "end": 52.168
+    },
+    {
+     "w": "schützen.",
+     "hl": false,
+     "start": 52.168,
+     "end": 52.639
+    }
+   ]
+  },
+  {
+   "id": "fakt2",
+   "text": "Ist die Explosion weit weg, kann die *Druckwelle* dreißig Sekunden oder länger brauchen.",
+   "start": 52.999,
+   "end": 57.762,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Ist",
+     "hl": false,
+     "start": 53.039,
+     "end": 53.272
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 53.272,
+     "end": 53.505
+    },
+    {
+     "w": "Explosion",
+     "hl": false,
+     "start": 53.505,
+     "end": 54.018
+    },
+    {
+     "w": "weit",
+     "hl": false,
+     "start": 54.018,
+     "end": 54.298
+    },
+    {
+     "w": "weg,",
+     "hl": false,
+     "start": 54.298,
+     "end": 54.578
+    },
+    {
+     "w": "kann",
+     "hl": false,
+     "start": 54.578,
+     "end": 54.858
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 54.858,
+     "end": 55.091
+    },
+    {
+     "w": "Druckwelle",
+     "hl": true,
+     "start": 55.091,
+     "end": 55.651
+    },
+    {
+     "w": "dreißig",
+     "hl": false,
+     "start": 55.651,
+     "end": 56.07
+    },
+    {
+     "w": "Sekunden",
+     "hl": false,
+     "start": 56.07,
+     "end": 56.536
+    },
+    {
+     "w": "oder",
+     "hl": false,
+     "start": 56.536,
+     "end": 56.816
+    },
+    {
+     "w": "länger",
+     "hl": false,
+     "start": 56.816,
+     "end": 57.189
+    },
+    {
+     "w": "brauchen.",
+     "hl": false,
+     "start": 57.189,
+     "end": 57.702
+    }
+   ]
+  },
+  {
+   "id": "zaehlen",
+   "text": "Du zählst. Eins. Zwei. Drei. Am Horizont biegen sich die *Bäume.*",
+   "start": 58.262,
+   "end": 62.367,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 58.302,
+     "end": 58.516
+    },
+    {
+     "w": "zählst.",
+     "hl": false,
+     "start": 58.516,
+     "end": 58.996
+    },
+    {
+     "w": "Eins.",
+     "hl": false,
+     "start": 58.996,
+     "end": 59.37
+    },
+    {
+     "w": "Zwei.",
+     "hl": false,
+     "start": 59.37,
+     "end": 59.744
+    },
+    {
+     "w": "Drei.",
+     "hl": false,
+     "start": 59.744,
+     "end": 60.118
+    },
+    {
+     "w": "Am",
+     "hl": false,
+     "start": 60.118,
+     "end": 60.331
+    },
+    {
+     "w": "Horizont",
+     "hl": false,
+     "start": 60.331,
+     "end": 60.865
+    },
+    {
+     "w": "biegen",
+     "hl": false,
+     "start": 60.865,
+     "end": 61.292
+    },
+    {
+     "w": "sich",
+     "hl": false,
+     "start": 61.292,
+     "end": 61.613
+    },
+    {
+     "w": "die",
+     "hl": false,
+     "start": 61.613,
+     "end": 61.88
+    },
+    {
+     "w": "Bäume.",
+     "hl": true,
+     "start": 61.88,
+     "end": 62.307
+    }
+   ]
+  },
+  {
+   "id": "frage",
+   "text": "Was machst du? A: Du wirfst dich in den Graben neben den Gleisen. B: Du rennst zurück in den Zug.",
+   "start": 63.267,
+   "end": 68.244,
+   "noCaption": true,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Was",
+     "hl": false,
+     "start": 63.307,
+     "end": 63.513
+    },
+    {
+     "w": "machst",
+     "hl": false,
+     "start": 63.513,
+     "end": 63.844
+    },
+    {
+     "w": "du?",
+     "hl": false,
+     "start": 63.844,
+     "end": 64.051
+    },
+    {
+     "w": "A:",
+     "hl": false,
+     "start": 64.051,
+     "end": 64.216
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 64.216,
+     "end": 64.381
+    },
+    {
+     "w": "wirfst",
+     "hl": false,
+     "start": 64.381,
+     "end": 64.712
+    },
+    {
+     "w": "dich",
+     "hl": false,
+     "start": 64.712,
+     "end": 64.96
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 64.96,
+     "end": 65.125
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 65.125,
+     "end": 65.332
+    },
+    {
+     "w": "Graben",
+     "hl": false,
+     "start": 65.332,
+     "end": 65.663
+    },
+    {
+     "w": "neben",
+     "hl": false,
+     "start": 65.663,
+     "end": 65.952
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 65.952,
+     "end": 66.159
+    },
+    {
+     "w": "Gleisen.",
+     "hl": false,
+     "start": 66.159,
+     "end": 66.572
+    },
+    {
+     "w": "B:",
+     "hl": false,
+     "start": 66.572,
+     "end": 66.737
+    },
+    {
+     "w": "Du",
+     "hl": false,
+     "start": 66.737,
+     "end": 66.903
+    },
+    {
+     "w": "rennst",
+     "hl": false,
+     "start": 66.903,
+     "end": 67.233
+    },
+    {
+     "w": "zurück",
+     "hl": false,
+     "start": 67.233,
+     "end": 67.564
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 67.564,
+     "end": 67.729
+    },
+    {
+     "w": "den",
+     "hl": false,
+     "start": 67.729,
+     "end": 67.936
+    },
+    {
+     "w": "Zug.",
+     "hl": false,
+     "start": 67.936,
+     "end": 68.184
+    }
+   ]
+  }
+ ],
+ "voiceEnd": 68.444,
+ "total": 72.94,
+ "backend": "piper"
+}

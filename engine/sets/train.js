@@ -1,7 +1,7 @@
 // SET: train – S-Bahn-/Zugwaggon von der Seite (Weltkoordinaten ca. -600..2800 x 0..1920)
 // Wichtige Punkte: Fenster x 70-490 / 590-1010 / 1810-2230 (y 520-980), Tür x 1180-1640, Notgriff (1722,985)
 // Sitzbank-Hüfthöhe y=1290 (pose:'sit'), Stehende Personen y=1460, s=1.32
-// st: {t, L:Licht 0..1, E:Notlicht 0..1, p:Zugposition px, sp:Tempo px/s, door:0..1, oncoming:0..1, passing:sec, heat:0..1}
+// st: {t, view:(x,y,w,h)=>… eigener Fensterblick statt Tunnel (z. B. SETS.fieldView), L:Licht 0..1, E:Notlicht 0..1, p:Zugposition px, sp:Tempo px/s, door:0..1, oncoming:0..1, passing:sec, heat:0..1}
 SETS.trainMotion = function (t, brakeAt = 2, brakeDur = 1.4, V = 2600) {
   const p = t < brakeAt ? V * t : V * brakeAt + V * brakeDur * (1 - Math.pow(1 - clamp((t - brakeAt) / brakeDur), 3)) / 3;
   const sp = t < brakeAt ? V : V * Math.pow(1 - clamp((t - brakeAt) / brakeDur), 2);
@@ -11,6 +11,7 @@ SETS.train = function (st) {
   const WINS = [{ x: 70, w: 420 }, { x: 590, w: 420 }, { x: 1810, w: 420 }], WY = 520, WH = 460;
   function tunnel(x, y, w, h) {
     ctx.save(); rr(x, y, w, h, 40); ctx.clip();
+    if (st.view) { st.view(x, y, w, h); } else {
     ctx.fillStyle = '#07080b'; ctx.fillRect(x, y, w, h);
     const p = st.p || 0, sp = st.sp || 0;
     ctx.fillStyle = '#14171d';
@@ -28,6 +29,7 @@ SETS.train = function (st) {
       g.addColorStop(0, `rgba(235,240,255,${a * a * 0.85})`); g.addColorStop(1, 'rgba(235,240,255,0)'); ctx.fillStyle = g; ctx.fillRect(x, y, w, h);
       if (st.passing) { ctx.fillStyle = '#262b35'; ctx.fillRect(x, y + h * .08, w, h * .9);
         for (let k = 0; k < 6; k++) { const bx = x + ((k * 230 - st.passing * 9000) % 1380 + 1380) % 1380 - 200; ctx.fillStyle = 'rgba(255,246,214,.95)'; rr(bx, y + h * .25, 150, h * .33, 14); ctx.fill(); } }
+    }
     }
     const gl = ctx.createLinearGradient(x, y, x + w, y + h); gl.addColorStop(0, 'rgba(255,255,255,.10)'); gl.addColorStop(.5, 'rgba(255,255,255,0)'); gl.addColorStop(1, 'rgba(255,255,255,.05)');
     ctx.fillStyle = gl; ctx.fillRect(x, y, w, h); ctx.restore();

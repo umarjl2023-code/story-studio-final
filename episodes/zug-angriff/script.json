@@ -1,0 +1,109 @@
+{
+ "title": "TEIL 1 – POV: Du sitzt im Zug, als der Angriff beginnt",
+ "series": "Angriff",
+ "part": 1,
+ "voice": {
+  "backend": "piper",
+  "voice": "thorsten",
+  "length_scale": 0.97
+ },
+ "outro": 4.5,
+ "fact_source": "Ready.gov 'Nuclear Explosion' (wiedergegeben u. a. von Prince William County OEM, pwcva.gov/department/office-emergency-management/nuclear-blast; FEMA 'During a Nuclear Blast'; US Marines Fact Sheet Nuclear Blast): nicht in Blitz/Feuerball schauen, flach hinlegen, Kopf schützen; bei Entfernung kann die Druckwelle 30 s oder mehr brauchen",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Es ist 16 Uhr 12. Du sitzt im Zug nach Hause. Und über dir *donnern* zwei Kampfjets vorbei.",
+   "pause": 0.5
+  },
+  {
+   "id": "tief",
+   "text": "So tief, dass die *Scheiben* zittern. Die Frau neben dir lässt ihren Kaffee fallen.",
+   "pause": 0.3
+  },
+  {
+   "id": "frau1",
+   "text": "Das ist doch nur eine *Übung*, oder?",
+   "pause": 0.5,
+   "voice": "kerstin",
+   "speaker": "FRAU NEBEN DIR",
+   "color": "#ff9ecf"
+  },
+  {
+   "id": "alarm",
+   "text": "Dann schrillen alle Handys gleichzeitig. Auf deinem Display steht: *Extreme Gefahr.*",
+   "pause": 0.6
+  },
+  {
+   "id": "bremst",
+   "text": "Der Zug *bremst* so hart, dass Taschen durch den Gang fliegen.",
+   "pause": 0.4
+  },
+  {
+   "id": "durchsage",
+   "text": "Achtung. Wir halten auf freier Strecke. Bitte bleiben Sie im *Zug.*",
+   "pause": 0.4,
+   "voice": "karlsson",
+   "speaker": "DURCHSAGE",
+   "color": "#8fd3ff"
+  },
+  {
+   "id": "rauch",
+   "text": "Draußen am Horizont steigen schwarze *Rauchsäulen* auf.",
+   "pause": 0.4
+  },
+  {
+   "id": "netz",
+   "text": "Du willst deine Familie anrufen. Aber da steht nur: Kein *Netz.*",
+   "pause": 0.5
+  },
+  {
+   "id": "fehler",
+   "text": "Jemand drückt die Tür auf. Alle rennen raus aufs Feld. Und du rennst *hinterher.*",
+   "pause": 0.4
+  },
+  {
+   "id": "frau2",
+   "text": "Komm zurück! Draußen bist du *ungeschützt!*",
+   "pause": 0.6,
+   "voice": "kerstin",
+   "speaker": "FRAU NEBEN DIR",
+   "color": "#ff9ecf"
+  },
+  {
+   "id": "still",
+   "text": "Dann wird es plötzlich ganz *still.*",
+   "pause": 0.9
+  },
+  {
+   "id": "blitz",
+   "text": "Und der Himmel wird *weiß.*",
+   "pause": 0.8
+  },
+  {
+   "id": "pilz",
+   "text": "Weit hinter der Stadt wächst eine riesige Wolke in den Himmel. Ein *Atompilz.*",
+   "pause": 0.6
+  },
+  {
+   "id": "fakt",
+   "text": "Behörden raten: Nie in den Blitz schauen. Sofort *flach hinlegen* und den Kopf schützen.",
+   "pause": 0.3
+  },
+  {
+   "id": "fakt2",
+   "text": "Ist die Explosion weit weg, kann die *Druckwelle* dreißig Sekunden oder länger brauchen.",
+   "pause": 0.5
+  },
+  {
+   "id": "zaehlen",
+   "text": "Du zählst. Eins. Zwei. Drei. Am Horizont biegen sich die *Bäume.*",
+   "pause": 0.9
+  },
+  {
+   "id": "frage",
+   "text": "Was machst du? A: Du wirfst dich in den Graben neben den Gleisen. B: Du rennst zurück in den Zug.",
+   "pause": 0.2,
+   "noCaption": true
+  }
+ ]
+}
