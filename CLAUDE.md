@@ -76,6 +76,9 @@ nichts zu Suizid/Selbstverletzung. Grusel durch Andeutung, nicht durch Gewalt.
 `voice` = Stimmenname (oder Objekt `{voice, length_scale, voice_id}`), `speaker` = Namensschild über dem Untertitel, `color` = Untertitelfarbe der Figur.
 Stimmen sinnvoll verteilen (Erzähler: thorsten; Frauen: kerstin/ramona/eva; zweiter Mann: karlsson/thorsten-medium) und in `serie.md` pro Serie festhalten,
 damit eine Figur in jedem Teil gleich klingt. Figuren im Bild über `acc`/`accColor` unterscheiden. Dialogzeilen kurz halten, der Erzähler trägt die Story.
+**Wann Dialog? (Wunsch des Nutzers)**: Standard ist **nur ein Erzähler** (thorsten) – besonders bei „Was wäre wenn …"-Videos.
+Zusätzliche Stimmen nur, wenn der Nutzer es sagt, oder sparsam (1–3 kurze Zeilen einer Nebenfigur), wenn es die Spannung/das Engagement
+klar steigert (z. B. eine Durchsage, ein Anruf, eine Stimme hinter der Tür). Im Zweifel: ein Erzähler. Ziel immer: maximales Engagement – Spannung, Tempo, Neugier bis zum Schluss.
 
 ---------------------------------------------------------------------------------------------------
 ## 3. Animations-Regeln (`scenes.js`)
