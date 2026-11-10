@@ -22,11 +22,12 @@ Unter Windows heißt Python evtl. `py` statt `python`.
 ---------------------------------------------------------------------------------------------------
 ## 1. Der Ablauf bei „/video <Szenario>" (oder wenn der Nutzer einfach ein Szenario schreibt)
 
+0. **Analytics-Check** (Abschnitt 12): Zahlen über Metricool holen, `erkenntnisse.md` aktualisieren. Die Erkenntnisse gelten für dieses Video.
 1. **Ordner**: `episodes/<kurzer-slug>/`. Schau kurz in `episodes/` und `serie.md`, was es schon gibt (Abwechslung!, Seriendaten).
 2. **Story → `script.json`** (Regeln in Abschnitt 2). Zeig dem Nutzer Titel + Skript als kurze Liste und frag *„Passt das? Dann animiere ich."*
    Ausnahme: Er sagt „direkt", „ohne Rückfrage", „mach einfach" → nicht fragen, durchziehen.
 3. **Stimme**: `python tools/voice.py episodes/<slug>` → erzeugt `voice.wav`, `timing.json`, `timing.js`.
-   Ist die Gesamtlänge < 75 s → Skript verlängern (eine Eskalationsstufe mehr), nicht strecken.
+   Ist die Gesamtlänge < 75 s (Ziel 90–150 s) → Skript verlängern (eine Eskalationsstufe mehr), nicht strecken.
 4. **Animation → `scenes.js`** (Regeln Abschnitt 3, API Abschnitt 6). Neue Orte als neues Set in `engine/sets/` anlegen.
 5. **Sound → `sound.json`** (Abschnitt 4).
 6. **Prüfen**: `python tools/sound.py episodes/<slug>` und `node tools/render.cjs episodes/<slug> sheet`,
@@ -34,7 +35,8 @@ Unter Windows heißt Python evtl. `py` statt `python`.
    Einzelne Stellen: `node tools/render.cjs episodes/<slug> stills 12.5 30`. Fehler beheben, erneut prüfen.
 7. **Video**: `node tools/render.cjs episodes/<slug> video` → `final.mp4` (1080×1920, 30 fps, -14 LUFS, H.264).
 8. **Posting-Text → `post.txt`** (Abschnitt 7) und Eintrag in `serie.md`.
-9. Dem Nutzer melden: Pfad zu `final.mp4`, Länge, 1 Satz zum Inhalt, Posting-Text. Hinweis: einmal mit Ton anhören.
+9. Dem Nutzer melden: Pfad zu `final.mp4`, Länge, 1 Satz zum Inhalt, Posting-Text **inkl. empfohlener Posting-Zeit** für TikTok und YouTube,
+   und in einem Satz, was du aufgrund der Analytics an diesem Video anders gemacht hast. Hinweis: einmal mit Ton anhören.
 
 Abkürzung, wenn script/scenes/sound schon fertig sind: `python tools/make.py episodes/<slug>`.
 
@@ -68,17 +70,13 @@ nichts zu Suizid/Selbstverletzung. Grusel durch Andeutung, nicht durch Gewalt.
 
 **Serie**: Teil 2 knüpft an die Abstimmung an (Gewinner-Antwort, die der Nutzer nennt). Titel-Schema: `TEIL n – POV: …`.
 
-`script.json`-Felder: `title`, `series`, `part`, `voice` {backend, voice, length_scale}, `outro` (Sek. Abstimmungskarte nach dem Sprechen, 4–5),
-`fact_source`, `lines` [{id, text, pause, noCaption?, voice?, speaker?, color?}]. Beispiel: `episodes/klopfen-um-2-47/script.json`.
+**Mehrere Stimmen (Dialoge)**: Zeilen mit `"speaker": "Mann"` werden von einer anderen Stimme gesprochen (in `cast` je Rolle `voice` für Piper und `azure_voice` für Azure angeben) und bekommen ein farbiges Namens-Etikett
+über dem Untertitel. Stimmen pro Rolle in `"cast"` festlegen, z. B. `{"Mann": {"voice": "karlsson"}, "Frau": {"voice": "kerstin"}, "Durchsage": {"voice": "ramona", "fx": "radio"}}`
+(`fx`: `radio` = Durchsage/Funk, `phone` = Telefon, `whisper`). Bei ElevenLabs pro Rolle `"voice_id"`. Erzähler = Zeilen ohne `speaker`.
+Dialogzeilen in „…" setzen, kurz halten (max. 1 Satz), 2–4 Dialogzeilen pro Episode machen sie lebendig.
 
-**Mehrere Figuren / Dialog**: Der Erzähler (Standardstimme aus `voice`) bleibt, andere Figuren bekommen pro Zeile eine eigene Stimme:
-`{"id":"n1","text":"Hast du das *Licht* gesehen?","pause":0.3,"voice":"kerstin","speaker":"NACHBARIN","color":"#ff9ecf"}`.
-`voice` = Stimmenname (oder Objekt `{voice, length_scale, voice_id}`), `speaker` = Namensschild über dem Untertitel, `color` = Untertitelfarbe der Figur.
-Stimmen sinnvoll verteilen (Erzähler: thorsten; Frauen: kerstin/ramona/eva; zweiter Mann: karlsson/thorsten-medium) und in `serie.md` pro Serie festhalten,
-damit eine Figur in jedem Teil gleich klingt. Figuren im Bild über `acc`/`accColor` unterscheiden. Dialogzeilen kurz halten, der Erzähler trägt die Story.
-**Wann Dialog? (Wunsch des Nutzers)**: Standard ist **nur ein Erzähler** (thorsten) – besonders bei „Was wäre wenn …"-Videos.
-Zusätzliche Stimmen nur, wenn der Nutzer es sagt, oder sparsam (1–3 kurze Zeilen einer Nebenfigur), wenn es die Spannung/das Engagement
-klar steigert (z. B. eine Durchsage, ein Anruf, eine Stimme hinter der Tür). Im Zweifel: ein Erzähler. Ziel immer: maximales Engagement – Spannung, Tempo, Neugier bis zum Schluss.
+`script.json`-Felder: `title`, `series`, `part`, `voice` {backend, voice, length_scale}, `cast`, `outro` (Sek. Abstimmungskarte nach dem Sprechen, 4–5),
+`fact_source`, `lines` [{id, text, pause, noCaption?}]. Beispiel: `episodes/klopfen-um-2-47/script.json`.
 
 ---------------------------------------------------------------------------------------------------
 ## 3. Animations-Regeln (`scenes.js`)
@@ -134,7 +132,9 @@ Figuren: `stick({t,x,y,s,pose:'sit'|'stand'|'walk',walkPhase,acc:'hood'|'beanie'
 `silhouette(x,y,s,{eyes})`, `drawEyes()`.
 Bildschirme/Karten: `phoneClose({lt,time,date,status,battery,toast:{at,title,sub},message:{at,from,text},bg})`,
 `factCard(lt,titel,[sätze],[einblendzeiten])`, `choiceCard(lt,{question,a,b,cta,sub,bg})`, `titleCard(lt,text,dauer)`.
-Sets: `SETS.house/houseLight/peephole`, `SETS.train/trainLight/trainMotion` (Koordinaten im Kopf der Set-Dateien).
+Sets: `SETS.house/houseLight/peephole`, `SETS.train/trainLight/trainMotion` (Fenster mit Landschaft: `st.outside='land'`, `st.land={…}`, Risse: `st.cracks`),
+`SETS.land(x,y,w,h,st)` – Außenwelt mit `sky`, `jets`, `smoke`, `nuke` (Atompilz), `wave` (Druckwelle), `train` (Zug von außen), `smokeScale/nukeScale` (Koordinaten im Kopf der Set-Dateien).
+Beispiel mit allem: `episodes/angriff-im-zug/scenes.js`.
 Episode: `EPISODE.scenes=[{from,to,draw(t,lt),noCaptions,noHud}]`, `EPISODE.hud=t=>({day,clock,battery,temp,extra:{label,value,color},part})`.
 Zeichen-Helfer: `rr`, `line([x1,y1,x2,y2…])`, `circle`, `font(gewicht,größe)`, `wrap(text,maxBreite)`. Canvas: `ctx`, `W`=1080, `H`=1920.
 
@@ -149,7 +149,13 @@ Fester Kommentar: „A oder B? Ich mache Teil 2 mit der meistgewählten Antwort 
 YOUTUBE SHORTS
 Titel (≤ 70 Zeichen): POV: … #shorts
 Beschreibung: 1 Satz + Frage + 3 Hashtags
+
+WANN POSTEN (aus Metricool, Europe/Berlin)
+TikTok: <nächster bester Termin, z. B. „heute 19:00" oder „Mi 18:00">
+YouTube: <nächster bester Termin>
+Teil 2: <Empfehlung, z. B. „24–48 h nach Teil 1, wenn die Kommentare laufen">
 ```
+Ohne Metricool-Daten: TikTok werktags 19–21 Uhr, Wochenende auch 11 Uhr; YouTube gleiche Zeit.
 Hinweis an den Nutzer: Bei KI-Stimme auf TikTok das Label „KI-generierte Inhalte" aktivieren (schadet der Reichweite nicht).
 
 ---------------------------------------------------------------------------------------------------
@@ -162,7 +168,10 @@ Hinweis an den Nutzer: Bei KI-Stimme auf TikTok das Label „KI-generierte Inhal
 
 ---------------------------------------------------------------------------------------------------
 ## 9. Stimmen
-`voice.backend`: `piper` (Standard, gratis, offline; Stimmen: thorsten, thorsten-medium, kerstin, ramona, eva, karlsson),
+`voice.backend`: `auto` (Standard: **Azure**, wenn `AZURE_SPEECH_KEY` gesetzt ist, sonst Piper),
+`azure` (Microsoft, sehr natürlich, 500.000 Zeichen/Monat gratis; Umgebungsvariablen `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION=westeurope`;
+Stimme über `"azure_voice"`: conrad (Erzähler-Standard), killian, florian, katja, amala, seraphina; Tempo `"rate": "+5%"`; optional `"style"`, z. B. `whispering`, `terrified`, `shouting` – nur manche Stimmen),
+`piper` (gratis, offline; Stimmen: thorsten, thorsten-medium, kerstin, ramona, eva, karlsson),
 `elevenlabs` (Key als Umgebungsvariable `ELEVENLABS_API_KEY` oder lokal in `.env`; Stimme über `ELEVENLABS_VOICE_ID` oder `"voice_id"` in script.json – eine deutsche Stimme aus der ElevenLabs Voice Library; Modell `eleven_multilingual_v2`), `recording` (Nutzer spricht das Skript ein →
 `episodes/<slug>/recording.wav`, dann `python tools/voice.py episodes/<slug> --backend recording --align`; `--align` braucht `pip install faster-whisper`),
 `none` (stumm, nur Vorschau). `length_scale` < 1 = schneller (0.9–1.0 üblich).
@@ -178,3 +187,32 @@ Hinweis an den Nutzer: Bei KI-Stimme auf TikTok das Label „KI-generierte Inhal
 - ElevenLabs-Key kommt als Umgebungsvariable `ELEVENLABS_API_KEY` (und optional `ELEVENLABS_VOICE_ID`) aus der Cloud-Umgebung – nie in Dateien schreiben oder committen.
 - Erzeugte Sprachzeilen liegen in `episodes/<slug>/voice_cache/` (mit committen) – bei Änderungen werden nur geänderte Zeilen neu erzeugt (spart ElevenLabs-Credits).
   (Videos bleiben unter 100 MB; sonst `-crf` in tools/render.cjs auf 23 erhöhen.)
+
+---------------------------------------------------------------------------------------------------
+## 11. Remotion
+Steht `UPGRADE-REMOTION.md` im Ordner und ist noch nicht umgesetzt (kein Ordner `remotion/`), frag den Nutzer einmal, ob du den Umbau jetzt machen sollst.
+Nach dem Umbau gelten die dort beschriebenen Render-Befehle und Szenen-Felder.
+
+---------------------------------------------------------------------------------------------------
+## 12. Analytics & Optimierung (Metricool) – vor JEDEM neuen Video
+Der Nutzer postet selbst (TikTok + YouTube). Über den **Metricool-Connector** liest du seine echten Zahlen. Ziel: jedes Video besser als das letzte.
+
+**Ablauf (kurz halten, max. ein paar Tool-Aufrufe):**
+1. Prüfe, ob Metricool-Tools verfügbar sind. Wenn nicht: dem Nutzer einmal sagen „Metricool ist in dieser Sitzung nicht verbunden –
+   ich arbeite mit den bisherigen Erkenntnissen", dann normal weiter. Nie deswegen abbrechen.
+2. `getBrandSettings` → Brand und verbundene Netzwerke. `getAnalyticsAvailableMetrics` nur beim ersten Mal bzw. wenn Metriken unklar sind.
+3. `getAnalyticsDataByMetrics` für **TikTok und YouTube**, Zeitraum seit der letzten Auswertung (max. 30 Tage – Gratisplan):
+   pro Video Aufrufe, Wiedergabedauer / Anteil gesehen (Retention), Likes, Kommentare, Shares, Saves; dazu Follower-/Abo-Zuwachs.
+4. `getBestTimeToPostByNetwork` für TikTok und YouTube → beste Zeitfenster (Europe/Berlin).
+5. Videos den Episoden zuordnen (über Titel/Beschreibung aus `post.txt`). In `serie.md` Spalte „gepostet" ergänzen.
+6. **`erkenntnisse.md` aktualisieren**: Video-Tabelle, dann Muster ableiten – nur mit Daten belegt, z. B.:
+   Hook-Art (Uhrzeit/Ort vs. Frage vs. Schock), Genre (Horror/Survival/Mystery), Setting, Länge, Anzahl Dialoge, Stimme, Serie vs. Einzelfolge,
+   welche Abstimmungen viele Kommentare bringen. Vergleiche immer mit dem Kanal-Durchschnitt; bei < 5 Videos nur vorsichtige Tendenzen.
+7. **Anwenden**: Das neue Video übernimmt, was funktioniert. Pro Video höchstens **1–2 bewusste Tests** (unter „Laufende Tests" notieren,
+   nach 3–5 Videos auswerten und als Regel übernehmen oder verwerfen). Bewährte Regeln dürfen die Standardwerte aus Abschnitt 2–4 überschreiben.
+8. Posting-Zeiten in `erkenntnisse.md` und in `post.txt` eintragen.
+
+**Grenzen**: Nur lesen und auswerten – **nichts posten oder planen** über Metricool, außer der Nutzer bittet ausdrücklich darum.
+Keine Kommentare/Antworten veröffentlichen. Zahlen nie erfinden; fehlen Werte, sag es.
+
+**Auf Wunsch „Wochen-Analyse"**: ausführlicher Bericht (Top/Flop-Videos, warum, 3 konkrete Änderungen, Serien-Empfehlung, Ideen für die nächsten 5 Videos).
