@@ -1,0 +1,87 @@
+{
+ "title": "What if you became a millionaire at sixteen?",
+ "series": "What if",
+ "part": 2,
+ "style": "what-if-video-stil",
+ "language": "en",
+ "voice": {
+  "backend": "auto",
+  "voice": "ryan",
+  "length_scale": 1.0
+ },
+ "outro": 3.57,
+ "fact_source": "UTMA custodial accounts: custodian controls assets until termination age, usually 18 or 21 depending on state (Motley Fool 'UTMA'; finaid.org age of majority; Nolo/WillMaker UTMA). Compound growth: 1,000,000 × 1.07^49 ≈ 27.5 million (simple arithmetic, assumes 7 % average annual return, not guaranteed).",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "What if you became a millionaire at sixteen?",
+   "pause": 0.5,
+   "noCaption": true
+  },
+  {
+   "id": "walk",
+   "text": "It's a boring Monday. You're sixteen, walking home from school, with eleven dollars in your account.",
+   "pause": 0.3
+  },
+  {
+   "id": "buzz",
+   "text": "Then your phone buzzes. A deposit. One million dollars. In your name.",
+   "pause": 0.5
+  },
+  {
+   "id": "refresh",
+   "text": "You refresh the app three times. It's still there.",
+   "pause": 0.5
+  },
+  {
+   "id": "lock",
+   "text": "But in the US, money for a minor usually sits in a custodial account. An adult controls it, not you, until you turn eighteen.",
+   "pause": 0.4
+  },
+  {
+   "id": "friend",
+   "text": "So you tell one friend. Just one.",
+   "pause": 0.3
+  },
+  {
+   "id": "school",
+   "text": "By dinner, your whole school knows. Two hundred new followers. Forty messages from people you've never talked to.",
+   "pause": 0.3
+  },
+  {
+   "id": "cousin",
+   "text": "Your cousin needs a loan. Your uncle has a business idea.",
+   "pause": 0.4
+  },
+  {
+   "id": "math",
+   "text": "Invested at seven percent a year, that million could be over twenty five million when you retire.",
+   "pause": 0.4
+  },
+  {
+   "id": "car",
+   "text": "Or you ignore all of that, and buy the car anyway. Because you're sixteen.",
+   "pause": 0.5
+  },
+  {
+   "id": "post",
+   "text": "You post one picture with it. Two million views by the morning.",
+   "pause": 0.5
+  },
+  {
+   "id": "midnight",
+   "text": "Then, at midnight, your phone buzzes again.",
+   "pause": 0.6
+  },
+  {
+   "id": "error",
+   "text": "Bank error. Funds reversed. Eleven dollars.",
+   "pause": 0.5
+  },
+  {
+   "id": "end",
+   "text": "Be honest. What would you have bought first?",
+   "pause": 0.2
+  }
+ ]
+}

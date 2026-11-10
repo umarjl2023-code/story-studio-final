@@ -119,11 +119,12 @@ WI.texCanvas = function (w, h, draw) {
   const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace; tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.anisotropy = 4; return tx;
 };
 // Fassaden-Texturen (Fensterraster), 1 Kachel = 4 m breit × 3.5 m hoch (ein Stockwerk, 2 Fenster)
-WI.facade = function (base, glass, frame, lit = .12, seed = 1) {
+WI.facade = function (base, glass, frame, lit = .12, seed = 1, deco = false) {
   return WI.texCanvas(256, 448, (g, w, h) => {
     g.fillStyle = base; g.fillRect(0, 0, w, h);
+    if (deco) { g.fillStyle = frame; g.fillRect(0, 0, w, 14); g.fillRect(0, 224, w, 10); }  // Art-déco-Bänder
     for (let fy = 0; fy < 2; fy++) for (let fx = 0; fx < 2; fx++) {
-      const x = 22 + fx * 128, y = 40 + fy * 224, ww = 84, hh = 150;
+      const x = deco ? 38 + fx * 128 : 22 + fx * 128, y = deco ? 62 + fy * 224 : 40 + fy * 224, ww = deco ? 52 : 84, hh = deco ? 104 : 150;
       g.fillStyle = frame; g.fillRect(x - 6, y - 6, ww + 12, hh + 12);
       const on = hash(seed * 13 + fx * 3 + fy * 7) < lit;
       g.fillStyle = on ? '#e8d7a8' : glass; g.fillRect(x, y, ww, hh);
@@ -134,7 +135,7 @@ WI.facade = function (base, glass, frame, lit = .12, seed = 1) {
 };
 WI.building = function (T, { w, d, h, color, glass, frame, kind }) {
   const g = new T.Group();
-  const tex = WI.facade(color, glass, frame, kind === 'brick' ? .15 : .08, w * 7 + h);
+  const tex = WI.facade(color, glass, frame, kind === 'brick' ? .15 : .08, w * 7 + h, kind === 'deco');
   const tx = tex.clone(); tx.repeat.set(w / 4, h / 3.5); tx.needsUpdate = true;
   const tz = tex.clone(); tz.repeat.set(d / 4, h / 3.5); tz.needsUpdate = true;
   const mx = WI.std(0xffffff, { map: tx }), mz = WI.std(0xffffff, { map: tz }), mr = WI.std(new T.Color(frame).multiplyScalar(.9));
@@ -174,6 +175,33 @@ WI.taxi = function (T) {
   const bump = new T.Mesh(new T.BoxGeometry(4.7, .25, 1.95), WI.std(0x2a2a2a)); bump.position.y = .42; g.add(bump);
   for (const [x, z] of [[1.45, .95], [-1.45, .95], [1.45, -.95], [-1.45, -.95]]) { const wh = new T.Mesh(new T.CylinderGeometry(.38, .38, .3, 8), WI.std(0x151515)); wh.rotation.x = Math.PI / 2; wh.position.set(x, .38, z); g.add(wh); }
   for (const z of [-.6, .6]) { const hl = new T.Mesh(new T.BoxGeometry(.05, .18, .35), WI.std(0xffffff, { emissive: 0xfff6d0, emissiveIntensity: .8 })); hl.position.set(2.32, .85, z); g.add(hl); }
+  return W3.shadow(g);
+};
+WI.palm = function (T, h = 9, seed = 0) {
+  const g = new T.Group(), bend = (hash(seed) - .5) * .5, trunk = WI.std(0x9b7a55);
+  let x = 0, y = 0;
+  for (let i = 0; i < 6; i++) { const seg = new T.Mesh(new T.CylinderGeometry(.16 - i * .012, .2 - i * .012, h / 6, 6), trunk);
+    x += Math.sin(bend) * h / 6 * i * .08; seg.position.set(x, y + h / 12, 0); seg.rotation.z = -bend * .3; g.add(seg); y += h / 6; }
+  const leaf = WI.std(0x3f9a4f);
+  for (let k = 0; k < 7; k++) { const a = k / 7 * Math.PI * 2 + seed;
+    const f = new T.Mesh(new T.ConeGeometry(.35, 3.6, 4), leaf); f.scale.z = .25; f.geometry.translate(0, 1.8, 0);
+    f.position.set(x, y, 0); f.rotation.set(0, a, 0); f.rotateX(1.25 + hash(k + seed) * .4); g.add(f); }
+  const nut = new T.Mesh(new T.IcosahedronGeometry(.3, 0), WI.std(0x6b4a2a)); nut.position.set(x, y - .2, 0); g.add(nut);
+  return W3.shadow(g);
+};
+WI.sportsCar = function (T, color = 0xe8323c) {
+  const g = new T.Group(), paint = WI.std(color, { roughness: .28, metalness: .35 }), dark = WI.std(0x15171a, { roughness: .3, metalness: .4 });
+  const body = new T.Mesh(new T.BoxGeometry(4.5, .62, 2.0), paint); body.position.y = .62; g.add(body);
+  const nose = new T.Mesh(new T.BoxGeometry(1.2, .3, 1.96), paint); nose.position.set(2.0, .78, 0); nose.rotation.z = -.22; g.add(nose);
+  const cabG = new T.BufferGeometry(); const v = [-1.4, 0, -.85, 1.0, 0, -.85, .1, .62, -.7, -1.0, .6, -.7, -1.4, 0, .85, 1.0, 0, .85, .1, .62, .7, -1.0, .6, .7];
+  cabG.setAttribute('position', new T.Float32BufferAttribute(v, 3)); cabG.setIndex([0, 1, 2, 0, 2, 3, 4, 6, 5, 4, 7, 6, 0, 3, 7, 0, 7, 4, 1, 5, 6, 1, 6, 2, 3, 2, 6, 3, 6, 7]); cabG.computeVertexNormals();
+  const cab = new T.Mesh(cabG, dark); cab.position.y = .93; g.add(cab);
+  const spoiler = new T.Mesh(new T.BoxGeometry(.3, .06, 1.9), paint); spoiler.position.set(-2.1, 1.12, 0); g.add(spoiler);
+  for (const z of [-.8, .8]) { const st = new T.Mesh(new T.BoxGeometry(.08, .2, .08), dark); st.position.set(-2.1, 1.0, z); g.add(st); }
+  for (const [x, z] of [[1.45, 1.0], [-1.45, 1.0], [1.45, -1.0], [-1.45, -1.0]]) { const wh = new T.Mesh(new T.CylinderGeometry(.42, .42, .32, 10), WI.std(0x111111)); wh.rotation.x = Math.PI / 2; wh.position.set(x, .42, z); g.add(wh);
+    const rim = new T.Mesh(new T.CylinderGeometry(.26, .26, .34, 8), WI.std(0xc8ccd2, { metalness: .8, roughness: .3 })); rim.rotation.x = Math.PI / 2; rim.position.set(x, .42, z); g.add(rim); }
+  for (const z of [-.7, .7]) { const hl = new T.Mesh(new T.BoxGeometry(.08, .1, .45), WI.std(0xffffff, { emissive: 0xffffff, emissiveIntensity: 1 })); hl.position.set(2.5, .8, z); g.add(hl);
+    const tl = new T.Mesh(new T.BoxGeometry(.06, .1, .5), WI.std(0xff2030, { emissive: 0xff2030, emissiveIntensity: 1 })); tl.position.set(-2.26, .8, z); g.add(tl); }
   return W3.shadow(g);
 };
 WI.tree = function (T, h = 7) {
@@ -230,9 +258,12 @@ WI.phoneScreen = function (T) {
   const tex = new T.CanvasTexture(c); tex.colorSpace = T.SRGBColorSpace; tex.anisotropy = 8;
   return { c, tex, state: '' };
 };
+WI.SCREENS = {};  // eigene Handy-Bildschirme: WI.SCREENS[name] = (g, w, h, clock, arg) => {...}; Modus 'name|arg'
 WI.drawScreen = function (scr, mode, clockStr) {
   const key = mode + clockStr; if (scr.state === key) return; scr.state = key;
   const g = scr.c.getContext('2d'), w = scr.c.width, h = scr.c.height;
+  const [nm, arg] = String(mode).split('|');
+  if (WI.SCREENS[nm]) { g.save(); WI.SCREENS[nm](g, w, h, clockStr, arg); g.restore(); scr.tex.needsUpdate = true; return; }
   const bg = g.createLinearGradient(0, 0, 0, h);
   if (mode === 'alert') { bg.addColorStop(0, '#5a1414'); bg.addColorStop(1, '#1d0606'); }
   else if (mode === 'false') { bg.addColorStop(0, '#1c2b3d'); bg.addColorStop(1, '#0b121b'); }
@@ -305,21 +336,21 @@ WI.updateFp = function (w, t, o) {
 };
 
 // ===================================================================================== WELT: wiCity
-W3.BUILD.wiCity = function (T) {
-  const scene = new T.Scene(), w = { scene };
-  const SKY = 0xaab8c4;
-  scene.background = new T.Color(SKY); scene.fog = new T.Fog(SKY, 60, 520);
-  w.hemi = new T.HemisphereLight(0xdfe7ef, 0x5d5a55, 1.25); scene.add(w.hemi);
+WI.buildCity = function (T, opt = {}) {
+  const scene = new T.Scene(), w = { scene, warm: !!opt.warm };
+  const SKY = opt.warm ? 0xf4cfae : 0xaab8c4;
+  scene.background = new T.Color(SKY); scene.fog = new T.Fog(SKY, opt.warm ? 90 : 60, opt.warm ? 700 : 520); w.skyCol = new T.Color(SKY);
+  w.hemi = opt.warm ? new T.HemisphereLight(0xfff0dc, 0x9a7458, 1.45) : new T.HemisphereLight(0xdfe7ef, 0x5d5a55, 1.25); scene.add(w.hemi);
   w.sun = new T.DirectionalLight(0xffe9cc, 2.4); w.sun.position.set(60, 90, 40); w.sun.castShadow = true;
   Object.assign(w.sun.shadow.camera, { left: -60, right: 60, top: 60, bottom: -60, near: 10, far: 300 }); w.sun.shadow.mapSize.set(2048, 2048); w.sun.shadow.bias = -.0006; w.sun.shadow.normalBias = .03;
   scene.add(w.sun, w.sun.target);
   // Himmelskuppel mit Verlauf
   const skyGeo = new T.SphereGeometry(4000, 24, 12); const cols = []; const pos = skyGeo.attributes.position;
-  for (let i = 0; i < pos.count; i++) { const k = clamp(pos.getY(i) / 4000); const c = new T.Color(0xc9d2d8).lerp(new T.Color(0x6f8aa3), Math.pow(k, .6)); cols.push(c.r, c.g, c.b); }
+  for (let i = 0; i < pos.count; i++) { const k = clamp(pos.getY(i) / 4000); const c = opt.warm ? new T.Color(0xffd3a6).lerp(new T.Color(0x2f86d8), Math.pow(k, .45)) : new T.Color(0xc9d2d8).lerp(new T.Color(0x6f8aa3), Math.pow(k, .6)); cols.push(c.r, c.g, c.b); }
   skyGeo.setAttribute('color', new T.Float32BufferAttribute(cols, 3));
   w.sky = new T.Mesh(skyGeo, new T.MeshBasicMaterial({ vertexColors: true, side: T.BackSide, fog: false })); scene.add(w.sky);
   // Boden: Asphalt, Gehwege, Zebrastreifen
-  const asphalt = WI.std(0x3b3d40), walk = WI.std(0x8e8b85), curb = WI.std(0x6e6c68);
+  const asphalt = WI.std(opt.warm ? 0x55504c : 0x3b3d40), walk = WI.std(opt.warm ? 0xe2d3bb : 0x8e8b85), curb = WI.std(0x6e6c68);
   const g0 = new T.Mesh(new T.PlaneGeometry(3000, 3000), asphalt); g0.rotation.x = -Math.PI / 2; g0.receiveShadow = true; scene.add(g0);
   for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
     const p = new T.Mesh(new T.BoxGeometry(400, .18, 400), walk); p.position.set(sx * (7 + 200), .09, sz * (7 + 200)); p.receiveShadow = true; scene.add(p);
@@ -336,13 +367,18 @@ W3.BUILD.wiCity = function (T) {
     { color: '#b9b2a6', glass: '#33414f', frame: '#8a847a', kind: 'stone' }, { color: '#7e858c', glass: '#3a4c5e', frame: '#5c6268', kind: 'tower' },
     { color: '#a39784', glass: '#2e3a46', frame: '#7a6f5f', kind: 'stone' }, { color: '#6a7a88', glass: '#44607a', frame: '#4c5864', kind: 'tower' },
   ];
+  if (opt.warm) palettes.splice(0, palettes.length,   // Miami-Art-déco: Pastell + Türkis-Glas (warm/kühl-Kontrast)
+    { color: '#f2b09a', glass: '#4fa3bf', frame: '#fbf3e6', kind: 'deco' }, { color: '#9fdccf', glass: '#3f8fae', frame: '#fbf3e6', kind: 'deco' },
+    { color: '#f7e2ae', glass: '#5aa9c6', frame: '#fff8ec', kind: 'deco' }, { color: '#f5a8bc', glass: '#4a98b8', frame: '#fbf3e6', kind: 'deco' },
+    { color: '#bfe2f4', glass: '#3c86a8', frame: '#ffffff', kind: 'deco' }, { color: '#f6c7a0', glass: '#4fa3bf', frame: '#fff6ea', kind: 'deco' }, { color: '#c9b8f0', glass: '#4f9fc0', frame: '#fbf3e6', kind: 'deco' },
+    { color: '#f3e6d0', glass: '#5fb6cf', frame: '#ffffff', kind: 'tower' });
   let seed = 1;
   for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
     // entlang der x-Straße (Fassade zur Straße bei z = sz*11)
     let x = 11;
     while (x < 260) {
       const wdt = 10 + hash(seed) * 14, dep = 14 + hash(seed + .5) * 10; const p = palettes[Math.floor(hash(seed * 1.3) * palettes.length)];
-      const h = p.kind === 'tower' ? 60 + hash(seed * 2.2) * 110 : p.kind === 'stone' ? 28 + hash(seed * 2.2) * 30 : 17.5 + Math.floor(hash(seed * 2.2) * 3) * 3.5;
+      const h = p.kind === 'deco' ? 12 + hash(seed * 2.2) * 18 : p.kind === 'tower' ? 60 + hash(seed * 2.2) * 110 : p.kind === 'stone' ? 28 + hash(seed * 2.2) * 30 : 17.5 + Math.floor(hash(seed * 2.2) * 3) * 3.5;
       const b = WI.building(T, { w: wdt, d: dep, h, ...p }); b.position.set(sx * (x + wdt / 2), 0, sz * (11 + dep / 2)); scene.add(b);
       if (p.kind === 'brick' && x < 120) { const fe = WI.fireEscape(T, Math.floor(h / 3.5) - 1, Math.min(6, wdt * .5)); fe.position.set(sx * (x + wdt / 2), 0, sz * 11); if (sz > 0) fe.rotation.y = Math.PI; scene.add(fe); }
       x += wdt + .3; seed++;
@@ -351,7 +387,7 @@ W3.BUILD.wiCity = function (T) {
     let z = 11 + 26;
     while (z < 260) {
       const wdt = 10 + hash(seed) * 14, dep = 18; const p = palettes[Math.floor(hash(seed * 1.3) * palettes.length)];
-      const h = p.kind === 'tower' ? 60 + hash(seed * 2.2) * 120 : p.kind === 'stone' ? 28 + hash(seed * 2.2) * 30 : 17.5 + Math.floor(hash(seed * 2.2) * 3) * 3.5;
+      const h = p.kind === 'deco' ? 12 + hash(seed * 2.2) * 18 : p.kind === 'tower' ? 60 + hash(seed * 2.2) * 120 : p.kind === 'stone' ? 28 + hash(seed * 2.2) * 30 : 17.5 + Math.floor(hash(seed * 2.2) * 3) * 3.5;
       const b = WI.building(T, { w: dep, d: wdt, h, ...p }); b.position.set(sx * (11 + dep / 2), 0, sz * (z + wdt / 2)); scene.add(b);
       if (p.kind === 'brick' && z < 120) { const fe = WI.fireEscape(T, Math.floor(h / 3.5) - 1, Math.min(6, wdt * .5)); fe.position.set(sx * 11, 0, sz * (z + wdt / 2)); fe.rotation.y = sx > 0 ? -Math.PI / 2 : Math.PI / 2; scene.add(fe); }
       z += wdt + .3; seed++;
@@ -359,9 +395,9 @@ W3.BUILD.wiCity = function (T) {
   }
   // Ferne Skyline (Dunst)
   for (let i = 0; i < 90; i++) { const a = hash(i * 9.1) * Math.PI * 2, r = 300 + hash(i * 4.4) * 600; const h = 60 + hash(i * 2.7) * 260;
-    const b = new T.Mesh(new T.BoxGeometry(25 + hash(i) * 30, h, 25 + hash(i * 1.9) * 30), WI.std(0x7d8794)); b.position.set(Math.cos(a) * r, h / 2, Math.sin(a) * r); scene.add(b); }
+    const b = new T.Mesh(new T.BoxGeometry(25 + hash(i) * 30, h, 25 + hash(i * 1.9) * 30), WI.std(opt.warm ? [0xe8b9a0, 0x9fc9d6, 0xf1dcc0][i % 3] : 0x7d8794)); b.position.set(Math.cos(a) * r, h / 2, Math.sin(a) * r); scene.add(b); }
   // Bäume, Ampeln, Laternen
-  for (let i = 0; i < 14; i++) { const sx = i % 2 ? 1 : -1, sz = i % 4 < 2 ? 1 : -1; const tr = WI.tree(T, 6 + hash(i) * 2.5); tr.position.set(sx * (16 + i * 7), 0, sz * 9.6); scene.add(tr); }
+  for (let i = 0; i < (opt.warm ? 24 : 14); i++) { const sx = i % 2 ? 1 : -1, sz = i % 4 < 2 ? 1 : -1; const tr = opt.warm ? WI.palm(T, 8 + hash(i) * 3, i) : WI.tree(T, 6 + hash(i) * 2.5); tr.position.set(sx * (16 + i * 7), 0, sz * 9.6); scene.add(tr); }
   const pole = WI.std(0x2a2c30);
   for (const [x, z] of [[8.2, 8.2], [-8.2, 8.2], [8.2, -8.2], [-8.2, -8.2]]) {
     const p = new T.Mesh(new T.CylinderGeometry(.1, .12, 4.6, 6), pole); p.position.set(x, 2.3, z); p.castShadow = true; scene.add(p);
@@ -381,7 +417,7 @@ W3.BUILD.wiCity = function (T) {
   // Menge
   w.people = [];
   for (let i = 0; i < 200; i++) {
-    const p = WI.person(T, i + 3); scene.add(p);
+    const p = WI.person(T, i + 3, opt.warm ? { cloth: [0xf4f1ea, 0xff8a6b, 0x4fc3c9, 0xffd166, 0xf28fb0, 0x6fa8ff, 0xffffff, 0x9be08a, 0xe8505b][i % 9] } : {}); scene.add(p);
     // Startpunkt auf einem der vier Gehwege, Laufrichtung entlang des Gehwegs
     const q = i % 4, along = (hash(i * 1.7) - .5) * 80, off = 7.8 + hash(i * 2.9) * 2.6, dir = hash(i * 4.1) > .5 ? 1 : -1;
     const sp = 1.1 + hash(i * 6.3) * .5;
@@ -390,11 +426,15 @@ W3.BUILD.wiCity = function (T) {
   }
   // Taxis + Autos auf der x-Straße
   w.cars = [];
-  for (let i = 0; i < 12; i++) { const c = WI.taxi(T); if (i % 3 === 2) c.children[0].material = c.children[1].material = WI.std([0x4a5560, 0x7a2f2f, 0xd0d0cc][i % 3]);
+  for (let i = 0; i < 12; i++) { const c = WI.taxi(T); if (opt.warm ? i % 4 : i % 3 === 2) { c.children[0].material = c.children[1].material = WI.std(opt.warm ? [0xf4f1ea, 0x6fd3c6, 0xf08a7a, 0x8fb8e8][i % 4] : [0x4a5560, 0x7a2f2f, 0xd0d0cc][i % 3], { roughness: .4 }); c.children[3].visible = false; }
     const lane = i % 2 ? 1 : -1; c.userData = { lane, x0: -150 + hash(i * 3.3) * 300, sp: 9 + hash(i) * 5 }; scene.add(c); w.cars.push(c); }
+  // Sportwagen (o.showCar) am Straßenrand bei (-4, 0, -5)
+  w.hero = WI.sportsCar(T, 0xe8323c); w.hero.position.set(-4, 0, -4.6); w.hero.visible = false; scene.add(w.hero);
   WI.fpRig(T, w);
   return w;
 };
+W3.BUILD.wiCity = T => WI.buildCity(T);
+W3.BUILD.wiCityWarm = T => WI.buildCity(T, { warm: true });
 WI.walkPos = function (p, t) {
   const u = p.userData.path, s = ((u.along + u.dir * u.sp * t + 40) % 80 + 80) % 80 - 40;
   // q: 0 = Gehweg z+, 1 = z-, 2 = x+, 3 = x-
@@ -405,8 +445,13 @@ WI.walkPos = function (p, t) {
 };
 W3.UPDATE.wiCity = function (w, t, o) {
   const crowd = o.crowd || 'walk', tA = o.tAlert ?? 1e9, tR = o.tRun ?? 1e9;
-  const sky = o.sky || 0;
-  w.sun.color.setHex(0xffe9cc).lerp(new THREE.Color(0xffb878), sky); w.sun.intensity = lerp(2.4, 2.0, sky);
+  const sky = o.sky ?? (w.warm ? .6 : 0), night = o.night || 0;
+  w.sun.color.setHex(0xffe9cc).lerp(new THREE.Color(0xffb878), sky).lerp(new THREE.Color(0x8fa8ff), night);
+  w.sun.intensity = lerp(lerp(2.4, w.warm ? 3.0 : 2.0, sky), .5, night);
+  w.hemi.intensity = lerp(w.warm ? 1.45 : 1.25, .8, night); w.hemi.color.setHex(w.warm ? 0xfff0dc : 0xdfe7ef).lerp(new THREE.Color(0x5a6fb0), night);
+  const bg = w.skyCol.clone().lerp(new THREE.Color(0x2b2d5e), night); w.scene.background = bg; w.scene.fog.color.copy(bg);
+  w.sky.material.color.setHex(0xffffff).lerp(new THREE.Color(0x26315a), night);
+  w.hero.visible = !!o.showCar;
   w.sun.position.set(lerp(60, 120, sky), lerp(90, 45, sky), lerp(40, 70, sky));
   const tc = o.camTarget || [0, 0, 0]; w.sun.target.position.set(tc[0], 0, tc[2]); w.sun.position.x += tc[0]; w.sun.position.z += tc[2];
   w.people.forEach((p, i) => {
@@ -424,7 +469,7 @@ W3.UPDATE.wiCity = function (w, t, o) {
     p.position.set(x, .18, z); p.rotation.y = ry;
     if (o.clear && o.camPos && Math.hypot(x - o.camPos[0], z - o.camPos[2]) < o.clear) p.visible = false;
     WI.pose(p, pose, ph, (o.alertGlow || 0) * (t > tA ? 2.2 : 0));
-    if (pose === 'phone') p.userData.phone.material.emissive.setHex(0xff6b5a);
+    if (pose === 'phone') p.userData.phone.material.emissive.setHex(o.glowColor ?? 0xff6b5a);
   });
   const drive = o.cars ?? 1, tStop = o.tStop ?? 1e9;
   w.cars.forEach(c => { const u = c.userData; const tt = Math.min(t, tStop) * drive; const x = ((u.x0 + u.lane * u.sp * tt + 160) % 320 + 320) % 320 - 160;
@@ -433,6 +478,8 @@ W3.UPDATE.wiCity = function (w, t, o) {
 };
 
 // ===================================================================================== WELT: wiSubway
+W3.UPDATE.wiCityWarm = (w, t, o) => W3.UPDATE.wiCity(w, t, o);
+
 W3.BUILD.wiSubway = function (T) {
   const scene = new T.Scene(), w = { scene };
   const FOG = 0x2a2f33; scene.background = new T.Color(FOG); scene.fog = new T.Fog(FOG, 12, 70);

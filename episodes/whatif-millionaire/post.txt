@@ -1,0 +1,18 @@
+TIKTOK
+Description: What if you became a millionaire at 16? Wait for the ending… 💸
+Hashtags: #whatif #money #millionaire #pov #fyp
+Pinned comment: "Be honest: what would you have bought first? 👇"
+
+YOUTUBE SHORTS
+Title (≤ 70 chars): What if you became a millionaire at 16? #shorts
+Description: One deposit changes everything – until midnight. What would you buy first? #whatif #money #pov
+
+WHEN TO POST (Europe/Berlin)
+TikTok: weekdays 19–21 h (weekends also 11 h)   YouTube: same time
+English video → also test a post around 01:00 (US evening).
+
+NOTES
+- Exactly 60.0 s (as requested). TikTok Creator Rewards need MORE than 60 s – if you want rewards, ask for a 61+ s version.
+- AI voice (Piper "ryan") → enable TikTok label "AI-generated content".
+- Facts: custodial (UTMA) accounts – adult controls until 18/21 depending on state; 1,000,000 × 1.07^49 ≈ 27.5 M (assumption: 7 %/year average, not guaranteed). Sources in script.json.
+- Viral levers used: question hook + countdown in second 0, rising numbers in HUD every few seconds, open loop ("Still there."), twist at midnight, comment question at the end.
