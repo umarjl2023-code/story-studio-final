@@ -1,0 +1,17 @@
+TIKTOK
+Description: What if a war started out of nowhere? Every phone screams at once… 📱⚠️
+Hashtags: #whatif #pov #story #storytime #fyp
+Pinned comment: "Would you have believed the alert? Yes or no 👇"
+
+YOUTUBE SHORTS
+Title (≤ 70 chars): What if a war started out of nowhere? #shorts
+Description: Every phone in Manhattan screams at the same moment. Would you have believed it? #whatif #pov #story
+
+WHEN TO POST (Europe/Berlin)
+TikTok: weekdays 19–21 h (weekends also 11 h)   YouTube: same time
+Note: English video → US audience is awake ~ 01–03 h Berlin time too; worth testing a 01:00 post.
+
+NOTES
+- 60.8 s → just over 1 minute (TikTok Creator Rewards threshold).
+- AI voice (Piper "ryan") → enable TikTok label "AI-generated content".
+- Fact: Hawaii false missile alert, 13 Jan 2018, correction after 38 minutes (sources in script.json).

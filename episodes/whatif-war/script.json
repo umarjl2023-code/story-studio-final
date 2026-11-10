@@ -1,0 +1,26 @@
+{
+ "title": "What if a war started out of nowhere?",
+ "series": "What if",
+ "part": 1,
+ "style": "what-if-video-stil",
+ "language": "en",
+ "voice": { "backend": "auto", "voice": "ryan", "length_scale": 1.05 },
+ "outro": 2.0,
+ "fact_source": "Hawaii false ballistic missile alert, 13 Jan 2018 – correction sent 38 minutes later (ABC7 'Timeline of trepidation: 38 minutes of fear in Hawaii'; PBS NewsHour; FCC report). Shelter advice: Ready.gov nuclear explosion guidance – get inside, basement or middle of the building.",
+ "lines": [
+  { "id": "hook", "text": "What if a war started out of nowhere?", "pause": 0.6, "noCaption": true },
+  { "id": "setup", "text": "You're standing at a busy crossing in Manhattan. It's a normal Tuesday afternoon.", "pause": 0.4 },
+  { "id": "normal", "text": "Taxis honk. People rush past you. Your coffee is still hot.", "pause": 0.5 },
+  { "id": "phones", "text": "And then, every phone around you screams at the exact same moment.", "pause": 0.6 },
+  { "id": "alert", "text": "Emergency alert. Missile threat inbound. Seek immediate shelter. This is not a drill.", "pause": 0.7 },
+  { "id": "freeze", "text": "For one second, nobody moves. Everyone just stares at their screen.", "pause": 0.5 },
+  { "id": "run", "text": "Then the sirens start, and the whole street breaks into a run.", "pause": 0.4 },
+  { "id": "fact", "text": "The official advice is simple. Get inside. Go to the basement, or the middle of a building.", "pause": 0.4 },
+  { "id": "lead", "text": "So you grab the hand of a stranger, and pull her down into the subway.", "pause": 0.5 },
+  { "id": "wait", "text": "Down here, hundreds of people sit in silence, refreshing the news. Nothing comes.", "pause": 0.6 },
+  { "id": "second", "text": "Thirty eight minutes later, a second message arrives.", "pause": 0.6 },
+  { "id": "false", "text": "False alarm. Someone pressed the wrong button.", "pause": 0.6 },
+  { "id": "real", "text": "This really happened. In Hawaii, in 2018, a whole state believed for thirty eight minutes that war had begun.", "pause": 0.5 },
+  { "id": "end", "text": "Would you have believed it?", "pause": 0.3 }
+ ]
+}

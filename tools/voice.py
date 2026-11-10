@@ -70,6 +70,10 @@ PIPER_VOICES = {
     'ramona': 'de/de_DE/ramona/low/de_DE-ramona-low',
     'eva': 'de/de_DE/eva_k/x_low/de_DE-eva_k-x_low',
     'karlsson': 'de/de_DE/karlsson/low/de_DE-karlsson-low',
+    # Englisch (What-if-Stil)
+    'ryan': 'en/en_US/ryan/high/en_US-ryan-high',
+    'lessac': 'en/en_US/lessac/high/en_US-lessac-high',
+    'alan': 'en/en_GB/alan/medium/en_GB-alan-medium',
 }
 def piper_model(name):
     rel = PIPER_VOICES.get(name, name)

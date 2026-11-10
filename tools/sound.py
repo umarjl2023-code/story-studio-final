@@ -120,6 +120,10 @@ def clunk(): t = tt(.6); return np.sin(2 * np.pi * 55 * t) * np.exp(-t * 9) + lp
 def hiss(d=1.2): return hp(noise(d), 0.3) * np.exp(-tt(d) * 2.2) * env(int(d * SR), .01, .2)
 def horn(d=1.2):
     t = tt(d); s = sum(np.sign(np.sin(2 * np.pi * f * t)) * .5 for f in (311, 370)); return lp(s, .12) * env(len(t), .05, .05)
+def siren(dur=10, period=4.0, far=0.5):  # an- und abschwellende Sirene (Luftalarm), far = Entfernung/Dumpfheit
+    t = tt(dur); f = 700 + 500 * (0.5 - 0.5 * np.cos(2 * np.pi * t / period)); ph = 2 * np.pi * np.cumsum(f) / SR
+    s = np.sin(ph) + .3 * np.sin(2 * ph) + .15 * np.sin(3 * ph)
+    return lp(s, .25 - .18 * far) * env(len(t), 1.5, 2.0) * .6
 def passing_train(d=1.0): t = tt(d); return lp(noise(d), .3) * (np.sin(2 * np.pi * 14 * t) > 0) * 2 * env(len(t), .05, .01)
 def paper(): return hp(noise(.5), .2) * (lp(np.abs(noise(.5)), .002) * 8) * env(int(.5 * SR), .02, .1)
 def lock_click(): t = tt(.15); return (np.sin(2 * np.pi * 1800 * t) + np.sin(2 * np.pi * 2700 * t)) * np.exp(-t * 50)
