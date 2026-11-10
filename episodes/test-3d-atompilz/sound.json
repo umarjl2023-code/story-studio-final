@@ -1,0 +1,19 @@
+{
+  "bed": "tension",
+  "bed_curve": [[0, 0.6], [3, 1.0], [12, 1.5]],
+  "cues": [
+    { "sfx": "wind", "at": 0, "gain": 0.35, "args": { "d": 3 } },
+    { "sfx": "hit", "at": "word:blitz:weiß", "gain": 1.0 },
+    { "sfx": "sting", "at": "word:blitz:weiß", "gain": 0.8 },
+    { "sfx": "whoosh", "at": "word:blitz:weiß", "gain": 0.7, "args": { "d": 1.5 } },
+    { "sfx": "rumble", "at": "line:pilz", "gain": 0.9, "args": { "d": 8 } },
+    { "sfx": "thunder", "at": "line:pilz", "offset": 1.0, "gain": 0.6 },
+    { "sfx": "heartbeat", "at": "line:zaehlen", "gain": 0.9, "args": { "dur": 5, "bpm_from": 110, "bpm_to": 170 } },
+    { "sfx": "tick", "at": "word:zaehlen:Eins", "gain": 0.8 },
+    { "sfx": "tick", "at": "word:zaehlen:Zwei", "gain": 0.8 },
+    { "sfx": "tick", "at": "word:zaehlen:Drei", "gain": 0.8 },
+    { "sfx": "riser", "at": "word:zaehlen:Drei", "gain": 0.7, "args": { "dur": 1.8 } },
+    { "sfx": "rumble", "at": "word:zaehlen:Bäume", "gain": 1.0, "args": { "d": 2.5 } }
+  ],
+  "cut": [1.75, 3.4]
+}
