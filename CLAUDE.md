@@ -138,6 +138,12 @@ Beispiel mit allem: `episodes/angriff-im-zug/scenes.js`.
 Episode: `EPISODE.scenes=[{from,to,draw(t,lt),noCaptions,noHud}]`, `EPISODE.hud=t=>({day,clock,battery,temp,extra:{label,value,color},part})`.
 Zeichen-Helfer: `rr`, `line([x1,y1,x2,y2…])`, `circle`, `font(gewicht,größe)`, `wrap(text,maxBreite)`. Canvas: `ctx`, `W`=1080, `H`=1920.
 
+**3D (Low-Poly, Three.js)**: `engine/sets/world3d.js`. In einer Szene: `const w = W3.world('nukeField'); if (!w) return;` →
+`W3.update(w, t, {...})` → `W3.render(w, {pos:[x,y,z], look:[x,y,z], fov, shake, t}, belichtung)`. Das 3D-Bild landet im normalen Canvas,
+danach gehen alle 2D-Sachen (flash, Karten, Zahlen, HUD, Untertitel) wie gewohnt. Neue 3D-Orte: `W3.BUILD.<name>(THREE)` + `W3.UPDATE.<name>(w,t,o)`.
+Bausteine: `W3.hero()` (Hauptfigur in 3D), `W3.tree`, `W3.box`, `W3.cyl`, `W3.ball`, `W3.mat`. Beispiel: `episodes/test-3d-atompilz/scenes.js`.
+3D rendert ca. 10 s pro Videosekunde (Software-Grafik) – 75-s-Video ≈ 12 min. 2D und 3D lassen sich pro Szene mischen.
+
 ---------------------------------------------------------------------------------------------------
 ## 7. Posting-Text (`post.txt`)
 ```
