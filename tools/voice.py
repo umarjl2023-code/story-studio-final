@@ -158,6 +158,11 @@ def main():
     backend = args[args.index('--backend') + 1] if '--backend' in args else None
     script = json.load(open(os.path.join(ep, 'script.json'), encoding='utf-8'))
     vcfg = script.get('voice', {}); backend = backend or vcfg.get('backend', 'auto')
+    need = {'azure': 'AZURE_SPEECH_KEY', 'elevenlabs': 'ELEVENLABS_API_KEY'}
+    if backend in need and not os.environ.get(need[backend]):
+        print(f'Hinweis: {need[backend]} fehlt – nehme die beste verfügbare Stimme.'); backend = 'auto'
+    if backend == 'recording' and not os.path.exists(os.path.join(ep, 'recording.wav')):
+        print('Hinweis: recording.wav fehlt im Episodenordner – nehme die beste verfügbare KI-Stimme.'); backend = 'auto'
     if backend == 'auto':
         backend = 'azure' if os.environ.get('AZURE_SPEECH_KEY') else 'elevenlabs' if os.environ.get('ELEVENLABS_API_KEY') else 'piper'
         if os.path.exists(os.path.join(ep, 'recording.wav')): backend = 'recording'   # eigene Aufnahme schlägt jede KI-Stimme
@@ -209,7 +214,8 @@ def main():
     for st, a in parts:
         i = int(st * SR); voice[i:i + len(a)] += a[:len(voice) - i]
     write_wav(os.path.join(ep, 'voice.wav'), voice)
-    if '--align' in args: align(ep, lines)
+    if '--align' in args or (rec is not None and has_whisper()): align(ep, lines)
+    elif rec is not None: print('Hinweis: Wortzeiten geschätzt. Für exakte Untertitel: python -m pip install faster-whisper')
     total = round(voice_end + script.get('outro', 4.5), 2)
     timing = {'lines': lines, 'voiceEnd': round(voice_end, 3), 'total': total, 'backend': backend}
     json.dump(timing, open(os.path.join(ep, 'timing.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -219,8 +225,14 @@ def main():
     if total < 61: print(f'WARNUNG: Video ist {total:.1f}s – TikTok zahlt erst ab 60s. Skript verlängern.')
     elif total < 75: print(f'Hinweis: {total:.1f}s – Ziel laut CLAUDE.md sind 90–150s (außer der Nutzer will es kürzer).')
 
+def has_whisper():
+    try: import faster_whisper; return True
+    except ImportError: return False
+
 def align(ep, lines):
     """Exakte Wortzeiten mit faster-whisper (pip install faster-whisper)."""
+    if not has_whisper():
+        print('Hinweis: faster-whisper fehlt (python -m pip install faster-whisper) – Wortzeiten bleiben geschätzt.'); return
     from faster_whisper import WhisperModel
     m = WhisperModel('small', compute_type='int8')
     segs, _ = m.transcribe(os.path.join(ep, 'voice.wav'), language='de', word_timestamps=True)

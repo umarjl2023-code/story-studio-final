@@ -165,7 +165,8 @@ def resolve(at, timing):
 
 def main():
     ep = sys.argv[1]
-    cfg = json.load(open(os.path.join(ep, 'sound.json'), encoding='utf-8'))
+    sp = os.path.join(ep, 'sound.json')
+    cfg = json.load(open(sp, encoding='utf-8')) if os.path.exists(sp) else {'bed': 'tension', 'cues': []}  # ohne sound.json: nur Musikteppich
     timing = json.load(open(os.path.join(ep, 'timing.json'), encoding='utf-8'))
     total = timing['total']; N = int(total * SR)
     Lc = np.zeros(N); Rc = np.zeros(N)
