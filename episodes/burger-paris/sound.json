@@ -1,0 +1,19 @@
+{
+  "bed": "tension",
+  "bed_curve": [[0, 0.7], [10, 1.0]],
+  "cues": [
+    { "sfx": "wind", "at": 0, "gain": 0.25, "args": { "dur": 12 } },
+    { "sfx": "whoosh", "at": "word:hook:Plötzlich", "gain": 0.7 },
+    { "sfx": "hit", "at": "word:hook:zehntausend", "gain": 0.7 },
+    { "sfx": "pop", "at": "word:hook:zehntausend", "offset": 0.2, "gain": 0.4 },
+    { "sfx": "pop", "at": "word:hook:Big", "gain": 0.4 },
+    { "sfx": "rumble", "at": "line:turm", "gain": 0.5, "args": { "dur": 3 } },
+    { "sfx": "pop", "at": "word:turm:Eiffelturm", "gain": 0.45 },
+    { "sfx": "pop", "at": "word:turm:Immer", "gain": 0.45 },
+    { "sfx": "riser", "at": "line:turm", "offset": 0.8, "gain": 0.4, "args": { "dur": 2 } },
+    { "sfx": "clunk", "at": "word:tonnen:Tonnen", "gain": 0.8 },
+    { "sfx": "sting", "at": "word:tonnen:Tonnen", "offset": 0.05, "gain": 0.5 },
+    { "sfx": "hit", "at": "line:frage", "gain": 0.8 }
+  ],
+  "cut": []
+}

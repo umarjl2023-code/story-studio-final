@@ -9,6 +9,8 @@
 ## Serien
 | Serie | Teil | Ordner | Abstimmung | Ergebnis | gepostet |
 |---|---|---|---|---|---|
+| Test (10.000 Big Macs in Paris) | 1 | episodes/burger-paris | A: isst / B: rennt | – | – |
 
 ## Stimmen pro Serie
 (Je Serie festhalten, welche Rolle welche Stimme hat, damit sie in jedem Teil gleich klingt.)
+- Test (burger-paris): Erzähler Piper thorsten
