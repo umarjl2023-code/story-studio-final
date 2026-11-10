@@ -1,8 +1,19 @@
+# Installiert / heruntergeladen
 node_modules/
 voices/
-episodes/*/_page.html
-episodes/*/stills/
-episodes/*/audio.wav
-episodes/*/voice.wav
 __pycache__/
 .env
+
+# Zwischendateien beim Rendern (werden jedes Mal neu erzeugt)
+**/_page.html
+**/_tmp.wav
+**/stills/
+**/sheet.jpg
+**/audio.wav
+**/voice.wav
+
+# Vorlagen bleiben „sauber" (nur Skript, Szenen, Sound)
+vorlagen/**/timing.js
+vorlagen/**/timing.json
+vorlagen/**/voice_cache/
+vorlagen/**/final.mp4

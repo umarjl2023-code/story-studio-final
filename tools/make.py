@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Komplette Produktion in einem Rutsch:  python tools/make.py episodes/<slug> [--backend piper|elevenlabs|recording|none] [--skip-voice]
+"""Komplette Produktion in einem Rutsch:  python tools/make.py episodes/<slug> [--backend auto|azure|elevenlabs|piper|recording|none] [--skip-voice]
    1. Stimme + Timing   2. Sound-Mix   3. Kontaktbogen   4. Video
 """
 import os, subprocess, sys

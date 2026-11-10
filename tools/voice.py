@@ -9,10 +9,10 @@ Liest  episodes/<slug>/script.json  und schreibt
   timing.js     – dasselbe für die Animation (window.TIMING)
 
 Backends:
-  auto        Azure, wenn AZURE_SPEECH_KEY gesetzt ist, sonst Piper.
+  auto        beste verfügbare Stimme: Azure (AZURE_SPEECH_KEY) → ElevenLabs (ELEVENLABS_API_KEY) → Piper (immer verfügbar).
   azure       Microsoft Azure Speech (AZURE_SPEECH_KEY, AZURE_SPEECH_REGION=westeurope). Stimme "azure_voice": conrad, killian, florian,
               katja, amala, seraphina (oder voller Name), "rate": "+5%", "style": "whispering" …
-  piper       kostenlos, offline, deutsche Stimme (Standard). Lädt das Stimmenmodell beim ersten Mal automatisch.
+  piper       kostenlos, offline, deutsche Stimme. Lädt das Stimmenmodell beim ersten Mal automatisch.
   elevenlabs  braucht ELEVENLABS_API_KEY (in .env oder Umgebung). Kostenloser Plan = nicht kommerziell!
   recording   eigene Aufnahme: episodes/<slug>/recording.wav (Skript Zeile für Zeile einsprechen).
               Mit --align (braucht faster-whisper) werden die Wörter exakt erkannt.
@@ -158,7 +158,9 @@ def main():
     backend = args[args.index('--backend') + 1] if '--backend' in args else None
     script = json.load(open(os.path.join(ep, 'script.json'), encoding='utf-8'))
     vcfg = script.get('voice', {}); backend = backend or vcfg.get('backend', 'auto')
-    if backend == 'auto': backend = 'azure' if os.environ.get('AZURE_SPEECH_KEY') else 'piper'
+    if backend == 'auto':
+        backend = 'azure' if os.environ.get('AZURE_SPEECH_KEY') else 'elevenlabs' if os.environ.get('ELEVENLABS_API_KEY') else 'piper'
+        if os.path.exists(os.path.join(ep, 'recording.wav')): backend = 'recording'   # eigene Aufnahme schlägt jede KI-Stimme
     cast = script.get('cast', {}); spk_col = {}
     tmp = os.path.join(ep, '_tmp.wav')
     lead = 0.25; t = lead; parts = []; lines = []
@@ -214,7 +216,8 @@ def main():
     open(os.path.join(ep, 'timing.js'), 'w', encoding='utf-8').write('window.TIMING=' + json.dumps(timing, ensure_ascii=False) + ';')
     if os.path.exists(tmp): os.remove(tmp)
     print(f'OK  Stimme: {backend}  Sprache bis {voice_end:.1f}s  Video gesamt {total:.1f}s')
-    if total < 61: print(f'WARNUNG: Video ist {total:.1f}s – TikTok zahlt erst ab 60s. Skript verlängern (Ziel 65–75s).')
+    if total < 61: print(f'WARNUNG: Video ist {total:.1f}s – TikTok zahlt erst ab 60s. Skript verlängern.')
+    elif total < 75: print(f'Hinweis: {total:.1f}s – Ziel laut CLAUDE.md sind 90–150s (außer der Nutzer will es kürzer).')
 
 def align(ep, lines):
     """Exakte Wortzeiten mit faster-whisper (pip install faster-whisper)."""

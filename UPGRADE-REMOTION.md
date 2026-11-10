@@ -22,7 +22,7 @@ Melde dem Nutzer am Ende kurz und ohne Technik-Details, was jetzt besser ist.
 - Ton: `<Audio src={staticFile('episodes/<slug>/audio.wav')} />`.
 - Neues Skript `tools/render_remotion.mjs` bzw. npm-Script: `npx remotion render <slug> episodes/<slug>/final.mp4 --codec h264 --crf 20`,
   danach Lautheit wie bisher mit ffmpeg `loudnorm=I=-14:TP=-1.5` normalisieren.
-- **Test**: `episodes/angriff-im-zug` mit Remotion rendern, 4 Standbilder mit `node tools/render.cjs … stills` vergleichen (müssen gleich aussehen),
+- **Test**: `vorlagen/2d` (und `vorlagen/3d`) mit Remotion rendern, 4 Standbilder mit `node tools/render.cjs … stills` vergleichen (müssen gleich aussehen),
   Renderzeit beider Wege notieren.
 
 ## Phase 2 – Qualität mit Remotion-Funktionen
@@ -38,4 +38,4 @@ Melde dem Nutzer am Ende kurz und ohne Technik-Details, was jetzt besser ist.
 ## Phase 3 – Umstellen
 - `tools/make.py` rendert standardmäßig mit Remotion; `tools/render.cjs` bleibt als Fallback und für schnelle Kontaktbögen (`sheet`).
 - `CLAUDE.md` aktualisieren: Render-Befehle, neue Szenen-Felder (`motionBlur`, `transition`, Bild-Hintergründe), Remotion-Lizenzhinweis.
-- Abnahme: `episodes/angriff-im-zug` komplett (Stimme Azure/Piper → Sound → Remotion) rendern, Länge/Ton/Lautheit prüfen, Kontaktbogen ansehen, pushen.
+- Abnahme: `vorlagen/2d` (und `vorlagen/3d`) komplett (Stimme Azure/Piper → Sound → Remotion) rendern, Länge/Ton/Lautheit prüfen, Kontaktbogen ansehen, pushen.
