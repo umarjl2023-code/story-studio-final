@@ -1,0 +1,178 @@
+{
+ "lines": [
+  {
+   "id": "hook",
+   "text": "What if time stopped for everyone except you?",
+   "start": 0.25,
+   "end": 2.317,
+   "noCaption": true,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "What",
+     "hl": false,
+     "start": 0.29,
+     "end": 0.509
+    },
+    {
+     "w": "if",
+     "hl": false,
+     "start": 0.509,
+     "end": 0.654
+    },
+    {
+     "w": "time",
+     "hl": false,
+     "start": 0.654,
+     "end": 0.873
+    },
+    {
+     "w": "stopped",
+     "hl": false,
+     "start": 0.873,
+     "end": 1.2
+    },
+    {
+     "w": "for",
+     "hl": false,
+     "start": 1.2,
+     "end": 1.383
+    },
+    {
+     "w": "everyone",
+     "hl": false,
+     "start": 1.383,
+     "end": 1.747
+    },
+    {
+     "w": "except",
+     "hl": false,
+     "start": 1.747,
+     "end": 2.038
+    },
+    {
+     "w": "you?",
+     "hl": false,
+     "start": 2.038,
+     "end": 2.257
+    }
+   ]
+  },
+  {
+   "id": "dog",
+   "text": "Wait... why is your dog frozen in the air?",
+   "start": 2.667,
+   "end": 4.652,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Wait...",
+     "hl": false,
+     "start": 2.707,
+     "end": 3.033
+    },
+    {
+     "w": "why",
+     "hl": false,
+     "start": 3.033,
+     "end": 3.214
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 3.214,
+     "end": 3.359
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 3.359,
+     "end": 3.577
+    },
+    {
+     "w": "dog",
+     "hl": false,
+     "start": 3.577,
+     "end": 3.758
+    },
+    {
+     "w": "frozen",
+     "hl": false,
+     "start": 3.758,
+     "end": 4.048
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 4.048,
+     "end": 4.193
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 4.193,
+     "end": 4.374
+    },
+    {
+     "w": "air?",
+     "hl": false,
+     "start": 4.374,
+     "end": 4.592
+    }
+   ]
+  },
+  {
+   "id": "fris",
+   "text": "Even the frisbee just hangs there.",
+   "start": 5.002,
+   "end": 6.674,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Even",
+     "hl": false,
+     "start": 5.042,
+     "end": 5.272
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 5.272,
+     "end": 5.464
+    },
+    {
+     "w": "frisbee",
+     "hl": false,
+     "start": 5.464,
+     "end": 5.809
+    },
+    {
+     "w": "just",
+     "hl": false,
+     "start": 5.809,
+     "end": 6.039
+    },
+    {
+     "w": "hangs",
+     "hl": false,
+     "start": 6.039,
+     "end": 6.307
+    },
+    {
+     "w": "there.",
+     "hl": false,
+     "start": 6.307,
+     "end": 6.614
+    }
+   ]
+  }
+ ],
+ "voiceEnd": 6.874,
+ "total": 10.0,
+ "backend": "piper"
+}
