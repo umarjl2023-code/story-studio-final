@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sprecher + Timing für eine Episode.
 
-Aufruf:  python tools/voice.py episodes/<slug>  [--backend piper|elevenlabs|recording|none] [--align]
+Aufruf:  python tools/voice.py episodes/<slug>  [--backend auto|azure|piper|elevenlabs|recording|none] [--align]
 
 Liest  episodes/<slug>/script.json  und schreibt
   voice.wav     – komplette Sprachspur (44.1 kHz mono)
@@ -9,11 +9,17 @@ Liest  episodes/<slug>/script.json  und schreibt
   timing.js     – dasselbe für die Animation (window.TIMING)
 
 Backends:
+  auto        Azure, wenn AZURE_SPEECH_KEY gesetzt ist, sonst Piper.
+  azure       Microsoft Azure Speech (AZURE_SPEECH_KEY, AZURE_SPEECH_REGION=westeurope). Stimme "azure_voice": conrad, killian, florian,
+              katja, amala, seraphina (oder voller Name), "rate": "+5%", "style": "whispering" …
   piper       kostenlos, offline, deutsche Stimme (Standard). Lädt das Stimmenmodell beim ersten Mal automatisch.
   elevenlabs  braucht ELEVENLABS_API_KEY (in .env oder Umgebung). Kostenloser Plan = nicht kommerziell!
   recording   eigene Aufnahme: episodes/<slug>/recording.wav (Skript Zeile für Zeile einsprechen).
               Mit --align (braucht faster-whisper) werden die Wörter exakt erkannt.
   none        keine Stimme, Timing geschätzt (nur zur Vorschau).
+
+Mehrere Stimmen: "cast": {"Mann": {"voice": "karlsson", "azure_voice": "killian"}, "Durchsage": {"voice": "ramona", "fx": "radio"}}
+und in der Zeile "speaker": "Mann". fx: radio | phone | whisper. Alte Form (Zeile mit eigenem "voice"/"color") geht weiterhin.
 """
 import json, os, sys, re, wave, urllib.request
 import numpy as np
@@ -54,7 +60,7 @@ def trim(a, thr=0.012):
     return a[s:e]
 
 def clean_text(t):  # Sterne (Hervorhebung) und Regieanweisungen [..] entfernen
-    return re.sub(r'\[.*?\]', '', t.replace('*', '')).strip()
+    return re.sub(r'\[.*?\]', '', t.replace('*', '')).strip().strip('„“"»«').strip()
 
 # ---------------- Backends ----------------
 PIPER_VOICES = {
@@ -100,6 +106,39 @@ def tts_elevenlabs(text, cfg, tmp):
     raw = urllib.request.urlopen(req).read()
     return np.frombuffer(raw, dtype=np.int16).astype(np.float64) / 32768
 
+AZURE_VOICES = {'conrad': 'de-DE-ConradNeural', 'killian': 'de-DE-KillianNeural', 'florian': 'de-DE-FlorianMultilingualNeural',
+                'katja': 'de-DE-KatjaNeural', 'amala': 'de-DE-AmalaNeural', 'seraphina': 'de-DE-SeraphinaMultilingualNeural'}
+def tts_azure(text, cfg, tmp):
+    from xml.sax.saxutils import escape
+    key = os.environ.get('AZURE_SPEECH_KEY'); assert key, 'AZURE_SPEECH_KEY fehlt'
+    region = os.environ.get('AZURE_SPEECH_REGION', 'westeurope')
+    name = AZURE_VOICES.get(cfg.get('azure_voice', 'conrad'), cfg.get('azure_voice', 'conrad'))
+    inner = f'<prosody rate="{cfg.get("rate", "+0%")}">{escape(text)}</prosody>'
+    if cfg.get('style'): inner = f'<mstts:express-as style="{cfg["style"]}">{inner}</mstts:express-as>'
+    ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="de-DE">'
+            f'<voice name="{name}">{inner}</voice></speak>')
+    req = urllib.request.Request(f'https://{region}.tts.speech.microsoft.com/cognitiveservices/v1', data=ssml.encode('utf-8'),
+                                 headers={'Ocp-Apim-Subscription-Key': key, 'Content-Type': 'application/ssml+xml',
+                                          'X-Microsoft-OutputFormat': 'riff-44100hz-16bit-mono-pcm', 'User-Agent': 'story-studio'})
+    open(tmp, 'wb').write(urllib.request.urlopen(req).read())
+    return read_wav(tmp)
+
+def apply_fx(a, fx):
+    """Klang-Effekte für Rollen: radio (Funk/Durchsage), phone (Telefon), whisper (Flüstern)."""
+    if not fx: return a
+    from scipy.signal import butter, sosfilt
+    if fx in ('radio', 'phone'):
+        lo, hi = (300, 3400) if fx == 'radio' else (450, 2800)
+        a = sosfilt(butter(4, [lo, hi], btype='band', fs=SR, output='sos'), a)
+        a = np.tanh(a * (3.0 if fx == 'radio' else 2.0))
+        if fx == 'radio': a = a + np.random.default_rng(3).standard_normal(len(a)) * 0.012
+    elif fx == 'whisper':
+        a = sosfilt(butter(2, 900, btype='high', fs=SR, output='sos'), a) * 0.8
+    pk = np.abs(a).max() or 1
+    return a / pk * 0.7
+
+SPEAKER_COLORS = ['#ff9ecf', '#8fd3ff', '#9be89b', '#ffc36b', '#c9a7ff']
+
 def est_dur(text):
     return max(0.9, len(text) * 0.064 + text.count(',') * 0.15)
 
@@ -118,7 +157,9 @@ def main():
     ep = sys.argv[1]; args = sys.argv[2:]
     backend = args[args.index('--backend') + 1] if '--backend' in args else None
     script = json.load(open(os.path.join(ep, 'script.json'), encoding='utf-8'))
-    vcfg = script.get('voice', {}); backend = backend or vcfg.get('backend', 'piper')
+    vcfg = script.get('voice', {}); backend = backend or vcfg.get('backend', 'auto')
+    if backend == 'auto': backend = 'azure' if os.environ.get('AZURE_SPEECH_KEY') else 'piper'
+    cast = script.get('cast', {}); spk_col = {}
     tmp = os.path.join(ep, '_tmp.wav')
     lead = 0.25; t = lead; parts = []; lines = []
     rec = None
@@ -128,21 +169,30 @@ def main():
     for ln in script['lines']:
         txt = clean_text(ln['text'])
         # Pro Zeile andere Stimme (Dialog): "voice": "kerstin" oder {"voice": "kerstin", "length_scale": 1.0, "voice_id": "…"}
-        lv = ln.get('voice')
-        vcfg = {**base_vcfg, **(lv if isinstance(lv, dict) else {'voice': lv} if lv else {})}
+        lv = ln.get('voice'); spk = ln.get('speaker')
+        role = cast.get(spk, {}) if spk else {}
+        vcfg = {**base_vcfg, **role, **(lv if isinstance(lv, dict) else {'voice': lv} if lv else {})}
+        if spk and spk not in spk_col: spk_col[spk] = role.get('color') or SPEAKER_COLORS[len(spk_col) % len(SPEAKER_COLORS)]
+        if backend == 'azure' and spk and 'azure_voice' not in role and 'azure_voice' not in (lv if isinstance(lv, dict) else {}):
+            vcfg['azure_voice'] = 'katja' if vcfg.get('voice') in ('kerstin', 'ramona', 'eva') else 'killian'
         import hashlib
         cdir = os.path.join(ep, 'voice_cache'); os.makedirs(cdir, exist_ok=True)
-        key = hashlib.md5(json.dumps([backend, vcfg.get('voice'), vcfg.get('voice_id'), vcfg.get('length_scale'), txt]).encode()).hexdigest()[:12]
+        if backend == 'azure':
+            key = hashlib.md5(json.dumps(['azure', vcfg.get('azure_voice', 'conrad'), vcfg.get('rate'), vcfg.get('style'), txt]).encode()).hexdigest()[:12]
+        else:
+            key = hashlib.md5(json.dumps([backend, vcfg.get('voice'), vcfg.get('voice_id'), vcfg.get('length_scale'), txt]).encode()).hexdigest()[:12]
         cpath = os.path.join(cdir, f'{ln["id"]}_{key}.wav')
-        if backend in ('piper', 'elevenlabs') and os.path.exists(cpath): a = read_wav(cpath)  # schon erzeugt → keine Credits
+        if backend in ('piper', 'elevenlabs', 'azure') and os.path.exists(cpath): a = read_wav(cpath)  # schon erzeugt → keine Credits
+        elif backend == 'azure': a = trim(tts_azure(txt, vcfg, tmp)); write_wav(cpath, a)
         elif backend == 'piper': a = trim(tts_piper(txt, vcfg, tmp)); write_wav(cpath, a)
         elif backend == 'elevenlabs': a = trim(tts_elevenlabs(txt, vcfg, tmp)); write_wav(cpath, a)
         else: a = np.zeros(int(est_dur(txt) * SR))
-        if backend in ('piper', 'elevenlabs'):
+        if backend in ('piper', 'elevenlabs', 'azure'):
             pk = np.abs(a).max() or 1; a = a / pk * 0.7
+            a = apply_fx(a, vcfg.get('fx'))
         dur = len(a) / SR
         lines.append({'id': ln['id'], 'text': ln['text'], 'start': round(t, 3), 'end': round(t + dur, 3),
-                      'noCaption': ln.get('noCaption', False), 'color': ln.get('color'), 'speaker': ln.get('speaker'), 'words': word_times(ln['text'], t, t + dur)})
+                      'noCaption': ln.get('noCaption', False), 'color': ln.get('color') or spk_col.get(spk), 'speaker': spk, 'words': word_times(ln['text'], t, t + dur)})
         parts.append((t, a)); t += dur + ln.get('pause', 0.35)
     voice_end = t
     if rec is not None:

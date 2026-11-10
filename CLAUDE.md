@@ -74,6 +74,7 @@ nichts zu Suizid/Selbstverletzung. Grusel durch Andeutung, nicht durch Gewalt.
 über dem Untertitel. Stimmen pro Rolle in `"cast"` festlegen, z. B. `{"Mann": {"voice": "karlsson"}, "Frau": {"voice": "kerstin"}, "Durchsage": {"voice": "ramona", "fx": "radio"}}`
 (`fx`: `radio` = Durchsage/Funk, `phone` = Telefon, `whisper`). Bei ElevenLabs pro Rolle `"voice_id"`. Erzähler = Zeilen ohne `speaker`.
 Dialogzeilen in „…" setzen, kurz halten (max. 1 Satz), 2–4 Dialogzeilen pro Episode machen sie lebendig.
+Altes Format (Zeile mit eigenem `"voice"`, `"color"`) funktioniert weiterhin; ohne `color` bekommt jede Rolle automatisch eine eigene Farbe.
 
 `script.json`-Felder: `title`, `series`, `part`, `voice` {backend, voice, length_scale}, `cast`, `outro` (Sek. Abstimmungskarte nach dem Sprechen, 4–5),
 `fact_source`, `lines` [{id, text, pause, noCaption?}]. Beispiel: `episodes/klopfen-um-2-47/script.json`.
