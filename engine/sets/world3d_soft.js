@@ -39,7 +39,14 @@ SOFT.captions = function (t, y = H * 0.75) {
     for (const l of TIMING.lines) { if (l.noCaption) continue;
       const ws = l.words && l.words.length ? l.words : [{ w: l.text, start: l.start, end: l.end }]; let cur = [];
       const flush = () => { if (cur.length) SOFT_CHUNKS.push({ text: cur.map(w => w.w.replace(/\*/g, '')).join(' '), start: cur[0].start, end: cur[cur.length - 1].end }); cur = []; };
-      ws.forEach(w => { cur.push(w); const n = cur.map(x => x.w).join(' ').length; if ((/[.?!…]$/.test(w.w) && n > 18) || n > 44) flush(); }); flush(); }
+      // Sätze bilden; zu lange Sätze (> 46 Zeichen) in zwei ausgewogene Hälften teilen (keine einzelnen Rest-Wörter)
+      const sents = []; ws.forEach(w => { cur.push(w); if (/[.?!…]$/.test(w.w)) { sents.push(cur); cur = []; } }); if (cur.length) sents.push(cur); cur = [];
+      const merged = []; sents.forEach(sn => { const last = merged[merged.length - 1]; const len = a => a.map(x => x.w).join(' ').length;
+        if (last && len(last) + len(sn) < 30) merged[merged.length - 1] = last.concat(sn); else merged.push(sn); });
+      merged.forEach(sn => { const txt = sn.map(x => x.w).join(' ');
+        if (txt.length <= 46) { cur = sn; flush(); return; }
+        let best = 1, bd = 1e9, acc = 0; for (let i = 1; i < sn.length; i++) { acc = sn.slice(0, i).map(x => x.w).join(' ').length; const d = Math.abs(acc - (txt.length - acc)); if (d < bd) { bd = d; best = i; } }
+        cur = sn.slice(0, best); flush(); cur = sn.slice(best); flush(); }); }
     SOFT_CHUNKS.forEach((c, i) => { const nx = SOFT_CHUNKS[i + 1]; c.show = c.start - .1; c.hide = nx ? Math.min(nx.start - .1, c.end + .9) : c.end + .9; });
   }
   ctx.save(); ctx.font = `900 76px ${SOFT.CAP}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.letterSpacing = '-1.5px';

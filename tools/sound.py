@@ -124,6 +124,24 @@ def siren(dur=10, period=4.0, far=0.5):  # an- und abschwellende Sirene (Luftala
     t = tt(dur); f = 700 + 500 * (0.5 - 0.5 * np.cos(2 * np.pi * t / period)); ph = 2 * np.pi * np.cumsum(f) / SR
     s = np.sin(ph) + .3 * np.sin(2 * ph) + .15 * np.sin(3 * ph)
     return lp(s, .25 - .18 * far) * env(len(t), 1.5, 2.0) * .6
+def meow(pitch=1.0, d=0.75, wrong=0.0):  # Katzen-Miau (synthetisch): Tonhöhe gleitet hoch und runter; wrong>0 = tiefer, gedehnt, unheimlich
+    d = d * (1 + wrong * .8); t = tt(d); k = t / d
+    f0 = pitch * (1 - wrong * .45) * (520 + 380 * np.sin(np.pi * np.clip(k * 1.15, 0, 1)) ** .8 - 120 * k)
+    f0 = f0 * (1 + .012 * np.sin(2 * np.pi * 6 * t))
+    ph = 2 * np.pi * np.cumsum(f0) / SR; src = sum(np.sin(h * ph) / h ** 1.1 for h in range(1, 14))
+    src = src + .04 * noise(d)
+    def bp(x, fc, q):  # einfacher Resonator (Formant)
+        w = 2 * np.pi * fc / SR; r = 1 - w / (2 * q); return lfilter([1 - r], [1, -2 * r * np.cos(w), r * r], x)
+    f1 = 700 + 500 * np.sin(np.pi * np.clip(k * 1.2, 0, 1)); out = np.zeros_like(src)
+    for i in range(0, len(src), 512):  # Formant gleitet (m → i → a → u)
+        seg_ = slice(i, i + 512); fc = float(np.mean(f1[seg_]))
+        out[seg_] = bp(src[max(0, i - 2048):i + 512], fc, 6)[-len(src[seg_]):] + .6 * bp(src[max(0, i - 2048):i + 512], fc * 2.6, 8)[-len(src[seg_]):]
+    e = np.minimum(1, k * 12) * np.minimum(1, (1 - k) * 5) ** 1.5
+    if wrong: out = np.tanh(out * (1 + wrong * 3)) + .15 * wrong * lp(noise(d), .05)
+    return out * e
+def purr(d=3.0, rate=25):  # Schnurren: tiefes, rhythmisch moduliertes Rauschen
+    t = tt(d); am = (.55 + .45 * np.sin(2 * np.pi * rate * t)) * (.6 + .4 * np.sin(2 * np.pi * .45 * t) ** 2)
+    return lp(noise(d), .02) * 6 * am * env(len(t), .4, .6)
 def passing_train(d=1.0): t = tt(d); return lp(noise(d), .3) * (np.sin(2 * np.pi * 14 * t) > 0) * 2 * env(len(t), .05, .01)
 def paper(): return hp(noise(.5), .2) * (lp(np.abs(noise(.5)), .002) * 8) * env(int(.5 * SR), .02, .1)
 def lock_click(): t = tt(.15); return (np.sin(2 * np.pi * 1800 * t) + np.sin(2 * np.pi * 2700 * t)) * np.exp(-t * 50)

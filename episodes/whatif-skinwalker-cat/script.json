@@ -1,0 +1,95 @@
+{
+ "title": "What if your cat became a skinwalker in the middle of the night?",
+ "series": "What if",
+ "part": 3,
+ "style": "what-if-video-stil v2 (soft look), no narration – text + sound only",
+ "language": "en",
+ "voice": {
+  "backend": "none"
+ },
+ "outro": 3.58,
+ "fact_source": "- (fiction, no fact claim)",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "What if your cat became a skinwalker in the middle of the night?",
+   "pause": 0.6,
+   "noCaption": true
+  },
+  {
+   "id": "time",
+   "text": "3:00 AM. Your cat is asleep at the end of your bed.",
+   "pause": 1.4
+  },
+  {
+   "id": "meow",
+   "text": "Then you hear her meow...",
+   "pause": 0.4
+  },
+  {
+   "id": "hall",
+   "text": "...from the hallway.",
+   "pause": 1.6
+  },
+  {
+   "id": "here",
+   "text": "But your cat is right here.",
+   "pause": 1.4
+  },
+  {
+   "id": "stare",
+   "text": "She's staring at the door. Not blinking.",
+   "pause": 1.6
+  },
+  {
+   "id": "copy",
+   "text": "Something out there is copying her voice.",
+   "pause": 1.6
+  },
+  {
+   "id": "turn",
+   "text": "Then she slowly turns to look at you.",
+   "pause": 1.4
+  },
+  {
+   "id": "smile",
+   "text": "Cats don't smile like that.",
+   "pause": 1.8
+  },
+  {
+   "id": "lamp",
+   "text": "The lamp flickers.",
+   "pause": 1.4
+  },
+  {
+   "id": "empty",
+   "text": "The bed is empty.",
+   "pause": 1.8
+  },
+  {
+   "id": "stand",
+   "text": "And something tall is standing in the hallway.",
+   "pause": 1.8
+  },
+  {
+   "id": "climb",
+   "text": "Something climbs onto your bed.",
+   "pause": 2.0
+  },
+  {
+   "id": "purr",
+   "text": "It's purring. It looks just like her.",
+   "pause": 1.4
+  },
+  {
+   "id": "wave",
+   "text": "So who is still standing in the doorway?",
+   "pause": 1.2
+  },
+  {
+   "id": "end",
+   "text": "Which one is your real cat?",
+   "pause": 0.2
+  }
+ ]
+}
