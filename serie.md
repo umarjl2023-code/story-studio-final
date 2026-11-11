@@ -9,6 +9,7 @@
 ## Serien
 | Serie | Teil | Ordner | Abstimmung | Ergebnis | gepostet |
 |---|---|---|---|---|---|
+| What if (EN, Soft-Look v2) | 5 | episodes/whatif-days-left | – (Frage: what would you do with 7 days?) | – | – |
 | What if (EN, Soft-Look v2) | 4 | episodes/whatif-nuke-dinner | – (Loop; Frage: run or stay?) | – | – |
 | What if (EN, Soft-Look v2) | 3 | episodes/whatif-skinwalker-cat | – (Frage: Which one is your real cat?) | – | – |
 | What if (EN, What-if-Stil) | 2 | episodes/whatif-millionaire | – (Frage: What would you have bought first?) | – | – |
@@ -19,6 +20,7 @@
 (Je Serie festhalten, welche Rolle welche Stimme hat, damit sie in jedem Teil gleich klingt.)
 - Test (burger-paris): Erzähler Piper thorsten
 - What if (whatif-war): Erzähler Piper ryan (englisch), length_scale 1.05
+- What if (whatif-days-left): keine Stimme – Texte (Fraunces/Barlow) + eigenes Klavierstück (bed "piano") + Wiegenlied (sfx hum, Mutter = Oktave 0, Großvater = Oktave -1); Welten home + outdoor; Figuren SOFT.human (mom: grauer Dutt + Brille, me: blauer Pulli)
 - What if (whatif-nuke-dinner): keine Stimme – englische Texte (Fraunces/Barlow Condensed, CINE-Overlays) + Sounddesign; Welt dinner, nahtloser Loop
 - What if (whatif-skinwalker-cat): keine Stimme – nur Texteinblendungen (Nunito) + Sounddesign (meow/purr synthetisch); Soft-Look v2 (Welt catRoom)
 - What if (whatif-millionaire): Erzähler Piper ryan (englisch), length_scale 1.0; warme Farbwelt (Welt wiCityWarm)

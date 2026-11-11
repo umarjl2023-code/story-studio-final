@@ -144,6 +144,64 @@ def purr(d=3.0, rate=25):  # Schnurren: tiefes, rhythmisch moduliertes Rauschen
     return lp(noise(d), .02) * 6 * am * env(len(t), .4, .6)
 def tinnitus(d=6.0, f=3900):  # Pfeifen im Ohr nach einem Knall
     t = tt(d); return np.sin(2 * np.pi * f * t) * env(len(t), .8, 1.5) * .35 + np.sin(2 * np.pi * f * 1.01 * t) * env(len(t), 1.2, 1.5) * .15
+# ---------- Klavier + Wiegenlied (eigene Komposition, frei verwendbar) ----------
+NOTE = {n: i for i, n in enumerate(['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'])}
+def midi(n): return NOTE[n[:-1]] + 12 * (int(n[-1]) + 1)
+def hz(m): return 440 * 2 ** ((m - 69) / 12)
+# Wiegenlied-Motiv (8 Takte à 4 Schläge): (Note, Dauer in Schlägen); None = Pause
+LULLABY = [('E5', 1.5), ('D5', .5), ('C5', 1), ('E5', 1), ('G5', 2), ('E5', 2),
+           ('F5', 1.5), ('E5', .5), ('D5', 1), ('C5', 1), ('D5', 3), (None, 1),
+           ('E5', 1.5), ('D5', .5), ('C5', 1), ('A4', 1), ('G4', 2), ('C5', 2),
+           ('D5', 1.5), ('E5', .5), ('D5', 1), ('B4', 1), ('C5', 3), (None, 1)]
+def piano_note(f, d, vel=.6):
+    n = int((d + 1.6) * SR); t = np.arange(n) / SR; out = np.zeros(n)
+    for k in range(1, 9):
+        fk = f * k * (1 + .0004 * k * k)
+        if fk > SR / 2.2: break
+        out += np.sin(2 * np.pi * fk * t + k) * (1 / k ** 1.6) * np.exp(-t * (.9 + k * .55 + f / 900))
+    out *= np.minimum(1, t / .004) * np.where(t < d, 1, np.exp(-(t - d) * 6))
+    out[:int(.01 * SR)] += lp(noise(.01), .3) * .05
+    return out * vel
+def reverb(x, sec=2.6, mix=.32):
+    ir = rng.standard_normal(int(sec * SR)) * np.exp(-np.arange(int(sec * SR)) / SR * 3.2); ir = lp(ir, .2); ir /= np.abs(ir).sum() ** .5 * 6
+    n = len(x) + len(ir); F = 1 << (n - 1).bit_length(); y = np.fft.irfft(np.fft.rfft(x, F) * np.fft.rfft(ir, F), F)[:len(x)]
+    return x * (1 - mix) + y * mix * 3
+def piano_bed(dur, cfg):
+    """Traurige Klaviermusik in a-Moll, 64 bpm. cfg: {"melody": [[von_s, bis_s], …] (Wiegenlied rechts), "bpm": 64}"""
+    bpm = cfg.get('bpm', 64); beat = 60 / bpm; bar = 4 * beat
+    prog = [('A2', 'E3', 'A3', 'C4'), ('F2', 'C3', 'F3', 'A3'), ('C3', 'G3', 'C4', 'E4'), ('G2', 'D3', 'G3', 'B3'),
+            ('A2', 'E3', 'A3', 'C4'), ('F2', 'C3', 'F3', 'A3'), ('D3', 'A3', 'D4', 'F4'), ('E2', 'B2', 'E3', 'G#3')]
+    out = np.zeros(int((dur + 3) * SR)); t0 = 0.0; b = 0
+    def put(sig, at, g=1):
+        i = int(at * SR); j = min(len(out), i + len(sig)); out[i:j] += sig[:j - i] * g
+    mel_on = lambda tt_: any(a <= tt_ < c for a, c in cfg.get('melody', []))
+    while t0 < dur:
+        ch = prog[b % 8]
+        put(piano_note(hz(midi(ch[0])), bar * .95, .5), t0)                       # Bass
+        for i, n in enumerate([ch[1], ch[2], ch[3], ch[2], ch[1], ch[2], ch[3], ch[2]]):   # Arpeggio in Achteln
+            put(piano_note(hz(midi(n)), beat * .9, .22 + .04 * (i == 0)), t0 + i * beat / 2 + rng.uniform(0, .012))
+        if mel_on(t0):
+            mb = b % 8; acc = 0.0; idx = 0
+            for note, d in LULLABY:   # Takt mb des Motivs
+                if acc >= mb * 4 and acc < (mb + 1) * 4 and note: put(piano_note(hz(midi(note)), d * beat * .95, .45), t0 + (acc - mb * 4) * beat)
+                acc += d
+        t0 += bar; b += 1
+    return reverb(out)[:int(dur * SR)]
+def hum(start_bar=0, bars=8, octave=0, bpm=64, voice=1.0):
+    """Gesummtes Wiegenlied („mmm“) – octave -1 = tiefe Männerstimme. Dauer = bars Takte."""
+    beat = 60 / bpm; seq = []; acc = 0
+    for note, d in LULLABY:
+        if start_bar * 4 <= acc < (start_bar + bars) * 4: seq.append((note, d, acc - start_bar * 4))
+        acc += d
+    total = bars * 4 * beat + 1; out = np.zeros(int(total * SR))
+    for note, d, at in seq:
+        if not note: continue
+        f = hz(midi(note) + 12 * octave); n = int(d * beat * SR); t = np.arange(n) / SR
+        ff = f * (1 + .006 * np.sin(2 * np.pi * 5.2 * t) * np.minimum(1, t / .3)); ph = 2 * np.pi * np.cumsum(ff) / SR
+        v = np.sin(ph) + .35 * np.sin(2 * ph) + .12 * np.sin(3 * ph) + .02 * rng.standard_normal(n)
+        v = lp(v, .08 if octave < 0 else .12) * np.minimum(1, t / .08) * np.minimum(1, (n / SR - t) / .12)
+        i = int(at * beat * SR); out[i:i + n] += v[:len(out) - i] * voice
+    return reverb(out, 1.8, .25)
 def passing_train(d=1.0): t = tt(d); return lp(noise(d), .3) * (np.sin(2 * np.pi * 14 * t) > 0) * 2 * env(len(t), .05, .01)
 def paper(): return hp(noise(.5), .2) * (lp(np.abs(noise(.5)), .002) * 8) * env(int(.5 * SR), .02, .1)
 def lock_click(): t = tt(.15); return (np.sin(2 * np.pi * 1800 * t) + np.sin(2 * np.pi * 2700 * t)) * np.exp(-t * 50)
@@ -156,7 +214,7 @@ def scream_far(d=1.2):
     return lp(np.sin(ph) * (1 + .5 * np.sin(2 * np.pi * 30 * t)), .05) * env(len(t), .1, .4) * .6
 def pop(): t = tt(.05); return np.sin(2 * np.pi * 1500 * t) * np.exp(-t * 80)
 
-SFX = {k: v for k, v in globals().items() if callable(v) and k not in ('lp', 'hp', 'tt', 'env', 'noise', 'main', 'resolve', 'bed', 'read_wav', 'lfilter')}
+SFX = {k: v for k, v in globals().items() if callable(v) and k not in ('lp', 'hp', 'tt', 'env', 'noise', 'main', 'resolve', 'bed', 'read_wav', 'lfilter', 'midi', 'hz', 'piano_note', 'reverb', 'piano_bed')}
 
 # ---------------- Musikteppiche ----------------
 def bed(kind, dur):
@@ -202,7 +260,9 @@ def main():
         if n <= 0: return
         Lc[i:i + n] += x[:n] * gain * (1 - max(0, pan)); Rc[i:i + n] += x[:n] * gain * (1 + min(0, pan))
     # Musik / Bed
-    if cfg.get('music'):
+    if cfg.get('bed') == 'piano':
+        m = piano_bed(total, cfg.get('piano', {}))
+    elif cfg.get('music'):
         m = read_wav(os.path.join(ep, cfg['music']))[:N]; m = np.pad(m, (0, N - len(m))) * 0.5
     else:
         m = bed(cfg.get('bed', 'tension'), total)
