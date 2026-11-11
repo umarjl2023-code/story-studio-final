@@ -1,0 +1,20 @@
+{
+ "title": "What if a nuke hit 2 km away during dinner?",
+ "series": "What if",
+ "part": 4,
+ "style": "what-if-video-stil v2 (soft look), no narration – sound + few text cards, seamless loop",
+ "language": "en",
+ "voice": {
+  "backend": "none"
+ },
+ "outro": 60.85,
+ "fact_source": "- (fiction; 470 kt / 2 km as scenario values)",
+ "lines": [
+  {
+   "id": "x",
+   "text": "loop",
+   "pause": 0,
+   "noCaption": true
+  }
+ ]
+}

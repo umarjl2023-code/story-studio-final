@@ -1,0 +1,30 @@
+{
+  "bed": "sad",
+  "bed_curve": [[0, 0.5], [16, 0.6], [25.8, 0.9], [26, 0.15], [30, 0.5], [35, 0.9], [37.9, 1.0], [38.2, 0.0], [45, 0.0], [47, 0.45], [62, 0.5]],
+  "caption_pops": false,
+  "cues": [
+    { "sfx": "wind", "at": 0, "gain": 0.14, "args": { "d": 26 } },
+    { "sfx": "chime", "at": 10.6, "gain": 0.3 },
+    { "sfx": "chime", "at": 10.75, "gain": 0.22, "pan": 0.2 },
+    { "sfx": "riser", "at": 17.5, "gain": 0.35, "args": { "d": 8.3 } },
+    { "sfx": "siren", "at": 19.0, "gain": 0.22, "args": { "dur": 7, "far": 0.9 } },
+    { "sfx": "heartbeat", "at": 21.5, "gain": 0.55, "args": { "dur": 4.4, "bpm_from": 80, "bpm_to": 120 } },
+    { "sfx": "whoosh", "at": 25.3, "gain": 0.55, "args": { "d": 0.7 } },
+    { "sfx": "hit", "at": 26.0, "gain": 1.0 },
+    { "sfx": "sting", "at": 26.0, "gain": 0.55 },
+    { "sfx": "thunder", "at": 26.05, "gain": 0.8 },
+    { "sfx": "rumble", "at": 26.1, "gain": 0.75, "args": { "d": 12 } },
+    { "sfx": "tinnitus", "at": 26.3, "gain": 0.35, "args": { "d": 11.5 } },
+    { "sfx": "heartbeat", "at": 27.5, "gain": 0.65, "args": { "dur": 10.5, "bpm_from": 52, "bpm_to": 64 } },
+    { "sfx": "riser", "at": 35.0, "gain": 0.6, "args": { "d": 3.0 } },
+    { "sfx": "thunder", "at": 37.5, "gain": 0.9 },
+    { "sfx": "rumble", "at": 37.2, "gain": 0.9, "args": { "d": 1.0 } },
+    { "sfx": "glass", "at": 37.7, "gain": 0.6 },
+    { "sfx": "tinnitus", "at": 38.3, "gain": 0.55, "args": { "d": 6.5, "f": 4200 } },
+    { "sfx": "breath", "at": 45.3, "gain": 0.7, "args": { "count": 2, "interval": 1.0 } },
+    { "sfx": "wind", "at": 45.4, "gain": 0.14, "args": { "d": 16.6 } },
+    { "sfx": "chime", "at": 47.6, "gain": 0.25 },
+    { "sfx": "chime", "at": 55.3, "gain": 0.2 }
+  ],
+  "cut": [[25.85, 26.0], [38.0, 38.3]]
+}

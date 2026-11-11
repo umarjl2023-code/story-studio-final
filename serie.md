@@ -9,6 +9,7 @@
 ## Serien
 | Serie | Teil | Ordner | Abstimmung | Ergebnis | gepostet |
 |---|---|---|---|---|---|
+| What if (EN, Soft-Look v2) | 4 | episodes/whatif-nuke-dinner | – (Loop; Frage: run or stay?) | – | – |
 | What if (EN, Soft-Look v2) | 3 | episodes/whatif-skinwalker-cat | – (Frage: Which one is your real cat?) | – | – |
 | What if (EN, What-if-Stil) | 2 | episodes/whatif-millionaire | – (Frage: What would you have bought first?) | – | – |
 | What if (EN, What-if-Stil) | 1 | episodes/whatif-war | – (Frage: Would you have believed it?) | – | – |
@@ -18,5 +19,6 @@
 (Je Serie festhalten, welche Rolle welche Stimme hat, damit sie in jedem Teil gleich klingt.)
 - Test (burger-paris): Erzähler Piper thorsten
 - What if (whatif-war): Erzähler Piper ryan (englisch), length_scale 1.05
+- What if (whatif-nuke-dinner): keine Stimme – englische Texte (Fraunces/Barlow Condensed, CINE-Overlays) + Sounddesign; Welt dinner, nahtloser Loop
 - What if (whatif-skinwalker-cat): keine Stimme – nur Texteinblendungen (Nunito) + Sounddesign (meow/purr synthetisch); Soft-Look v2 (Welt catRoom)
 - What if (whatif-millionaire): Erzähler Piper ryan (englisch), length_scale 1.0; warme Farbwelt (Welt wiCityWarm)

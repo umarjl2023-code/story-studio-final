@@ -352,5 +352,5 @@ function render(t) {
 }
 window.render = render;
 window.ready = Promise.all([900, 800, 700, 600, 500, 200].map(w => document.fonts.load(`${w} 80px Inter`).catch(() => null))
-  .concat(['400 80px "EB Garamond"', 'italic 400 80px "EB Garamond"', '400 80px "Instrument Serif"', '800 80px Nunito', '900 80px Nunito'].map(f => document.fonts.load(f).catch(() => null)))
+  .concat(['400 80px "EB Garamond"', 'italic 400 80px "EB Garamond"', '400 80px "Instrument Serif"', '800 80px Nunito', '900 80px Nunito', '700 80px Fraunces', 'italic 700 80px Fraunces', '700 80px "Barlow Condensed"'].map(f => document.fonts.load(f).catch(() => null)))
   .concat([new Promise(r => document.readyState === 'loading' ? addEventListener('DOMContentLoaded', r) : r())])).then(() => { render(0); return true; });  // erst rendern, wenn alle Skripte (inkl. scenes.js) geladen sind

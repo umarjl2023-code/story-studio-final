@@ -142,6 +142,8 @@ def meow(pitch=1.0, d=0.75, wrong=0.0):  # Katzen-Miau (synthetisch): Tonhöhe g
 def purr(d=3.0, rate=25):  # Schnurren: tiefes, rhythmisch moduliertes Rauschen
     t = tt(d); am = (.55 + .45 * np.sin(2 * np.pi * rate * t)) * (.6 + .4 * np.sin(2 * np.pi * .45 * t) ** 2)
     return lp(noise(d), .02) * 6 * am * env(len(t), .4, .6)
+def tinnitus(d=6.0, f=3900):  # Pfeifen im Ohr nach einem Knall
+    t = tt(d); return np.sin(2 * np.pi * f * t) * env(len(t), .8, 1.5) * .35 + np.sin(2 * np.pi * f * 1.01 * t) * env(len(t), 1.2, 1.5) * .15
 def passing_train(d=1.0): t = tt(d); return lp(noise(d), .3) * (np.sin(2 * np.pi * 14 * t) > 0) * 2 * env(len(t), .05, .01)
 def paper(): return hp(noise(.5), .2) * (lp(np.abs(noise(.5)), .002) * 8) * env(int(.5 * SR), .02, .1)
 def lock_click(): t = tt(.15); return (np.sin(2 * np.pi * 1800 * t) + np.sin(2 * np.pi * 2700 * t)) * np.exp(-t * 50)
