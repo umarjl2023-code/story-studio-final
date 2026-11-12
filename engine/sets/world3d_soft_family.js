@@ -33,7 +33,7 @@ SOFT.human = function (o = {}) {
   if (o.beard) { const b = sph(.1, hairM); b.scale.set(1.05, .75, .7); b.position.set(0, -.08, .05); head.add(b); }
   const eyes = [];
   for (const x of [-.046, .046]) { const e = new T.Group(); e.position.set(x, .012, .118); head.add(e);
-    const b = sph(.02, M(0x2a1a14, { roughness: .12 }), 16); b.scale.set(.85, 1.15, .5); e.add(b);
+    const b = sph(.02, M(o.eyeGlow ? 0xf4ffc8 : 0x2a1a14, o.eyeGlow ? { emissive: 0xe8ff9a, emissiveIntensity: 1.4 } : { roughness: .12 }), 16); b.scale.set(.85, 1.15, .5); e.add(b);
     const hl = sph(.006, M(0xffffff, { emissive: 0xffffff, emissiveIntensity: 1 }), 10); hl.position.set(.006, .008, .009); e.add(hl);
     const lid = sph(.024, sk, 16); lid.scale.set(.98, 1.2, .55); lid.visible = false; e.add(lid);
     const brow = cap(.0045, .03, hairM); brow.rotation.z = Math.PI / 2; brow.position.set(0, .038, .004); e.add(brow);
@@ -50,11 +50,16 @@ SOFT.human = function (o = {}) {
     const el = new T.Group(); el.position.y = -.29; shd.add(el); const fo = cap(.045, .18, top); fo.position.y = -.11; el.add(fo);
     const hand = sph(.048, sk, 18); hand.scale.set(.85, 1.05, .6); hand.position.y = -.25; el.add(hand); arms.push({ shd, el, s }); }
   g.scale.setScalar(o.scale || 1);
+  if (o.helmet) { const hm = M(0x1c2230, { roughness: .4, metalness: .2 }); const hl = sph(.15, hm); hl.scale.set(1.05, .85, 1.08); hl.position.set(0, .06, -.01); head.add(hl);
+    const vis = mesh(new T.SphereGeometry(.14, 24, 12, -Math.PI * .45, Math.PI * .9, Math.PI * .38, Math.PI * .22), M(0x2a3a4a, { roughness: .1, metalness: .5, emissive: 0x204060, emissiveIntensity: .4 })); vis.position.y = .0; head.add(vis);
+    const vest = cap(.19, .22, M(0x2a3040, { roughness: .7 })); vest.scale.set(1.12, 1, .95); vest.position.y = .36; torso.add(vest); }
+  if (o.torn) { for (let i = 0; i < 4; i++) { const r = sph(.04, M(0x5a6a4a, { roughness: 1 }), 10); r.scale.set(1.4, .5, .6); r.position.set((hash(i * 9 + (o.seed || 0)) - .5) * .3, .15 + hash(i * 3) * .35, .14); torso.add(r); } }
   g.userData = { hips, legs, torso, head, eyes, mouth, cheeks, tears, arms, mats, o };
   return g;
 };
 SOFT.ARMS = { idle: [.08, .1, -.15], wash: [-.95, .12, -1.0], knead: [-1.05, .22, -.75], lap: [-.35, .22, -1.25], album: [-.55, .3, -1.45], hug: [-1.15, .5, -1.35],
-  holdHand: [-.35, .05, -.25], laptop: [-.8, .18, -1.05], letter: [-.85, .2, -1.6], face: [-1.6, .45, -2.35], tea: [-.55, .2, -1.6], wave: [-.2, 1.9, -.6], shoulder: [-.35, .22, -1.2] };
+  holdHand: [-.35, .05, -.25], laptop: [-.8, .18, -1.05], letter: [-.85, .2, -1.6], face: [-1.6, .45, -2.35], tea: [-.55, .2, -1.6], wave: [-.2, 1.9, -.6], shoulder: [-.35, .22, -1.2],
+  zombie: [-1.4, .12, -.15], aim: [-1.45, -.05, -.35], run: [.0, .1, -1.3], axeUp: [-2.6, .2, -.6], axeHit: [-.9, .05, -.15], pull: [-1.2, .05, -.1], grab: [-1.6, .2, -.4], ride: [-1.1, .2, -.5], fall: [-2.6, .6, -.3], phone: [-.9, .15, -1.75], shock: [-.4, .5, -1.0] };
 SOFT.humanPose = function (h, p, t) {
   const u = h.userData; h.visible = p.visible !== false; if (!h.visible) return;
   h.position.set(...(p.pos || [0, 0, 0])); h.rotation.y = p.ry || 0;
@@ -83,6 +88,23 @@ SOFT.humanPose = function (h, p, t) {
   u.mats.forEach(m => { m.transparent = gh > 0 || m.userData.wasT || m.opacity < 1; if (m.userData.baseOp === undefined) { m.userData.baseOp = m.opacity; m.userData.baseE = m.emissive.getHex(); m.userData.baseEI = m.emissiveIntensity; }
     m.opacity = m.userData.baseOp * (1 - gh * .62); m.depthWrite = gh < .5; m.emissive.setHex(gh > 0 ? 0x9fc8ff : m.userData.baseE); m.emissiveIntensity = gh > 0 ? gh * .55 : m.userData.baseEI; });
   h.traverse(x => { if (x.isMesh) x.castShadow = gh < .5; });
+};
+SOFT.attach = function (h, side, obj) { const a = h.userData.arms[side === 'L' ? 0 : 1]; obj.position.y = -.25; a.el.add(obj); return obj; };
+SOFT.armsOf = (p, side) => (side ? p.armR : p.armL) || SOFT.ARMS[p.arms || 'idle'] || SOFT.ARMS.idle;
+SOFT.mix = function (a, b, k) {   // Pose a → b, k 0..1 (ease bereits angewandt): Zahlen, Arrays und head{} werden interpoliert
+  if (k <= 0) return a; if (k >= 1) return b; const o = { ...a, ...b };
+  for (const key of new Set([...Object.keys(a), ...Object.keys(b)])) { const x = a[key], y = b[key];
+    if (typeof x === 'number' && typeof y === 'number') o[key] = lerp(x, y, k);
+    else if (Array.isArray(x) && Array.isArray(y)) o[key] = x.map((v, i) => lerp(v, y[i], k));
+    else if (key === 'head' && (x || y)) { const hx = x || {}, hy = y || {}; o.head = {}; for (const kk of ['yaw', 'pitch', 'tilt']) o.head[kk] = lerp(hx[kk] || 0, hy[kk] || 0, k); } }
+  o.armL = SOFT.armsOf(a, 0).map((v, i) => lerp(v, SOFT.armsOf(b, 0)[i], k)); o.armR = SOFT.armsOf(a, 1).map((v, i) => lerp(v, SOFT.armsOf(b, 1)[i], k)); o.arms = k < .5 ? a.arms : b.arms;
+  return o;
+};
+// Keyframe-Spur: track(t, [[t0, wert], [t1, wert], …]) mit weichem Übergang (Zahl, Array oder Pose)
+SOFT.track = function (t, keys, mixer) {
+  if (t <= keys[0][0]) return keys[0][1]; const last = keys[keys.length - 1]; if (t >= last[0]) return last[1];
+  for (let i = 1; i < keys.length; i++) if (t <= keys[i][0]) { const [t0, a] = keys[i - 1], [t1, b] = keys[i], k = ease((t - t0) / (t1 - t0));
+    if (mixer) return mixer(a, b, k); if (typeof a === 'number') return lerp(a, b, k); if (Array.isArray(a)) return a.map((v, j) => lerp(v, b[j], k)); return SOFT.mix(a, b, k); }
 };
 SOFT.headPos = function (h) { const v = new THREE.Vector3(); h.userData.head.getWorldPosition(v); return v; };
 

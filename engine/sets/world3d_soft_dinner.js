@@ -232,6 +232,12 @@ CINE.radiation = function (x, y, r, a = 1) {
   ctx.fillStyle = '#e8b830'; ctx.beginPath(); ctx.arc(0, 0, r * .26, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = '#1a1612'; ctx.beginPath(); ctx.arc(0, 0, r * .16, 0, Math.PI * 2); ctx.fill();
   ctx.restore();
 };
+CINE.bio = function (x, y, r, a = 1) {   // Biogefährdungs-Symbol (vereinfacht)
+  if (a <= 0) return; ctx.save(); ctx.globalAlpha = a; ctx.translate(x, y); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 10;
+  ctx.fillStyle = '#8fe04a'; ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0; ctx.strokeStyle = '#14200e'; ctx.lineWidth = r * .12;
+  for (let i = 0; i < 3; i++) { const an = -Math.PI / 2 + i * Math.PI * 2 / 3; ctx.beginPath(); ctx.arc(Math.cos(an) * r * .36, Math.sin(an) * r * .36, r * .36, 0, Math.PI * 2); ctx.stroke(); }
+  ctx.beginPath(); ctx.arc(0, 0, r * .55, 0, Math.PI * 2); ctx.stroke(); ctx.fillStyle = '#14200e'; ctx.beginPath(); ctx.arc(0, 0, r * .14, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+};
 CINE.title = function (text, hl = [], a = 1) {
   if (a <= 0) return; ctx.save(); ctx.font = `700 76px ${CINE.SERIF}`; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.letterSpacing = '-1px';
   const words = text.split(' '), lines = [[]]; let lw = 0; const sp = ctx.measureText(' ').width;
@@ -244,7 +250,7 @@ CINE.title = function (text, hl = [], a = 1) {
 CINE.hud = function (h) {
   const a = h.alpha ?? 1; if (a <= 0) return; ctx.save(); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   const x = 56, y = 860;
-  CINE.radiation(x + 34, y - 92, 34, a);
+  if (h.icon === 'bio') CINE.bio(x + 34, y - 92, 34, a); else if (h.icon !== 'none') CINE.radiation(x + 34, y - 92, 34, a);
   ctx.font = `700 36px ${CINE.COND}`; ctx.letterSpacing = '.5px'; const lw = ctx.measureText(h.label).width;
   ctx.globalAlpha = a * .85; ctx.fillStyle = '#14100e'; ctx.fillRect(x - 6, y - 34, lw + 12, 44); ctx.globalAlpha = 1;
   CINE.stroke(h.label, x, y, a, 0);
