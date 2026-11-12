@@ -1,0 +1,1 @@
+window.TIMING={"lines": [{"id": "x", "text": "bounty", "start": 0.25, "end": 1.15, "noCaption": true, "color": null, "speaker": null, "words": [{"w": "bounty", "hl": false, "start": 0.29, "end": 1.09}]}], "voiceEnd": 1.15, "total": 68.05, "backend": "none"};
