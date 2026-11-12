@@ -1,0 +1,825 @@
+{
+ "lines": [
+  {
+   "id": "hook",
+   "text": "What if your cat became a skinwalker in the middle of the night?",
+   "start": 0.25,
+   "end": 4.346,
+   "noCaption": true,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "What",
+     "hl": false,
+     "start": 0.29,
+     "end": 0.597
+    },
+    {
+     "w": "if",
+     "hl": false,
+     "start": 0.597,
+     "end": 0.802
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 0.802,
+     "end": 1.11
+    },
+    {
+     "w": "cat",
+     "hl": false,
+     "start": 1.11,
+     "end": 1.366
+    },
+    {
+     "w": "became",
+     "hl": false,
+     "start": 1.366,
+     "end": 1.776
+    },
+    {
+     "w": "a",
+     "hl": false,
+     "start": 1.776,
+     "end": 1.929
+    },
+    {
+     "w": "skinwalker",
+     "hl": false,
+     "start": 1.929,
+     "end": 2.544
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 2.544,
+     "end": 2.749
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 2.749,
+     "end": 3.005
+    },
+    {
+     "w": "middle",
+     "hl": false,
+     "start": 3.005,
+     "end": 3.415
+    },
+    {
+     "w": "of",
+     "hl": false,
+     "start": 3.415,
+     "end": 3.62
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 3.62,
+     "end": 3.876
+    },
+    {
+     "w": "night?",
+     "hl": false,
+     "start": 3.876,
+     "end": 4.286
+    }
+   ]
+  },
+  {
+   "id": "time",
+   "text": "3:00 AM. Your cat is asleep at the end of your bed.",
+   "start": 4.946,
+   "end": 8.21,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "3:00",
+     "hl": false,
+     "start": 4.986,
+     "end": 5.283
+    },
+    {
+     "w": "AM.",
+     "hl": false,
+     "start": 5.283,
+     "end": 5.53
+    },
+    {
+     "w": "Your",
+     "hl": false,
+     "start": 5.53,
+     "end": 5.826
+    },
+    {
+     "w": "cat",
+     "hl": false,
+     "start": 5.826,
+     "end": 6.074
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 6.074,
+     "end": 6.271
+    },
+    {
+     "w": "asleep",
+     "hl": false,
+     "start": 6.271,
+     "end": 6.667
+    },
+    {
+     "w": "at",
+     "hl": false,
+     "start": 6.667,
+     "end": 6.865
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 6.865,
+     "end": 7.112
+    },
+    {
+     "w": "end",
+     "hl": false,
+     "start": 7.112,
+     "end": 7.359
+    },
+    {
+     "w": "of",
+     "hl": false,
+     "start": 7.359,
+     "end": 7.557
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 7.557,
+     "end": 7.853
+    },
+    {
+     "w": "bed.",
+     "hl": false,
+     "start": 7.853,
+     "end": 8.15
+    }
+   ]
+  },
+  {
+   "id": "meow",
+   "text": "Then you hear her meow...",
+   "start": 9.61,
+   "end": 11.21,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Then",
+     "hl": false,
+     "start": 9.65,
+     "end": 9.94
+    },
+    {
+     "w": "you",
+     "hl": false,
+     "start": 9.94,
+     "end": 10.182
+    },
+    {
+     "w": "hear",
+     "hl": false,
+     "start": 10.182,
+     "end": 10.473
+    },
+    {
+     "w": "her",
+     "hl": false,
+     "start": 10.473,
+     "end": 10.714
+    },
+    {
+     "w": "meow...",
+     "hl": false,
+     "start": 10.714,
+     "end": 11.15
+    }
+   ]
+  },
+  {
+   "id": "hall",
+   "text": "...from the hallway.",
+   "start": 11.61,
+   "end": 12.89,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "...from",
+     "hl": false,
+     "start": 11.65,
+     "end": 12.092
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 12.092,
+     "end": 12.338
+    },
+    {
+     "w": "hallway.",
+     "hl": false,
+     "start": 12.338,
+     "end": 12.83
+    }
+   ]
+  },
+  {
+   "id": "here",
+   "text": "But your cat is right here.",
+   "start": 14.49,
+   "end": 16.218,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "But",
+     "hl": false,
+     "start": 14.53,
+     "end": 14.769
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 14.769,
+     "end": 15.057
+    },
+    {
+     "w": "cat",
+     "hl": false,
+     "start": 15.057,
+     "end": 15.296
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 15.296,
+     "end": 15.488
+    },
+    {
+     "w": "right",
+     "hl": false,
+     "start": 15.488,
+     "end": 15.823
+    },
+    {
+     "w": "here.",
+     "hl": false,
+     "start": 15.823,
+     "end": 16.158
+    }
+   ]
+  },
+  {
+   "id": "stare",
+   "text": "She's staring at the door. Not blinking.",
+   "start": 17.618,
+   "end": 20.178,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "She's",
+     "hl": false,
+     "start": 17.658,
+     "end": 18.017
+    },
+    {
+     "w": "staring",
+     "hl": false,
+     "start": 18.017,
+     "end": 18.478
+    },
+    {
+     "w": "at",
+     "hl": false,
+     "start": 18.478,
+     "end": 18.683
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 18.683,
+     "end": 18.939
+    },
+    {
+     "w": "door.",
+     "hl": false,
+     "start": 18.939,
+     "end": 19.298
+    },
+    {
+     "w": "Not",
+     "hl": false,
+     "start": 19.298,
+     "end": 19.554
+    },
+    {
+     "w": "blinking.",
+     "hl": false,
+     "start": 19.554,
+     "end": 20.118
+    }
+   ]
+  },
+  {
+   "id": "copy",
+   "text": "Something out there is copying her voice.",
+   "start": 21.778,
+   "end": 24.402,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Something",
+     "hl": false,
+     "start": 21.818,
+     "end": 22.385
+    },
+    {
+     "w": "out",
+     "hl": false,
+     "start": 22.385,
+     "end": 22.642
+    },
+    {
+     "w": "there",
+     "hl": false,
+     "start": 22.642,
+     "end": 23.003
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 23.003,
+     "end": 23.209
+    },
+    {
+     "w": "copying",
+     "hl": false,
+     "start": 23.209,
+     "end": 23.672
+    },
+    {
+     "w": "her",
+     "hl": false,
+     "start": 23.672,
+     "end": 23.93
+    },
+    {
+     "w": "voice.",
+     "hl": false,
+     "start": 23.93,
+     "end": 24.342
+    }
+   ]
+  },
+  {
+   "id": "turn",
+   "text": "Then she slowly turns to look at you.",
+   "start": 26.002,
+   "end": 28.37,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Then",
+     "hl": false,
+     "start": 26.042,
+     "end": 26.338
+    },
+    {
+     "w": "she",
+     "hl": false,
+     "start": 26.338,
+     "end": 26.584
+    },
+    {
+     "w": "slowly",
+     "hl": false,
+     "start": 26.584,
+     "end": 26.979
+    },
+    {
+     "w": "turns",
+     "hl": false,
+     "start": 26.979,
+     "end": 27.324
+    },
+    {
+     "w": "to",
+     "hl": false,
+     "start": 27.324,
+     "end": 27.521
+    },
+    {
+     "w": "look",
+     "hl": false,
+     "start": 27.521,
+     "end": 27.817
+    },
+    {
+     "w": "at",
+     "hl": false,
+     "start": 27.817,
+     "end": 28.014
+    },
+    {
+     "w": "you.",
+     "hl": false,
+     "start": 28.014,
+     "end": 28.31
+    }
+   ]
+  },
+  {
+   "id": "smile",
+   "text": "Cats don't smile like that.",
+   "start": 29.77,
+   "end": 31.498,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Cats",
+     "hl": false,
+     "start": 29.81,
+     "end": 30.106
+    },
+    {
+     "w": "don't",
+     "hl": false,
+     "start": 30.106,
+     "end": 30.451
+    },
+    {
+     "w": "smile",
+     "hl": false,
+     "start": 30.451,
+     "end": 30.797
+    },
+    {
+     "w": "like",
+     "hl": false,
+     "start": 30.797,
+     "end": 31.093
+    },
+    {
+     "w": "that.",
+     "hl": false,
+     "start": 31.093,
+     "end": 31.438
+    }
+   ]
+  },
+  {
+   "id": "lamp",
+   "text": "The lamp flickers.",
+   "start": 33.298,
+   "end": 34.45,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "The",
+     "hl": false,
+     "start": 33.338,
+     "end": 33.577
+    },
+    {
+     "w": "lamp",
+     "hl": false,
+     "start": 33.577,
+     "end": 33.864
+    },
+    {
+     "w": "flickers.",
+     "hl": false,
+     "start": 33.864,
+     "end": 34.39
+    }
+   ]
+  },
+  {
+   "id": "empty",
+   "text": "The bed is empty.",
+   "start": 35.85,
+   "end": 36.938,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "The",
+     "hl": false,
+     "start": 35.89,
+     "end": 36.114
+    },
+    {
+     "w": "bed",
+     "hl": false,
+     "start": 36.114,
+     "end": 36.339
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 36.339,
+     "end": 36.519
+    },
+    {
+     "w": "empty.",
+     "hl": false,
+     "start": 36.519,
+     "end": 36.878
+    }
+   ]
+  },
+  {
+   "id": "stand",
+   "text": "And something tall is standing in the hallway.",
+   "start": 38.738,
+   "end": 41.682,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "And",
+     "hl": false,
+     "start": 38.778,
+     "end": 39.036
+    },
+    {
+     "w": "something",
+     "hl": false,
+     "start": 39.036,
+     "end": 39.605
+    },
+    {
+     "w": "tall",
+     "hl": false,
+     "start": 39.605,
+     "end": 39.915
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 39.915,
+     "end": 40.122
+    },
+    {
+     "w": "standing",
+     "hl": false,
+     "start": 40.122,
+     "end": 40.639
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 40.639,
+     "end": 40.846
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 40.846,
+     "end": 41.105
+    },
+    {
+     "w": "hallway.",
+     "hl": false,
+     "start": 41.105,
+     "end": 41.622
+    }
+   ]
+  },
+  {
+   "id": "climb",
+   "text": "Something climbs onto your bed.",
+   "start": 43.482,
+   "end": 45.466,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Something",
+     "hl": false,
+     "start": 43.522,
+     "end": 44.082
+    },
+    {
+     "w": "climbs",
+     "hl": false,
+     "start": 44.082,
+     "end": 44.489
+    },
+    {
+     "w": "onto",
+     "hl": false,
+     "start": 44.489,
+     "end": 44.795
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 44.795,
+     "end": 45.1
+    },
+    {
+     "w": "bed.",
+     "hl": false,
+     "start": 45.1,
+     "end": 45.406
+    }
+   ]
+  },
+  {
+   "id": "purr",
+   "text": "It's purring. It looks just like her.",
+   "start": 47.466,
+   "end": 49.834,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "It's",
+     "hl": false,
+     "start": 47.506,
+     "end": 47.808
+    },
+    {
+     "w": "purring.",
+     "hl": false,
+     "start": 47.808,
+     "end": 48.312
+    },
+    {
+     "w": "It",
+     "hl": false,
+     "start": 48.312,
+     "end": 48.514
+    },
+    {
+     "w": "looks",
+     "hl": false,
+     "start": 48.514,
+     "end": 48.867
+    },
+    {
+     "w": "just",
+     "hl": false,
+     "start": 48.867,
+     "end": 49.169
+    },
+    {
+     "w": "like",
+     "hl": false,
+     "start": 49.169,
+     "end": 49.471
+    },
+    {
+     "w": "her.",
+     "hl": false,
+     "start": 49.471,
+     "end": 49.774
+    }
+   ]
+  },
+  {
+   "id": "wave",
+   "text": "So who is still standing in the doorway?",
+   "start": 51.234,
+   "end": 53.794,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "So",
+     "hl": false,
+     "start": 51.274,
+     "end": 51.475
+    },
+    {
+     "w": "who",
+     "hl": false,
+     "start": 51.475,
+     "end": 51.726
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 51.726,
+     "end": 51.927
+    },
+    {
+     "w": "still",
+     "hl": false,
+     "start": 51.927,
+     "end": 52.278
+    },
+    {
+     "w": "standing",
+     "hl": false,
+     "start": 52.278,
+     "end": 52.78
+    },
+    {
+     "w": "in",
+     "hl": false,
+     "start": 52.78,
+     "end": 52.981
+    },
+    {
+     "w": "the",
+     "hl": false,
+     "start": 52.981,
+     "end": 53.232
+    },
+    {
+     "w": "doorway?",
+     "hl": false,
+     "start": 53.232,
+     "end": 53.734
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "text": "Which one is your real cat?",
+   "start": 54.994,
+   "end": 56.722,
+   "noCaption": false,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "Which",
+     "hl": false,
+     "start": 55.034,
+     "end": 55.369
+    },
+    {
+     "w": "one",
+     "hl": false,
+     "start": 55.369,
+     "end": 55.608
+    },
+    {
+     "w": "is",
+     "hl": false,
+     "start": 55.608,
+     "end": 55.8
+    },
+    {
+     "w": "your",
+     "hl": false,
+     "start": 55.8,
+     "end": 56.087
+    },
+    {
+     "w": "real",
+     "hl": false,
+     "start": 56.087,
+     "end": 56.375
+    },
+    {
+     "w": "cat?",
+     "hl": false,
+     "start": 56.375,
+     "end": 56.662
+    }
+   ]
+  }
+ ],
+ "voiceEnd": 56.922,
+ "total": 60.5,
+ "backend": "none"
+}

@@ -1,0 +1,11 @@
+{
+ "title": "What if you could see how many days everyone has left?",
+ "series": "What if",
+ "part": 5,
+ "style": "what-if-video-stil v2 (soft look), no narration – English text + piano/lullaby + sound",
+ "language": "en",
+ "voice": { "backend": "none" },
+ "outro": 121.9,
+ "fact_source": "Tim Urban, Wait But Why, 'The Tail End' (Dec 2015): by the end of high school ~93% of in-person parent time is used up (secondary sources: Between Parents podcast #40; Letters to Lucca 'The Tail End').",
+ "lines": [ { "id": "x", "text": "days", "pause": 0, "noCaption": true } ]
+}

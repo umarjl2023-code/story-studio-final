@@ -15,7 +15,7 @@ W3.renderer = function () {
 };
 W3.world = function (name) {
   if (!window.THREE) return null;
-  if (!W3.cache[name]) { const w = W3.BUILD[name](THREE); w.name = name; w.camera = new THREE.PerspectiveCamera(50, W / H, .1, 12000); W3.cache[name] = w; }
+  if (!W3.cache[name]) { const w = W3.BUILD[name](THREE); w.name = name; w.camera ||= new THREE.PerspectiveCamera(50, W / H, .1, 12000); W3.cache[name] = w; }
   return W3.cache[name];
 };
 W3.update = (w, t, o = {}) => W3.UPDATE[w.name] && W3.UPDATE[w.name](w, t, o);

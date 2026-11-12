@@ -1,0 +1,26 @@
+{
+  "bed": "mystery",
+  "bed_curve": [[0, 0.55], [12, 0.6], [15, 0.9], [29, 1.0], [38, 0.6], [47, 0.45], [50, 0.7], [60, 0.5]],
+  "cues": [
+    { "sfx": "wind", "at": 0, "gain": 0.18, "args": { "dur": 12 } },
+    { "sfx": "footsteps", "at": "line:setup", "offset": 1.4, "gain": 0.2, "args": { "count": 8, "interval": 0.45, "heavy": 0.4 } },
+    { "sfx": "horn", "at": "word:normal:Taxis", "gain": 0.35, "pan": 0.4 },
+    { "sfx": "horn", "at": "word:normal:honk", "offset": 0.4, "gain": 0.25, "pan": -0.3, "args": { "d": 0.6 } },
+    { "sfx": "rumble", "at": "line:normal", "gain": 0.18, "args": { "dur": 4 } },
+    { "sfx": "phone_buzz", "at": "word:phones:every", "gain": 0.7, "args": { "count": 3 } },
+    { "sfx": "error_beep", "at": "word:phones:every", "gain": 0.6 },
+    { "sfx": "error_beep", "at": "word:phones:every", "offset": 0.5, "gain": 0.5, "pan": 0.5 },
+    { "sfx": "error_beep", "at": "word:phones:every", "offset": 1.0, "gain": 0.5, "pan": -0.5 },
+    { "sfx": "hit", "at": "word:phones:every", "gain": 0.6 },
+    { "sfx": "heartbeat", "at": "line:freeze", "gain": 0.45, "args": { "dur": 4.5, "bpm_from": 70, "bpm_to": 95 } },
+    { "sfx": "riser", "at": "line:freeze", "offset": 1.5, "gain": 0.35, "args": { "dur": 3 } },
+    { "sfx": "siren", "at": "word:run:sirens", "gain": 0.55, "args": { "dur": 13 } },
+    { "sfx": "footsteps", "at": "word:run:breaks", "gain": 0.45, "args": { "count": 14, "interval": 0.22, "heavy": 0.8 } },
+    { "sfx": "footsteps", "at": "line:lead", "gain": 0.4, "args": { "count": 12, "interval": 0.3, "heavy": 0.7 } },
+    { "sfx": "whoosh", "at": "line:wait", "offset": -0.3, "gain": 0.3 },
+    { "sfx": "notif", "at": "word:second:arrives", "gain": 0.6 },
+    { "sfx": "chime", "at": "word:false:False", "gain": 0.35 },
+    { "sfx": "wind", "at": "line:real", "gain": 0.2, "args": { "dur": 10 } }
+  ],
+  "cut": [[37.6, 38.4]]
+}

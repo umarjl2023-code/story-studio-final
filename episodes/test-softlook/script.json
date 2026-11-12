@@ -1,0 +1,32 @@
+{
+ "title": "What if time stopped for everyone except you?",
+ "series": "What if – Test Soft-Look",
+ "part": 0,
+ "style": "what-if-video-stil v2 (soft look)",
+ "language": "en",
+ "voice": {
+  "backend": "auto",
+  "voice": "ryan",
+  "length_scale": 0.98
+ },
+ "outro": 3.13,
+ "fact_source": "-",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "What if time stopped for everyone except you?",
+   "pause": 0.35,
+   "noCaption": true
+  },
+  {
+   "id": "dog",
+   "text": "Wait... why is your dog frozen in the air?",
+   "pause": 0.35
+  },
+  {
+   "id": "fris",
+   "text": "Even the frisbee just hangs there.",
+   "pause": 0.2
+  }
+ ]
+}

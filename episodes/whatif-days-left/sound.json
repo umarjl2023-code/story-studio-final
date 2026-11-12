@@ -1,0 +1,33 @@
+{
+  "bed": "piano",
+  "piano": { "bpm": 64, "melody": [[33, 52], [58, 76], [92.5, 106.5]] },
+  "bed_curve": [[0, 0.55], [11, 0.6], [11.6, 0.2], [13, 0.42], [17, 0.45], [29.5, 0.55], [33, 0.8], [51.8, 0.8], [52.4, 0.3], [59, 0.85], [70, 0.9], [76, 0.12], [83, 0.22], [90.5, 0.45], [92.5, 0.8], [101.5, 0.6], [106.5, 0.28], [117.5, 0.55], [122, 0.25], [123, 0.0]],
+  "caption_pops": false,
+  "cues": [
+    { "sfx": "wind", "at": 0, "gain": 0.12, "args": { "d": 11.5 } },
+    { "sfx": "footsteps", "at": 0.2, "gain": 0.16, "args": { "count": 22, "interval": 0.5, "heavy": 0.3 } },
+    { "sfx": "rain", "at": 11.6, "gain": 0.07, "args": { "d": 14 } },
+    { "sfx": "hit", "at": 12.7, "gain": 0.3 },
+    { "sfx": "chime", "at": 14.6, "gain": 0.12 },
+    { "sfx": "chime", "at": 18.3, "gain": 0.1, "pan": -0.3 },
+    { "sfx": "clunk", "at": 30.6, "gain": 0.3 },
+    { "sfx": "lock_click", "at": 30.65, "gain": 0.25 },
+    { "sfx": "paper", "at": 34.5, "gain": 0.2 },
+    { "sfx": "paper", "at": 40.6, "gain": 0.35 },
+    { "sfx": "paper", "at": 43.2, "gain": 0.3 },
+    { "sfx": "footsteps", "at": 45.2, "gain": 0.16, "args": { "count": 14, "interval": 0.45, "heavy": 0.25 } },
+    { "sfx": "wind", "at": 45.0, "gain": 0.12, "args": { "d": 7 } },
+    { "sfx": "hum", "at": 52.3, "gain": 0.6, "args": { "start_bar": 0, "bars": 2, "octave": 0 } },
+    { "sfx": "wind", "at": 58.0, "gain": 0.1, "args": { "d": 6 } },
+    { "sfx": "static", "at": 64.0, "gain": 0.04, "args": { "d": 6 } },
+    { "sfx": "breath", "at": 66.0, "gain": 0.25, "args": { "count": 3, "interval": 1.2 } },
+    { "sfx": "breath", "at": 71.5, "gain": 0.3, "args": { "count": 2, "interval": 1.4 } },
+    { "sfx": "clock_ticks", "at": 76.0, "gain": 0.45, "args": { "dur": 16, "every": 1.0 } },
+    { "sfx": "paper", "at": 83.3, "gain": 0.4 },
+    { "sfx": "breath", "at": 90.6, "gain": 0.55, "args": { "count": 4, "interval": 0.5 } },
+    { "sfx": "wind", "at": 101.5, "gain": 0.12, "args": { "d": 5 } },
+    { "sfx": "hum", "at": 107.2, "gain": 0.65, "args": { "start_bar": 0, "bars": 3, "octave": -1 } },
+    { "sfx": "chime", "at": 118.2, "gain": 0.18 }
+  ],
+  "cut": []
+}

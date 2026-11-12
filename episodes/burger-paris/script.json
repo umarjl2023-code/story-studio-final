@@ -1,0 +1,14 @@
+{
+ "title": "TEST – POV: Über Paris regnet es 10.000 Big Macs",
+ "series": "Test",
+ "part": 1,
+ "voice": { "backend": "auto", "voice": "thorsten", "length_scale": 0.95 },
+ "outro": 3.0,
+ "fact_source": "Big Mac wiegt rund 200 bis 220 Gramm (Herstellerangaben, gerundet) – 10.000 Stück ≈ 2 Tonnen",
+ "lines": [
+  { "id": "hook", "text": "Paris, 12 Uhr mittags. Plötzlich regnet es *zehntausend* Big Macs.", "pause": 0.4 },
+  { "id": "turm", "text": "Sie stapeln sich unterm *Eiffelturm.* Immer höher.", "pause": 0.3 },
+  { "id": "tonnen", "text": "Das sind über *zwei* *Tonnen* Burger.", "pause": 0.4 },
+  { "id": "frage", "text": "Was machst du? A: Du isst. B: Du rennst.", "pause": 0.2, "noCaption": true }
+ ]
+}

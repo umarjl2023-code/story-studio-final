@@ -11,7 +11,12 @@ const uses3D = ep => /\bW3\.|THREE\./.test(fs.readFileSync(path.join(ep, 'scenes
 function pageHtml(ep) {
   const f = p => 'file://' + path.resolve(p).replace(/\\/g, '/');
   const fonts = [['Black', 900], ['ExtraBold', 800], ['Bold', 700], ['SemiBold', 600], ['Medium', 500], ['ExtraLight', 200]]
-    .map(([n, w]) => `@font-face{font-family:Inter;font-weight:${w};src:url('${f(path.join(ROOT, 'engine/fonts/Inter-' + n + '.otf'))}')}`).join('\n');
+    .map(([n, w]) => `@font-face{font-family:Inter;font-weight:${w};src:url('${f(path.join(ROOT, 'engine/fonts/Inter-' + n + '.otf'))}')}`).join('\n')
+    + [['Regular', 'normal'], ['Italic', 'italic']].map(([n, st]) => `\n@font-face{font-family:"EB Garamond";font-weight:400;font-style:${st};src:url('${f(path.join(ROOT, 'engine/fonts/EBGaramond-' + n + '.woff2'))}')}`).join('')
+    + `\n@font-face{font-family:"Instrument Serif";font-weight:400;src:url('${f(path.join(ROOT, 'engine/fonts/InstrumentSerif-Regular.woff2'))}')}`
+    + [['ExtraBold', 800], ['Black', 900]].map(([n, w]) => `\n@font-face{font-family:Nunito;font-weight:${w};src:url('${f(path.join(ROOT, 'engine/fonts/Nunito-' + n + '.woff2'))}')}`).join('')
+    + [['Bold', 'normal'], ['BoldItalic', 'italic']].map(([n, st]) => `\n@font-face{font-family:Fraunces;font-weight:700;font-style:${st};src:url('${f(path.join(ROOT, 'engine/fonts/Fraunces-' + n + '.woff2'))}')}`).join('')
+    + `\n@font-face{font-family:"Barlow Condensed";font-weight:700;src:url('${f(path.join(ROOT, 'engine/fonts/BarlowCondensed-Bold.woff2'))}')}`;
   const sets = fs.readdirSync(path.join(ROOT, 'engine/sets')).filter(x => x.endsWith('.js'))
     .map(x => `<script src="${f(path.join(ROOT, 'engine/sets', x))}"></script>`).join('\n');
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${fonts}\nhtml,body{margin:0;background:#000}</style></head><body>

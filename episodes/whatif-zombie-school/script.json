@@ -1,0 +1,11 @@
+{
+ "title": "What if a zombie apocalypse started out of nowhere?",
+ "series": "What if",
+ "part": 6,
+ "style": "what-if-video-stil v2 (soft look), no narration – English text + music + sound; smooth keyframed animation, whip transitions",
+ "language": "en",
+ "voice": { "backend": "none" },
+ "outro": 66.9,
+ "fact_source": "- (fiction)",
+ "lines": [ { "id": "x", "text": "zombie", "pause": 0, "noCaption": true } ]
+}

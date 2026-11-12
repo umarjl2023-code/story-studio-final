@@ -1,0 +1,24 @@
+{
+ "lines": [
+  {
+   "id": "x",
+   "text": "days",
+   "start": 0.25,
+   "end": 1.15,
+   "noCaption": true,
+   "color": null,
+   "speaker": null,
+   "words": [
+    {
+     "w": "days",
+     "hl": false,
+     "start": 0.29,
+     "end": 1.09
+    }
+   ]
+  }
+ ],
+ "voiceEnd": 1.15,
+ "total": 123.05,
+ "backend": "none"
+}

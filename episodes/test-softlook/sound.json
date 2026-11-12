@@ -1,0 +1,14 @@
+{
+  "bed": "mystery",
+  "bed_curve": [[0, 0.6], [0.8, 0.0], [1.3, 0.0], [2.5, 0.5], [10, 0.5]],
+  "cues": [
+    { "sfx": "footsteps", "at": 0, "gain": 0.3, "args": { "count": 3, "interval": 0.22, "heavy": 0.3 } },
+    { "sfx": "whoosh", "at": "word:hook:stopped", "offset": -0.35, "gain": 0.5 },
+    { "sfx": "hit", "at": "word:hook:stopped", "gain": 0.6 },
+    { "sfx": "tick", "at": "word:hook:stopped", "offset": 0.05, "gain": 0.7 },
+    { "sfx": "riser", "at": "line:dog", "gain": 0.2, "args": { "d": 2 } },
+    { "sfx": "wind", "at": "line:fris", "gain": 0.15, "args": { "d": 5 } },
+    { "sfx": "chime", "at": "word:fris:hangs", "gain": 0.3 }
+  ],
+  "cut": []
+}
