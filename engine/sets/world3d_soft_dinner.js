@@ -238,6 +238,11 @@ CINE.bio = function (x, y, r, a = 1) {   // Biogefährdungs-Symbol (vereinfacht)
   for (let i = 0; i < 3; i++) { const an = -Math.PI / 2 + i * Math.PI * 2 / 3; ctx.beginPath(); ctx.arc(Math.cos(an) * r * .36, Math.sin(an) * r * .36, r * .36, 0, Math.PI * 2); ctx.stroke(); }
   ctx.beginPath(); ctx.arc(0, 0, r * .55, 0, Math.PI * 2); ctx.stroke(); ctx.fillStyle = '#14200e'; ctx.beginPath(); ctx.arc(0, 0, r * .14, 0, Math.PI * 2); ctx.fill(); ctx.restore();
 };
+CINE.heart = function (x, y, r, a = 1, pulse = 0) {   // Herz-Symbol (pulsiert)
+  if (a <= 0) return; const s = r * (1 + pulse * .25); ctx.save(); ctx.globalAlpha = a; ctx.translate(x, y); ctx.shadowColor = 'rgba(255,60,120,.7)'; ctx.shadowBlur = 18 + pulse * 20;
+  ctx.fillStyle = '#ff4f8a'; ctx.beginPath(); ctx.moveTo(0, s * .35); ctx.bezierCurveTo(-s * 1.1, -s * .35, -s * .55, -s * 1.05, 0, -s * .45); ctx.bezierCurveTo(s * .55, -s * 1.05, s * 1.1, -s * .35, 0, s * .35); ctx.fill();
+  ctx.shadowBlur = 0; ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.beginPath(); ctx.ellipse(-s * .38, -s * .5, s * .14, s * .09, -.6, 0, 7); ctx.fill(); ctx.restore();
+};
 CINE.title = function (text, hl = [], a = 1) {
   if (a <= 0) return; ctx.save(); ctx.font = `700 76px ${CINE.SERIF}`; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.letterSpacing = '-1px';
   const words = text.split(' '), lines = [[]]; let lw = 0; const sp = ctx.measureText(' ').width;
@@ -250,7 +255,7 @@ CINE.title = function (text, hl = [], a = 1) {
 CINE.hud = function (h) {
   const a = h.alpha ?? 1; if (a <= 0) return; ctx.save(); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   const x = 56, y = 860;
-  if (h.icon === 'bio') CINE.bio(x + 34, y - 92, 34, a); else if (h.icon !== 'none') CINE.radiation(x + 34, y - 92, 34, a);
+  if (h.icon === 'bio') CINE.bio(x + 34, y - 92, 34, a); else if (h.icon === 'heart') CINE.heart(x + 34, y - 92, 34, a, h.pulse || 0); else if (h.icon !== 'none') CINE.radiation(x + 34, y - 92, 34, a);
   ctx.font = `700 36px ${CINE.COND}`; ctx.letterSpacing = '.5px'; const lw = ctx.measureText(h.label).width;
   ctx.globalAlpha = a * .85; ctx.fillStyle = '#14100e'; ctx.fillRect(x - 6, y - 34, lw + 12, 44); ctx.globalAlpha = 1;
   CINE.stroke(h.label, x, y, a, 0);

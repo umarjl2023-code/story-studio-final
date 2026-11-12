@@ -59,7 +59,8 @@ SOFT.human = function (o = {}) {
 };
 SOFT.ARMS = { idle: [.08, .1, -.15], wash: [-.95, .12, -1.0], knead: [-1.05, .22, -.75], lap: [-.35, .22, -1.25], album: [-.55, .3, -1.45], hug: [-1.15, .5, -1.35],
   holdHand: [-.35, .05, -.25], laptop: [-.8, .18, -1.05], letter: [-.85, .2, -1.6], face: [-1.6, .45, -2.35], tea: [-.55, .2, -1.6], wave: [-.2, 1.9, -.6], shoulder: [-.35, .22, -1.2],
-  zombie: [-1.4, .12, -.15], aim: [-1.45, -.05, -.35], run: [.0, .1, -1.3], axeUp: [-2.6, .2, -.6], axeHit: [-.9, .05, -.15], pull: [-1.2, .05, -.1], grab: [-1.6, .2, -.4], ride: [-1.1, .2, -.5], fall: [-2.6, .6, -.3], phone: [-.9, .15, -1.75], shock: [-.4, .5, -1.0] };
+  zombie: [-1.4, .12, -.15], aim: [-1.45, -.05, -.35], run: [.0, .1, -1.3], axeUp: [-2.6, .2, -.6], axeHit: [-.9, .05, -.15], pull: [-1.2, .05, -.1], grab: [-1.6, .2, -.4], ride: [-1.1, .2, -.5], fall: [-2.6, .6, -.3], phone: [-.9, .15, -1.75], shock: [-.4, .5, -1.0],
+  chin: [-1.25, .42, -2.2], wave2: [-.4, 2.3, -.9], holdHand: [-.1, .32, -.12], bag: [.05, .12, -.6], note: [-.9, .1, -.9], stretch: [-2.9, .3, -.2] };
 SOFT.humanPose = function (h, p, t) {
   const u = h.userData; h.visible = p.visible !== false; if (!h.visible) return;
   h.position.set(...(p.pos || [0, 0, 0])); h.rotation.y = p.ry || 0;
@@ -79,7 +80,7 @@ SOFT.humanPose = function (h, p, t) {
   const smile = p.smile ?? .6, brows = p.brows || 0, eyes = p.eyes || 0;
   u.mouth.rotation.z = smile >= 0 ? Math.PI : 0; u.mouth.position.y = smile >= 0 ? -.058 : -.07;
   u.mouth.scale.set(lerp(.55, 1.1, Math.abs(smile)) + (p.mouthO || 0) * -.3, lerp(.2, .9, Math.abs(smile)) + (p.mouthO || 0) * 1.4, 1);
-  u.cheeks.forEach(c => c.material.opacity = .2 + Math.max(0, smile) * .35);
+  u.cheeks.forEach(c => { c.material.opacity = Math.min(1, .2 + Math.max(0, smile) * .35 + (p.blush || 0) * .6); c.scale.set(1.3 + (p.blush || 0) * .5, .8 + (p.blush || 0) * .2, .4); });
   u.eyes.forEach(e => { e.lid.visible = eyes > .05; e.lid.scale.y = lerp(.25, 1.2, eyes); e.lid.position.y = lerp(.012, 0, eyes);
     e.brow.rotation.z = Math.PI / 2 - (e.x > 0 ? 1 : -1) * brows * .5; e.brow.position.y = .038 + brows * .006; });
   const tr = p.tears || 0;

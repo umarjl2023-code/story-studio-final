@@ -1,0 +1,11 @@
+{
+ "title": "What if the girl you liked had a crush on you?",
+ "series": "What if",
+ "part": 8,
+ "style": "what-if-video-stil v2 (soft look), no narration – English text + piano + sound; fixed walking lanes, keyframed animation, seamless loop",
+ "language": "en",
+ "voice": { "backend": "none" },
+ "outro": 60.9,
+ "fact_source": "- (fiction)",
+ "lines": [ { "id": "x", "text": "crush", "pause": 0, "noCaption": true } ]
+}

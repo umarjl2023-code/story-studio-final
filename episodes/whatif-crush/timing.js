@@ -1,0 +1,1 @@
+window.TIMING={"lines": [{"id": "x", "text": "crush", "start": 0.25, "end": 1.15, "noCaption": true, "color": null, "speaker": null, "words": [{"w": "crush", "hl": false, "start": 0.29, "end": 1.09}]}], "voiceEnd": 1.15, "total": 62.05, "backend": "none"};
