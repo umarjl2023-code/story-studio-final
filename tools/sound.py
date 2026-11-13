@@ -202,6 +202,13 @@ def hum(start_bar=0, bars=8, octave=0, bpm=64, voice=1.0):
         v = lp(v, .08 if octave < 0 else .12) * np.minimum(1, t / .08) * np.minimum(1, (n / SR - t) / .12)
         i = int(at * beat * SR); out[i:i + n] += v[:len(out) - i] * voice
     return reverb(out, 1.8, .25)
+def laser(d=1.5):  # Laser-Augen: sirrendes, pulsierendes Hochfrequenz-Brummen
+    t = tt(d); f = 900 + 140 * np.sin(2 * np.pi * 7 * t); ph = 2 * np.pi * np.cumsum(f) / SR
+    s = np.sin(ph) + .5 * np.sin(2.01 * ph) + .3 * np.sign(np.sin(ph * .5)) + .25 * hp(noise(d), .4)
+    return s * env(len(t), .05, .2) * (.7 + .3 * np.sin(2 * np.pi * 31 * t)) * .5
+def crowd(d=6.0, cheer=1.0):  # jubelnde Menge: viele Stimmen = gefiltertes Rauschen mit Schwankungen
+    t = tt(d); n = lp(hp(noise(d), .05), .25) * 3; mod = .6 + .4 * np.sin(2 * np.pi * .7 * t) * np.sin(2 * np.pi * .23 * t + 1)
+    return n * mod * env(len(t), .6, 1.0) * cheer
 def passing_train(d=1.0): t = tt(d); return lp(noise(d), .3) * (np.sin(2 * np.pi * 14 * t) > 0) * 2 * env(len(t), .05, .01)
 def paper(): return hp(noise(.5), .2) * (lp(np.abs(noise(.5)), .002) * 8) * env(int(.5 * SR), .02, .1)
 def lock_click(): t = tt(.15); return (np.sin(2 * np.pi * 1800 * t) + np.sin(2 * np.pi * 2700 * t)) * np.exp(-t * 50)

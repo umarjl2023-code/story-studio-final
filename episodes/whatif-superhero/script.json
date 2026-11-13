@@ -1,0 +1,11 @@
+{
+ "title": "What if you woke up as the most powerful superhero?",
+ "series": "What if",
+ "part": 9,
+ "style": "what-if-video-stil v2 (soft look) + bloom; original hero design (no licensed character); no narration",
+ "language": "en",
+ "voice": { "backend": "none" },
+ "outro": 58.9,
+ "fact_source": "- (fiction)",
+ "lines": [ { "id": "x", "text": "hero", "pause": 0, "noCaption": true } ]
+}

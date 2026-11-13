@@ -22,7 +22,10 @@ function pageHtml(ep) {
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${fonts}\nhtml,body{margin:0;background:#000}</style></head><body>
 <canvas id="c"></canvas>
 ${uses3D(ep) ? `<script>window.threeLoaded = new Promise(r => window.__threeReady = r);</script>
-<script type="module">import * as T from '${f(path.join(ROOT, 'node_modules/three/build/three.module.js'))}'; window.THREE = T; window.__threeReady(true);</script>` : ''}
+<script type="importmap">{"imports":{"three":"${f(path.join(ROOT, 'node_modules/three/build/three.module.js'))}","three/addons/":"${f(path.join(ROOT, 'node_modules/three/examples/jsm'))}/"}}</script>
+<script type="module">import * as T from 'three'; import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'; import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'; import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'; import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
+window.THREE = T; window.THREE_ADDONS = { EffectComposer, RenderPass, UnrealBloomPass, OutputPass, SMAAPass }; window.__threeReady(true);</script>` : ''}
 <script src="${f(path.join(ep, 'timing.js'))}"></script>
 <script>const EPISODE={scenes:[]};</script>
 <script src="${f(path.join(ROOT, 'engine/engine.js'))}"></script>

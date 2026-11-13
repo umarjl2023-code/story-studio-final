@@ -9,6 +9,7 @@
 ## Serien
 | Serie | Teil | Ordner | Abstimmung | Ergebnis | gepostet |
 |---|---|---|---|---|---|
+| What if (EN, Soft-Look v2 + Bloom) | 9 | episodes/whatif-superhero | A/B/C/D (Kommentare) | – | – |
 | What if (EN, Soft-Look v2) | 8 | episodes/whatif-crush | – (Loop; Kommentar: tag your crush) | – | – |
 | What if (EN, Soft-Look v2) | 7 | episodes/whatif-bounty | – (Loop über den Fernseher) | – | – |
 | What if (EN, Soft-Look v2) | 6 | episodes/whatif-zombie-school | – (Frage: would you have made it?) | – | – |
@@ -23,6 +24,7 @@
 (Je Serie festhalten, welche Rolle welche Stimme hat, damit sie in jedem Teil gleich klingt.)
 - Test (burger-paris): Erzähler Piper thorsten
 - What if (whatif-war): Erzähler Piper ryan (englisch), length_scale 1.05
+- What if (whatif-superhero): keine Stimme – Texte + tension-Bed + Laser/Crowd-Sounds; Welt hero (Zimmer, Bad/Spiegel, Stadt, Feld, Stadion, All); Bloom-Nachbearbeitung (w.post); eigener Held statt Lizenzfigur
 - What if (whatif-crush): keine Stimme – Texte + Klavier (bpm 72, Melodie) + Herz-Pops; Welt crush (Flur/Klasse/Tor/Park/Zimmer); feste Laufspuren, Loop über Flur-Zeit
 - What if (whatif-bounty): keine Stimme – Texte + tension-Bed + Sounddesign; Welten neon (Stadt + Supermarkt) und apt (Wohnung, Katze, schwarzer Mann); Verfolger folgen deinem Pfad mit Zeitversatz; Loop über TV-Überblendung
 - What if (whatif-zombie-school): keine Stimme – Texte + tension-Bed + Sounddesign; Welt zworld; Keyframe-Animation (SOFT.track/SOFT.mix), Wisch-Übergänge; Gewalt nur angedeutet

@@ -25,7 +25,14 @@ W3.render = function (w, cam, exposure = 1) {
   if (cam.shake) { c.position.x += noise1(cam.t * 23) * cam.shake; c.position.y += noise1(cam.t * 19 + 50) * cam.shake; }
   c.lookAt(...cam.look); c.updateProjectionMatrix();
   r.toneMappingExposure = exposure;
-  r.render(w.scene, c);
+  if (w.post && window.THREE_ADDONS) {   // Nachbearbeitung: Bloom (Leuchten) + Kantenglättung, pro Welt via w.post = {bloom:{strength, radius, threshold}}
+    const A = window.THREE_ADDONS;
+    if (!w._composer) { const comp = new A.EffectComposer(r); comp.setSize(W, H); comp.addPass(new A.RenderPass(w.scene, c));
+      const b = w.post.bloom || {}; w._bloom = new A.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), b.strength ?? .45, b.radius ?? .6, b.threshold ?? .82); comp.addPass(w._bloom);
+      comp.addPass(new A.OutputPass()); if (w.post.smaa) comp.addPass(new A.SMAAPass(W, H)); w._composer = comp; }
+    if (cam.bloom !== undefined) w._bloom.strength = cam.bloom;
+    w._composer.render();
+  } else r.render(w.scene, c);
   ctx.drawImage(r.domElement, 0, 0, W, H);
 };
 // ---------- Bausteine ----------
